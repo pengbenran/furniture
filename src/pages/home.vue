@@ -2,6 +2,7 @@
   <div class="containt">
     <Header/>
     <!-- banner图 -->
+<<<<<<< HEAD
    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="2000">
       <ol class="carousel-indicators">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -21,6 +22,9 @@
       </div>
     </div>
 
+=======
+    <Banner/>
+>>>>>>> d7bd81e1d3ba7c762cbc7447fe472dd692ea571b
     <div class="container">
       <!-- 关于我们 -->
       <div class="row magTop">
@@ -117,9 +121,15 @@
 </template>
 <script>
 import Header from "@/components/public/nav";
+<<<<<<< HEAD
 import Footer from "@/components/public/footer";
 export default {
   components:{Header,Footer},
+=======
+import Banner from "@/components/public/banner";
+export default {
+  components:{Header,Banner},
+>>>>>>> d7bd81e1d3ba7c762cbc7447fe472dd692ea571b
   name: 'Home',
   data () {
     return {

@@ -5,26 +5,7 @@
     <Banner/>
     <!-- banner图 -->
 
-<div class="container-fluid CaseOur magTop">
-      <div class="row">
-        <div class="col-md-6">
-          <a href="#" class="thumbnail">
-            <img src="../assets/company.png" alt="...">
-          </a>
-        </div>
-        <div class="col-md-6 CaseWarp">
-          <div class="CaseOurPos">
-            <strong>OUR CMPANY</strong>
-            <div class="info">发源于1995年，是大自然家具环保恐惧前段时间，看到群里一些小伙伴面试的时候被面试官问到这类题目。平时大家开发vue项目的时候，相信大部分人都是使用 vue-cli
-                  脚手架生成的项目架构，然后 npm run install 安装依赖，npm run serve启动项目然后就开始写业务代码了前段时间，看到群里一些小伙伴面试的时候被面试官问到这类题目。平时大家开发vue项目的时候，相信大部分人都是使用 vue-cli脚手架生成的项目架
-                  构，然后 npm run install 安装依赖，npm run serve启动项目然后就开始写业务代码了</div>  
-          </div>
-          <div class="CaseBnt">
-            <button type="button" class="btn btnMore">More+</button>
-          </div>
-        </div>
-      </div>
-</div>
+
     <!-- 关于我们 -->
 
 <div class="container-fluid Case_List magTop">
@@ -63,7 +44,7 @@
     </div>
 
     <div class="row mag100 homeDesign">
-      <div class="col-md-7 DesignCase">
+      <div class="col-md-7">
         <img src="../assets/desigen1.png" class="img-responsive">
       </div>
       <div class="col-md-5 DesignCase">
@@ -72,9 +53,9 @@
            <p>李强毕业于哈是李强毕业于哈是李强毕业于哈是李强毕业于哈是李强毕业于哈是李强毕业于哈是</p>
            <p>大小：128m<sup>3</sup>   结构：三室一厅一卫    预算：15万    耗时：三个月</p>
            <p>设计理念：航空公司航空公司航空公司航空公司航空公司航空公司航空公司航空公司公司航空公司航空公司航空公公司航空公司航空公司航空公</p>
-         </div>
-         <div class="DesignBtn">
+            <div class="DesignBtn">
             <a href="javascript:;"><span>M O R E 》</span></a>
+         </div>
          </div>
       </div>
     </div> 
@@ -165,22 +146,13 @@ a:focus{
 }
 
 
-.CaseOur{
-  padding:0 150px;
-  text-align: left;
-}
-.CaseOur img{width: 100%;}
-.CaseOur strong{font-size: 60px;font-weight: bold;font-family: 'STHeiti'}
-.CaseOur .info{font-size: 14px;font-weight: bold;font-family: 'STHeiti';letter-spacing:1px;}
-.CaseWarp{position: relative;}
-.CaseOurPos{position: absolute;top: 50%;height: 340px;margin-top: -170px;}
-.btnMore{border:1px solid #0e887a;color: #0e887a;background: #fff;position: absolute;bottom: 35px;right: 90px;padding: 5px 75px;font-family: "Microsoft YaHei";font-weight: bold;}
 
 .Case_List{padding: 0 345px;}
 .Case_List a{display: inline-block;}
 .Case_List a img{transition: all 0.3s;border-radius: 2px;}
 .Case_List a:hover{box-shadow: 0 0 10px rgba(0, 0, 0, 0.46);}
 .Case_List a:hover img{transform: scale(1.1);}
+.Case_List a img{width: 100%;}
 
 .hotCase{text-align: center;margin-top: 50px; padding:0 150px;}
 .hotTitle{font-weight: 100;width: 255px;margin: auto;}
@@ -197,9 +169,11 @@ a:focus{
 .mag100{margin-top: 100px;}
 
 .homeDesign .DesignCase{position: relative;padding: 0;font-family: "Microsoft YaHei";}
-.homeDesignInfo{text-align: left;height: 240px;padding: 0 65px;margin-top: 130px;}
+.DesignCase{display: flex;align-items: center;}
+.homeDesignInfo{text-align: left;height: 240px;padding: 0 65px;}
 .homeDesignInfo .title{font-weight: bold;}
-.DesignBtn{text-align: right;margin-right: 30px;margin-top: 100px;}
+.DesignBtn{text-align: right;margin-right: 30px;margin-top: 60px;}
 .DesignBtn a{color: #000;font-size: 15px;text-decoration:none;}
+.homeDesign img{width: 100%;}
 /* .homeDesignInfo{position: absolute;top: 44%;margin-top: -120px;} */
 </style>

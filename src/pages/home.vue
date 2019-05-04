@@ -20,6 +20,7 @@
         </div>
       </div>
     </div>
+
     <div class="container">
       <!-- 关于我们 -->
       <div class="row magTop">
@@ -107,49 +108,19 @@
         <p>找设计&nbsp;&nbsp;&nbsp;到七音</p>
       </div>
     </div> 
-    <div class="footer magTop">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-4 displayFlex">
-            <div class="icon">
-              <img src="../assets/phone.png" class="img-responsive">
-            </div>
-            <div class="intro">
-              <p class="title">联系电话</p>
-              <p>办公室电话:(026)83368227</p>
-              <p>手机:18980699677</p>
-            </div>
-          </div>
-          <div class="col-xs-4 displayFlex">
-            <div class="icon">
-              <img src="../assets/address.png" class="img-responsive">
-            </div>
-            <div class="intro">
-              <p class="title">办公地址</p>
-              <p>成都市金牛区天力商务楼501室</p>
-            </div>
-          </div>
-          <div class="col-xs-4 displayFlex">
-            <div class="icon">
-              <img src="../assets/time.png" class="img-responsive">
-            </div>
-            <div class="intro">
-              <p class="title">工作时间</p>
-              <p>周一至周六</p>
-              <p>早上8:30-下午17:30</p>
-            </div>
-          </div>
-        </div>
-      </div>   
-    </div>
-  </div> 
+
+
+    <Footer/>
+
+
   </div>
 
 </template>
 <script>
 import Header from "@/components/public/nav";
+import Footer from "@/components/public/footer";
 export default {
-  components:{Header},
+  components:{Header,Footer},
   name: 'Home',
   data () {
     return {
@@ -226,10 +197,5 @@ a:focus{
 .container{
   width: 90%;
 }
-.footer{
-  padding-top: 5%;
-  padding-bottom: 5%;
-  box-sizing: border-box;
-  background-image: url('../assets/footerBcg.png');
-}
+
 </style>

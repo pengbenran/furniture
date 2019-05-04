@@ -1,10 +1,34 @@
 <template>
   <div class="containt">
-   这是招商加盟页面 
+   <Header/>
+   <div class="join">
+   	<div class="bcg">
+   	   <img src="static/images/Join/joinbcg.png" class="d-block w-100" >
+   	</div>
+   	<div class="ipt">
+   	   <div>
+   	   	<input type="text" name="" placeholder="title">
+   	   </div>
+   	   <div>
+   	   	<textarea></textarea>
+   	   </div>
+   	   <div>
+   	   	<input type="email" name="" placeholder="email">
+   	   </div>
+   	   <div class="btn">submit</div>
+   	</div>
+   </div>
+   <div class="joinConent">
+   	<img src="static/images/Join/joinconent.png" class="d-block w-100" >
+   </div>
+   <Footer/>
   </div>
 </template>
 <script>
+import Header from "@/components/public/nav";
+import Footer from "@/components/public/footer";
 export default {
+  components:{Header,Footer},
   name: 'Join',
   data () {
     return {
@@ -13,6 +37,48 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang="less">
+.join{
+	position: relative;
+	.ipt{
+		position:absolute;
+		width: 43.8%;
+		top: 20%;
+		left: 10%;
+		div{
+			margin-bottom: 16px;
+			input{
+				width: 100%;
+				height: 30px;
+				background: #F3F5F6;
+				padding-left: 10px;
+				box-sizing: border-box;
+				border: none;
+				outline: 0;
+			}
+			textarea{
+				width: 100%;
+				height:133px;
+				background: #F3F5F6;
+				padding-left: 10px;
+				box-sizing: border-box;
+				border: none;
+				outline: 0; 
+			}
 
+		}
+		.btn{
+			width: 130px;
+			height: 42px;
+			background: #0E887A;
+			color: #fff;
+			float: right;
+		}
+	}
+
+}
+.joinConent{
+	width: 80%;
+	margin: 268px auto 312px;
+}
 </style>

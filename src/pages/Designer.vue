@@ -1,5 +1,6 @@
 <template>
   <div class="containt">
+  	<Header/>
    <Banner/>
     <div class="cartImg marginTop">
 		<img src="static/images/designer/connect.png" class="d-block w-100">
@@ -65,10 +66,11 @@
   </div>
 </template>
 <script>
+import Header from "@/components/public/nav";
 import Banner from "@/components/public/banner";
 import Footer from "@/components/public/footer";
 export default {
-  components:{ Banner,Footer},
+  components:{Header, Banner,Footer},
   name: 'Designer',
   data () {
     return {

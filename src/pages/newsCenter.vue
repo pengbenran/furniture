@@ -51,6 +51,41 @@
    		</div>
    	</div>
    </div>
+   <div class="industry">
+   	 <div class="industryTitle">
+   	 	行业新闻
+   	 </div>
+   	 <div class="engTitle">
+   	 	industry &nbsp; news
+   	 </div>
+   	 <div class="industryConent">
+   	 	<div class="left">
+   	 		<img src="static/images/newsCenter/industry1.png" class="d-block w-100" >
+   	 	</div>
+   	 	<div class="right">
+   	 		<div class="top">
+   	 			<div class="imglist">
+   	 				<img src="static/images/newsCenter/industry3.png" class="d-block w-100" >
+   	 				<div class="mode"></div>
+   	 			</div>
+   	 			<div class="imglist">
+   	 				<img src="static/images/newsCenter/industry4.png" class="d-block w-100" >
+   	 			</div>
+   	 			<div class="imglist">
+   	 				<img src="static/images/newsCenter/industry5.png" class="d-block w-100" >
+   	 			</div>
+   	 		</div>
+   	 		<div class="bottom">
+   	 			<div class="imglist">
+   	 				<img src="static/images/newsCenter/industry2.png" class="d-block w-100" >
+   	 			</div>
+   	 			<div class="imglist">
+   	 				<img src="static/images/newsCenter/industry6.png" class="d-block w-100" >
+   	 			</div>
+   	 		</div>
+   	 	</div>
+   	 </div>
+   </div>
    <!-- 页面底部 -->
    <Footer/>
   </div>
@@ -123,6 +158,59 @@ export default {
 	.companyNewRight :hover{
 		color: #fff;
 		background: #AECEC4;
+	}
+}
+.industry{
+	background-image: url('/static/images/newsCenter/industrybcg.png');
+	color:#fff;
+	padding-top: 80px;
+	padding-bottom: 20px;
+	box-sizing: border-box;
+	.industryTitle{
+		font-size: 36px;	
+	}
+	.engTitle{
+		font-size: 24px;
+		margin-bottom: 152px
+	}
+	.industryConent{
+		width: 78%;
+		margin:auto;
+		display: flex;
+		justify-content: space-between;
+		.left{
+			width: 23%;
+			height:100%;
+		}
+		.right{
+			width: 76.8%;
+			display:flex;
+			flex-direction: column;
+			justify-content: space-between;
+			.top{
+				display: flex;
+				justify-content: space-around;
+				.imglist{
+					width: 33%;
+					position: relative;
+					.mode{
+						width: 100%;
+						height: 100%;
+						background: red;
+						top: 0;
+						left: 0;
+						position: absolute;
+						display:none
+					}
+				}
+				
+			}
+			.bottom{
+				display: flex;
+				justify-content: space-around;
+			}
+
+		}
 	}
 }
 </style>

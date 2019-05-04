@@ -114,7 +114,6 @@
 
 
   </div>
-
 </template>
 <script>
 import Header from "@/components/public/nav";

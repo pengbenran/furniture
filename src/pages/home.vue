@@ -7,7 +7,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navList">
-            <li><a href="#">首页</a></li>
+            <li class="active"><a href="#">首页</a></li>
             <li><a href="#">企业文化</a></li>
             <li><a href="#">产品中心</a></li>
             <li><a href="#">设计师</a></li>
@@ -162,7 +162,6 @@
     </div>
   </div> 
   </div>
-
 </template>
 <script>
 export default {

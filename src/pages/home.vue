@@ -1,24 +1,6 @@
 <template>
   <div class="containt">
-    <nav class="navbar">
-      <div class="container-fluid">
-        <div class="navbar-header">  
-            <img alt="Brand" src="../assets/logo.png" class="img-responsive">
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navList">
-            <li class="active"><a href="#">首页</a></li>
-            <li><a href="#">企业文化</a></li>
-            <li><a href="#">产品中心</a></li>
-            <li><a href="#">设计师</a></li>
-            <li><a href="#">服务中心</a></li>
-            <li><a href="#">新闻中心</a></li>
-            <li><a href="#">销售中心</a></li>
-            <li><a href="#">招盟加商</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <Header/>
     <!-- banner图 -->
    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="2000">
       <ol class="carousel-indicators">
@@ -164,7 +146,9 @@
   </div>
 </template>
 <script>
+import Header from "@/components/public/nav";
 export default {
+  components:{Header},
   name: 'Home',
   data () {
     return {

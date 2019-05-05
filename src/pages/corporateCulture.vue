@@ -30,6 +30,7 @@ import Footer from "@/components/public/footer";
 export default {
   name: 'corporateCulture',
   components:{Header,Footer},
+
   data () {
     return {
      

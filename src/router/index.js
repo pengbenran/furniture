@@ -6,7 +6,9 @@ import corporateCulture from '@/pages/corporateCulture'
 import Designer from '@/pages/Designer'
 import Join from '@/pages/Join'
 import newsCenter from '@/pages/newsCenter'
+import newsInfo from '@/pages/newsInfo'
 import productCenter from '@/pages/productCenter'
+import productInfo from '@/pages/productInfo'
 import salesCenter from '@/pages/salesCenter'
 Vue.use(Router)
 export default new Router({
@@ -42,9 +44,19 @@ export default new Router({
       component: newsCenter
     },
     {
+      path: '/newsInfo',
+      name: 'newsInfo',
+      component: newsInfo
+    },
+    {
       path: '/productCenter',
       name: 'productCenter',
       component: productCenter
+    },
+    {
+      path: '/productInfo',
+      name: 'productInfo',
+      component: productInfo
     },
     {
       path: '/salesCenter',

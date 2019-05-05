@@ -13,7 +13,7 @@
    		<img src="static/images/newsCenter/companynew.png" class="d-block w-100" >
    	</div>
    	<div class="companyNewRight">
-   		<div class="companyNewRightList">
+   		<div class="companyNewRightList"  @click="to">
    			<div class="date">
    				<p class="day">13</p>
    				<p class="mont">2018-04</p>
@@ -25,7 +25,7 @@
    				</div>
    			</div>
    		</div>
-   		<div class="companyNewRightList">
+   		<div class="companyNewRightList" @click="to">
    			<div class="date">
    				<p class="day">13</p>
    				<p class="mont">2018-04</p>
@@ -37,7 +37,7 @@
    				</div>
    			</div>
    		</div>
-   		<div class="companyNewRightList">
+   		<div class="companyNewRightList"  @click="to">
    			<div class="date">
    				<p class="day">13</p>
    				<p class="mont">2018-04</p>
@@ -101,7 +101,14 @@ export default {
     return {
      
     }
-  }
+  },
+	methods: {
+		to(){
+			this.$router.push({
+				path:`/newsInfo`
+			})
+		}
+	}
 }
 </script>
 <style scoped lang="less">

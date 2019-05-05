@@ -39,11 +39,16 @@ export default {
 }
 </script>
 <style scoped>
-.main{background-image: url('../../static/images/corporateCulture/bg.png');height: 1050px;background-size: cover;}
-.mainWarp{height: 530px;width: 800px;background: rgba(255, 255, 255, 0.45);}
+.main{background-image: url('../../static/images/corporateCulture/bg.png');background-size: cover;width:100%;}
+.mainWarp{height: 530px;width:42%;background: rgba(255, 255, 255, 0.45);margin-top: 200px;margin-bottom: 150px;}
 .main{position: relative;display: flex;align-items: center;justify-content: center;}
 .main strong{display: block;font-size: 22px;padding: 20px 0;text-align: center;}
 .main .info{padding: 0 50px;}
-.main_Tab{width: 800px;background: rgba(000, 000, 000, 0.45);position:absolute;bottom:0;padding: 15px 0 8px;}
-.main_Tab span{display: inline-block;padding: 0 35px;font-size: 18px;color: #fff;}
+.main_Tab{width: 42%;background: rgba(000, 000, 000, 0.45);position:absolute;bottom:0;padding: 15px 0 8px;display: flex;justify-content: space-around;}
+.main_Tab span{display: inline-block;font-size: 18px;color: #fff;}
+@media (max-width: 768px) { 
+  .mainWarp{width: 80%;}
+  .main_Tab{width: 80%;}
+  .main .info{padding: 0 20px;}
+ }
 </style>

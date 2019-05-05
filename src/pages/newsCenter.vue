@@ -220,4 +220,31 @@ export default {
 		}
 	}
 }
+
+
+@media (max-width: 768px) { 
+	.title{margin-top: 50px;}
+	.companyNew{
+		width: 86.4%;
+		margin: 50px auto;
+		flex-wrap:wrap;
+		.companyNewLeft{
+			width: 100%;
+		}
+		.companyNewRight{
+			width: 100%;
+			margin-top: 20px;
+			.companyNewRightList{
+				margin-bottom: 10px;
+			}
+		}
+	}
+	.industry{
+		padding-bottom: 40px;
+		.engTitle{
+			font-size: 24px;
+			margin-bottom: 74px
+		}
+	}
+}
 </style>

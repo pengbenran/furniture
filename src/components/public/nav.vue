@@ -1,9 +1,8 @@
 <template>
-   <div>
     <header class="header">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-light inav">
-                <a class="navbar-brand" href="/"><h1><img src="../../assets/logo.png" alt="七音"></h1></a>
+                <div class="logo"><img src="../../assets/logo.png" alt="七音" class="d-block w-100"></div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -49,8 +48,6 @@
             </nav>
         </div>
     </header>
-<!--header end-->
-   </div>
 </template>
 <script>
 export default {
@@ -68,8 +65,8 @@ export default {
 }
 </script>
 <style scoped>
-.header{position: absolute;top: 0;left: 0;width: 100%;z-index: 999;padding: 0 150px;}
-.navbar-nav .nav-link{color:#fff;font-family:'STFangsong';margin:0 20px;}
+.header{position: fixed;top: 0;left: 0;width: 100%;z-index: 999;}
+.navbar-nav .nav-link{color:#fff;font-family:'STFangsong';padding: 0 10px;box-sizing: border-box;}
 .navbar-nav .nav-link:hover{ 
  color: #379589;
  background-color: transparent !important;
@@ -78,12 +75,12 @@ export default {
   color: #379589;
   background-color: transparent !important; 
 }
-
 .SpanShow{display: block;}
 .SpanHide{display: none;}
 
 .inav .NavMenu{background: rgba(255, 255, 255, 0.35);border-radius: 4px;color: #fff;}
 .NavPos{position: absolute;left: 42%;top: 2.7rem;width:0;height:0;border-width:0 10px 10px;border-style:solid;border-color:transparent transparent rgba(255, 255, 255, 0.35);margin-top: -10px;}
+.inav .logo{width: 123px;}
 .inav .dropdown-menu{min-width:max-content;}
 .inav .NavMenu .List{padding: 0}
 .inav .NavMenu .List span{display: block;width: 8rem;text-align: center;}

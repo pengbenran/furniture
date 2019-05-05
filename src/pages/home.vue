@@ -3,17 +3,10 @@
     <Header/>
     <!-- banner图 -->
     <Banner/>
-    <div class="container">
-      <!-- 关于我们 -->
-      <div class="row magTop">
-        <div class="col-xs-6">
-          <a href="#" class="thumbnail">
-            <img src="../assets/company.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6">
-        </div>
-      </div>
+    
+    <OurCase/>
+    <!-- 关于我们 -->
+
       <div class="container-fluid Case_List magTop">
        <div class="row">
         <div class="col-md-3 Lits"><a href="javascript:;"><img src="../assets/kind.png" alt="..."></a> </div>
@@ -23,6 +16,7 @@
       </div>
     </div>
    <!-- 产品分类 -->
+
     <div class="container-fluid hotCase">
      <div class="hotTitle">
        <label>热销产品</label>
@@ -38,54 +32,15 @@
        <div class="col-md-4 Lits"><a href="javascript:;"><img src="../assets/good2.png" alt="..."><div class="hotMask"><span><img src="../assets/cat.png" />北欧风椅子</span></div></a></div>
      </div>
     </div>
-  </div>
   <!-- 热销产品 -->
-  <div class="row magTop">
-    <div class="col-xs-4">
-      <a href="#" class="thumbnail">
-        <img src="../assets/good1.png" alt="...">
-      </a>
-    </div>
-    <div class="col-xs-4">
-      <a href="#" class="thumbnail">
-        <img src="../assets/good1.png" alt="...">
-      </a>
-    </div>
-    <div class="col-xs-4">
-      <a href="#" class="thumbnail">
-        <img src="../assets/good1.png" alt="...">
-      </a>
-    </div>
-    <div class="col-xs-4">
-      <a href="#" class="thumbnail">
-        <img src="../assets/good1.png" alt="...">
-      </a>
-    </div>
-    <div class="col-xs-4">
-      <a href="#" class="thumbnail">
-        <img src="../assets/good1.png" alt="...">
-      </a>
-    </div>
-    <div class="col-xs-4">
-      <a href="#" class="thumbnail">
-        <img src="../assets/good1.png" alt="...">
-      </a>
-    </div>
-  </div>
-<!-- 设计师中心 -->
+
+
 <div class="row magTop">
   <div class="col-xs-12">
     <img src="../assets/desigen.png" class="img-responsive">
   </div>
 </div>
-<div class="row magTop">
-  <div class="col-xs-8">
-    <img src="../assets/desigen1.png" class="img-responsive">
-  </div>
-  <div class="col-xs-4">
-    <p>你想要的设计&nbsp;&nbsp;&nbsp;我们都有</p>
-    <p>找设计&nbsp;&nbsp;&nbsp;到七音</p>
-    <div class="row mag100 homeDesign">
+ <div class="row mag100 homeDesign">
       <div class="col-md-7">
         <img src="../assets/desigen1.png" class="img-responsive">
       </div>
@@ -101,8 +56,6 @@
       </div>
     </div>
   </div> 
-</div>
-</div>
 <Footer/>
 </div>
 </template>
@@ -110,8 +63,10 @@
 import Header from "@/components/public/nav";
 import Footer from "@/components/public/footer";
 import Banner from "@/components/public/banner";
+import OurCase from "@/components/public/caseOur"
+
 export default {
-  components:{Header,Banner,Footer},
+  components:{Header,Banner,OurCase,Footer},
   name: 'Home',
   data () {
     return {
@@ -141,7 +96,7 @@ width: 100%;
   margin: 0;
 }
 .magTop{
-  margin-top:50px; 
+  margin-top:180px; 
 }
 .positionRelative{
   position: relative;

@@ -17,22 +17,26 @@
         <div class="TabList">
           <div class="row">
             <div class="col-md-6">
-               <div class="tit">
-                 <strong>国家木地板环保等级标准</strong><p>2019年4月26日</p>
-               </div>
-               <div class="info">
-                 国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准
-                 国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准,
-                 国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准
-               </div>
-               <div class="tit">
-                 <strong>国家木地板环保等级标准</strong><p>2019年4月26日</p>
-               </div>
-               <div class="info">
-                 国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准
-                 国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准,
-                 国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准
-               </div>
+              <div class="Case">
+                <div class="tit">
+                  <strong>国家木地板环保等级标准</strong><p>2019年4月26日</p>
+                </div>
+                <div class="info">
+                  国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准
+                  国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准,
+                  国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准等级标准国家木地板环保等级标准等级标准国家木地板环保等级标准等级标准国家木地板环保等级标准
+                </div>
+              </div>
+              <div class="Case">
+                <div class="tit">
+                  <strong>国家木地板环保等级标准</strong><p>2019年4月26日</p>
+                </div>
+                <div class="info">
+                  国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准
+                  国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准,
+                  国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准等级标准国家木地板环保等级标准等级标准国家木地板环保等级标准
+                </div>
+              </div>
             </div>
             <div class="col-md-6 TabImg">
                 <img src="../../static/images/serviceCenter/bz.png" />
@@ -60,16 +64,17 @@ export default {
 </script>
 <style scoped>
 .Tab{width: 60%;}
-.Tab img{width: 46px;height: 46px;}
-.Tab span{display: block;margin-top: 15px;}
-.mt150{margin-top: 120px;}
+.Tab img{width: 2.8rem;height: 2.8rem;}
+.Tab span{display: block;margin-top: 1rem;}
+.mt150{margin-top: 8rem;}
 
 .TabWarp{text-align: center;}
-.TabTitle{display: inline-block;padding: 0 40px;background: #f8f8f8;font-size: 18px;}
-.TabList{padding: 80px 10%;text-align: left;background: #f8f8f8;}
-.TabList>div>div{padding: 0 45px;}
-.TabList .tit{margin-bottom: 25px;}
-.TabList .info{font-size: 14px;font-weight: 100;text-indent:2em;justify-content: content;}
-.TabList .tit p{font-weight: 100;font-size: 14px;}
+.TabTitle{display: inline-block;padding: 0 2.5rem;background: #f8f8f8;font-size: 1.2rem;}
+.TabList{padding: 6rem 10%;text-align: left;background: #f8f8f8;}
+.TabList>div>div{padding: 0 3rem;}
+.TabList .tit{margin-bottom: 1.8rem;}
+.TabList .info{font-size: 1rem;font-weight: 100;text-indent:2rem;justify-content: content;}
+.TabList .tit p{font-weight: 100;font-size: 1rem;}
 .TabImg img{width: 100%;}
+.TabList .Case{padding: 3rem 0;}
 </style>

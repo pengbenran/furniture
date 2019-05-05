@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-6">
           <a href="#" class="thumbnail">
-            <img src="../assets/company.png" alt="...">
+            <img src="../../assets/company.png" alt="...">
           </a>
         </div>
         <div class="col-md-6 CaseWarp">
@@ -32,6 +32,7 @@ export default {
   padding:0 150px;
   text-align: left;
 }
+.magTop{margin-top: 100px;}
 .CaseOur img{width: 100%;}
 .CaseOur strong{font-size: 60px;font-weight: bold;font-family: 'STHeiti'}
 .CaseOur .info{font-size: 14px;font-weight: bold;font-family: 'STHeiti';letter-spacing:1px;}

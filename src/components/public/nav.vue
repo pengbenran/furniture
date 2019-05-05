@@ -33,7 +33,7 @@ export default {
 </script>
 <style scoped>
 .header{position: absolute;top: 0;left: 0;width: 100%;z-index: 999;padding: 0 150px;}
-.navbar-nav .nav-link{color:#fff;font-family:'STFangsong';margin:0 40px;}
+.navbar-nav .nav-link{color:#fff;font-family:'STFangsong';margin:0 20px;}
 .navbar-nav .nav-link:hover{ 
  color: #379589;
  background-color: transparent !important;

@@ -9,9 +9,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto nav-ul">
                         <li class="nav-item"><router-link class="nav-link" to='/'>首页</router-link></li>
-                        <li class="nav-item dropdown" @click="ClickNav"><router-link class="nav-link" to='/corporateCulture' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">企业文化</router-link>
+                        <li class="nav-item dropdown" :class="ShowNav?'show':''">
+                            <router-link class="nav-link" to='/corporateCulture' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div @mouseenter.self="enter()" @mouseleave.self="leave()">企业文化</div> 
+                            </router-link>
                             <span class="NavPos" :class="ShowNav?'SpanShow':'SpanHide'"></span>
-                            <div class="dropdown-menu NavMenu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu NavMenu" :class="ShowNav?'show':''" aria-labelledby="navbarDropdown">
                                 <div class="row">
                                     <div class="col-md-3 List">
                                         <span><label>地板</label></span>
@@ -23,15 +26,7 @@
                                             <li>强化地板</li>
                                         </ul>
                                     </div>
-                                    <div class="col-md-3 List"><span><label>实木家具</label></span>
-                                     <ul>
-                                            <li>强化地板</li>
-                                            <li>实木地板</li>
-                                            <li>进口地板</li>
-                                            <li>强化地板</li>
-                                            <li>强化地板</li>
-                                        </ul>
-                                    </div>
+                                    <div class="col-md-3 List"><span><label>实木家具</label></span></div>
                                     <div class="col-md-3 List"><span><label>软装</label></span></div>
                                     <div class="col-md-3 List"><span><label>整体家庭</label></span></div>
                                 </div>
@@ -58,8 +53,16 @@ export default {
     },
     methods:{
         ClickNav(){
-           this.ShowNav = !this.ShowNav;
-           console.log(this.ShowNav ,"你好世界")
+            console.log(this.ShowNav ,"你好世界")
+        //    this.ShowNav = !this.ShowNav;
+        },
+        enter(){//鼠标进入
+          console.log("进来啦")
+          this.ShowNav = true;
+        },
+        leave(){//鼠标出去
+          console.log("出来啦")
+          this.ShowNav = false;
         }
     }
 }

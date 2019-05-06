@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <div class="container-fluid">
+        <div class="">
             <nav class="navbar navbar-expand-lg navbar-light inav" :class="isScroll?'socllo':''">
                 <div class="logo"><img src="../../assets/logo.png" alt="七音" class="d-block w-100"></div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-label="Toggle navigation">

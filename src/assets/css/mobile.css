@@ -22,4 +22,28 @@
 
     /* 设置产品中心 */
     .mobileProduct .Recommend{padding-top: 2rem!important;}
+    .mobileProduct .Price{margin-bottom: 0;}
+    .mobileProduct .Price p{font-size: 1rem;}
+    .mobileProduct .Price span{font-size: .9rem!important;}
+    .mobileProduct .Recommend ul{list-style: none;padding-left: 0!important;}
+    .mobileProduct .Recommend .info strong{display: none!important;}
+    .mobileProduct .Recommend ul li{font-size: .9rem!important;}
+    .mobileProduct .Nordic{margin-bottom: 2rem!important;}
+    .mobileProduct .ImgTwo{margin-top: 1rem;}
+
+    /* 设置产品中心详情*/  
+    .mobilePinfo .Main{margin-top: 2.5rem!important;margin-bottom: 3rem!important;}
+    .mobilePinfo .WarpInfo{margin-top: 1.5rem;}
+    .mobilePinfo .Table{margin-bottom: 3rem!important;}
+
+    /* 设置产品服务中心*/    
+    .mobileServer .Tab{width: 100%!important;margin-top: 1.5rem!important;}
+    .mobileServer .Tab span{font-size: .9rem;}
+    .mobileServer .LineWarp{width: 100%!important;}
+    .mobileServer .LineWarpImg{width: 90%;}
+    .mobileServer .LineWarpImg img{width: 100%!important;}
+    .mobileServer .product .title img{display: none;}
+    .mobileServer .productInfo{padding: 2rem 1rem!important;}
+    .mobileServer .TabList .col-md-6{padding: 0;}
+    .mobileServer .ImgList>div:nth-child(2){margin-top: 3rem!important;}
 }   

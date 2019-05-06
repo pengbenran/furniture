@@ -7,12 +7,13 @@
         <div class="RecommendInfo">
           <div>
             <strong class="tit"><span>特别</span>推荐</strong>
-            <div class="Price">
-              <p>L O C K 铁制书桌灯</p>
-              <span>销量：18</span>
-              <span>￥ 124</span>
-            </div>
-            <div class="info">
+            <div class="row">
+              <div class="col-5 col-md-12 Price">
+                <p>L O C K 铁制书桌灯</p>
+                <span>销量：18</span>
+                <span>￥ 124</span>
+              </div>
+              <div class="col-7 col-md-12  info">
               <strong>商品详情</strong>
               <ul>
                 <li>LOCK</li>
@@ -21,6 +22,9 @@
                 <li>灯体 ： 黑色&nbsp;&nbsp;&nbsp;&nbsp;灯罩：透明</li>
               </ul>
             </div>
+            </div>
+
+
           </div>
         </div>
         <div class="RecommendList"><img src="../../static/images/productCenter/recommend1.png" /></div>
@@ -79,7 +83,7 @@ export default {
 }
 </script>
 <style scoped lang="less">
-.Recommend{text-align: left;font-family:"STHeiti";padding: 10rem 0;display: flex;justify-content: space-around;width: 90%;margin: 0 auto;
+.Recommend{text-align: left;font-family:"STHeiti";padding: 10rem 0;display: flex;align-items: center;width: 90%;margin: 0 auto;
   .RecommendInfo{width: 38%;}
   .RecommendList{width: 38%;}
 }

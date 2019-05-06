@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <div class="container Main">
-            <div class="Fan"><span>《 返回首页</span></div>
+    <div class="mobilePinfo">
+        <div class="container Main ">
+            <div class="Fan"><span @click="to">《 返回首页</span></div>
             <div class="row Warp">
                 <div class="col-md-7 WarpImg">
                     <div class="Left"><img src="../../static/images/productCenter/hot2.png" /></div>
@@ -46,6 +46,18 @@
 import Footer from "@/components/public/footer";
 export default {
     components:{Footer},  
+    data () {
+         return {
+
+         }
+    },
+    methods: {
+        to(){
+            this.$router.push({
+                path:`/productCenter`
+            })
+        }
+    }
 }
 </script>
 <style scoped>
@@ -53,7 +65,7 @@ export default {
 .WarpImg{display: flex;align-items: center}
 .WarpImg .Left{width: 82%;text-align: center;}
 .WarpImg .right{width: 18%;text-align: center;}
-.ImgList img{width: 100%;}
+.WarpImg img{width: 100%;}
 
 .Main .Fan{margin-bottom: 1rem;}
 .WarpInfo{display: flex;align-items: center;justify-content: center;}

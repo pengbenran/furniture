@@ -3,18 +3,12 @@
     <Header/>
     <!-- banner图 -->
     <Banner/>
-    
-    <OurCase/>
     <!-- 关于我们 -->
-
+    <OurCase/>
+    <!-- 产品分类 -->
       <div class="Case_List">
-        <div class="Lits"><a href="javascript:;"><img src="static/images/home/kind.png" alt="..."></a> </div>
-        <div class="Lits"><a href="javascript:;"><img src="static/images/home/kind.png" alt="..."></a></div>
-        <div class="Lits"><a href="javascript:;"><img src="static/images/home/kind.png" alt="..."></a></div>
-        <div class="Lits"><a href="javascript:;"><img src="static/images/home/kind.png" alt="..."></a></div>
+        <div class="Lits" v-for='(item,index) in kindData' ><a href="javascript:;" @click='changTab(index)'><img :src="item.kindImg" alt="..."></a> </div>
       </div>
-   <!-- 产品分类 -->
-
     <div class="hotCase">
      <div class="hotTitle">
        <label>热销产品</label>
@@ -22,12 +16,7 @@
        <span>前往查看更多》</span>
      </div>
      <div class="hotConent">
-       <div class="Lits"><a href="javascript:;"><img src="static/images/home/good2.png" alt="..."><div class="hotMask"><span><img src="../assets/cat.png" />北欧风椅子</span></div></a></div>
-       <div class="Lits"><a href="javascript:;"><img src="static/images/home/good3.png" alt="..."><div class="hotMask"><span><img src="../assets/cat.png" />北欧风椅子</span></div></a></div>
-       <div class="Lits"><a href="javascript:;"><img src="static/images/home/good4.png" alt="..."><div class="hotMask"><span><img src="../assets/cat.png" />北欧风椅子</span></div></a></div>
-       <div class="Lits"><a href="javascript:;"><img src="static/images/home/good5.png" alt="..."><div class="hotMask"><span><img src="../assets/cat.png" />北欧风椅子</span></div></a></div>
-       <div class="Lits"><a href="javascript:;"><img src="static/images/home/good6.png" alt="..."><div class="hotMask"><span><img src="../assets/cat.png" />北欧风椅子</span></div></a></div>
-       <div class="Lits"><a href="javascript:;"><img src="static/images/home/good2.png" alt="..."><div class="hotMask"><span><img src="../assets/cat.png" />北欧风椅子</span></div></a></div>
+       <div class="Lits" v-for="(item,index) in kindObj"><a href="javascript:;"><img :src="item.goodImg" alt="..."><div class="hotMask"><span><img src="../assets/cat.png" />{{item.name}}</span></div></a></div>
      </div>
     </div>
   <!-- 热销产品 -->
@@ -68,7 +57,38 @@ export default {
   name: 'Home',
   data () {
     return {
-     
+      kindIndex:0,
+      kindData:[
+      {
+        kindName:'橱柜',
+        kindImg:'static/images/home/kind1.png',
+        goodList:[{name:'北欧风橱柜',goodImg:'static/images/home/good2.png'},{name:'北欧风橱柜',goodImg:'static/images/home/good2.png'},{name:'北欧风橱柜',goodImg:'static/images/home/good2.png'},{name:'北欧风橱柜',goodImg:'static/images/home/good2.png'},{name:'北欧风橱柜',goodImg:'static/images/home/good2.png'},{name:'北欧风橱柜',goodImg:'static/images/home/good2.png'}]
+      }, {
+        kindName:'地板',
+        kindImg:'static/images/home/kind2.png',
+        goodList:[{name:'北欧风地板',goodImg:'static/images/home/good3.png'},{name:'北欧风地板',goodImg:'static/images/home/good3.png'},{name:'北欧风地板',goodImg:'static/images/home/good3.png'},{name:'北欧风地板',goodImg:'static/images/home/good3.png'},{name:'北欧风地板',goodImg:'static/images/home/good3.png'},{name:'北欧风地板',goodImg:'static/images/home/good3.png'}]
+      }, {
+        kindName:'实木家具',
+        kindImg:'static/images/home/kind3.png',
+        goodList:[{name:'北欧风实木家具',goodImg:'static/images/home/good4.png'},{name:'北欧风实木家具',goodImg:'static/images/home/good4.png'},{name:'北欧风橱柜',goodImg:'static/images/home/good4.png'},{name:'北欧风实木家具',goodImg:'static/images/home/good4.png'},{name:'北欧风实木家具',goodImg:'static/images/home/good4.png'},{name:'北欧风实木家具',goodImg:'static/images/home/good2.png'}]
+      }, {
+        kindName:'正装订制',
+        kindImg:'static/images/home/kind4.png',
+        goodList:[{name:'北欧风正装订制',goodImg:'static/images/home/good5.png'},{name:'北欧风正装订制',goodImg:'static/images/home/good5.png'},{name:'北欧风正装订制',goodImg:'static/images/home/good5.png'},{name:'北欧风正装订制',goodImg:'static/images/home/good5.png'},{name:'北欧风正装订制',goodImg:'static/images/home/good5.png'},{name:'北欧风正装订制',goodImg:'static/images/home/good2.png'}]
+      }
+      ]
+    }
+  },
+  computed:{
+    kindObj(){
+      let that=this
+      return that.kindData[that.kindIndex].goodList
+    }
+  },
+  methods:{
+    changTab(index){
+      let that=this
+      that.kindIndex=index
     }
   }
 }

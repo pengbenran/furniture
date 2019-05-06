@@ -1,9 +1,9 @@
 <template>
   <div class="containt">
-   <Header/>
+   <Header :curretIndex="index" :isScroll='isScroll'/>
    <div class="join">
    	<div class="bcg">
-   	   <img src="static/images/Join/joinbcg.png" class="d-block w-100" >
+   	   <img src="../assets/images/Join/joinbcg.png" class="d-block w-100" >
    	</div>
    	<div class="ipt">
    	   <div>
@@ -19,7 +19,7 @@
    	</div>
    </div>
    <div class="joinConent">
-   	<img src="static/images/Join/joinconent.png" class="d-block w-100" >
+   	<img src="../assets/images/Join/joinconent.png" class="d-block w-100" >
    </div>
    <Footer/>
   </div>
@@ -32,8 +32,17 @@ export default {
   name: 'Join',
   data () {
     return {
-     
+     index:8,
+     isScroll:false,
     }
+  },
+   methods:{
+   menu() {
+    this.isScroll = window.scrollY>0;
+  }
+  },
+   mounted(){
+    window.addEventListener('scroll', this.menu)
   }
 }
 </script>

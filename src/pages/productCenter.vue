@@ -1,6 +1,6 @@
 <template>
   <div class="containt mobileProduct">
-    <Header/>
+    <Header :curretIndex="index" :isScroll='isScroll'/>
     <Banner/>
     <main>
       <div class="container Recommend">
@@ -27,8 +27,8 @@
 
           </div>
         </div>
-        <div class="RecommendList"><img src="../../static/images/productCenter/recommend1.png" /></div>
-        <div class="RecommendList"><img src="../../static/images/productCenter/recommend2.png" /></div>
+        <div class="RecommendList"><img src="../assets/images/productCenter/recommend1.png" /></div>
+        <div class="RecommendList"><img src="../assets/images/productCenter/recommend2.png" /></div>
       </div>
       <!--特别推荐 end-->
 
@@ -47,15 +47,15 @@
       <div class="container Nordic">
         <div class="HotTitle"><span>热销产品</span></div>
         <div class="row">
-          <div class="col-md-6 left"><img src="../../static/images/productCenter/nordic1.png" /></div>
+          <div class="col-md-6 left"><img src="../assets/images/productCenter/nordic1.png" /></div>
           <div class="col-md-6 right">
             <div class="ImgTwo">
-              <div><img src="../../static/images/productCenter/nordic2.png"></div>
-              <div><img src="../../static/images/productCenter/nordic2.png"></div>
+              <div><img src="../assets/images/productCenter/nordic2.png"></div>
+              <div><img src="../assets/images/productCenter/nordic2.png"></div>
             </div>
             <div class="ImgTwo ">
-               <div><img src="../../static/images/productCenter/nordic2.png"></div>
-               <div><img src="../../static/images/productCenter/nordic2.png"></div>
+               <div><img src="../assets/images/productCenter/nordic2.png"></div>
+               <div><img src="../assets/images/productCenter/nordic2.png"></div>
             </div>
           </div>
         </div>
@@ -75,10 +75,20 @@ export default {
   components:{Header,Banner,Footer,ImgList},
   data () {
     return {
+      index:4,
+      isScroll:false,
        ImgListData:[{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},
                 {ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1}
        ],
     }
+  },
+  methods:{
+   menu() {
+    this.isScroll = window.scrollY>0;
+  }
+},
+ mounted(){
+    window.addEventListener('scroll', this.menu)
   }
 }
 </script>

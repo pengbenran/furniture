@@ -1,9 +1,9 @@
 <template>
     <div>
         <div class="container Main">
-            <div class="Fan"><a href="javasrcipt:;">《返回上一页</a></div>
+            <!-- <div class="Fan"><a href="javasrcipt:;">《返回上一页</a></div> -->
             <div class="Info">
-                
+               <img src="../assets/images/newsCenter/detail.png" class="d-block w-100">
             </div>
         </div>
          <Footer/>
@@ -13,6 +13,10 @@
 import Footer from "@/components/public/footer";
 export default {
      components:{Footer},
+     data(){
+     	return{
+     	}
+     }
 }
 </script>
 <style scoped>

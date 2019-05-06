@@ -1,9 +1,9 @@
 <template>
   <div class="containt">
-  	<Header/>
+  	<Header :curretIndex="index" :isScroll='isScroll'/>
    <Banner/>
     <div class="cartImg marginTop">
-		<img src="static/images/designer/connect.png" class="d-block w-100">
+		<img src="../assets/images/designer/connect.png" class="d-block w-100">
 	</div>
    <div class="title">
    	<h1>01/</h1><h2>产品设计</h2>
@@ -11,23 +11,23 @@
    <p class="intro">流程介绍：您可以根据您的想法提供设计稿，而我们则负责实现您的想法</p>
    <div class="floor">
    	<div class="floorleft">
-   		<img src="static/images/designer/1.png" class="d-block w-100">
+   		<img src="../assets/images/designer/1.png" class="d-block w-100">
    	</div>
    	<div class="floorright">
    		<div class="floortop">
    			<div class="floortopleft">
-   				<img src="static/images/designer/2.png" class="d-block w-100">
+   				<img src="../assets/images/designer/2.png" class="d-block w-100">
    			</div>
    			<div class="floortopright">
-   				<img src="static/images/designer/3.png" class="d-block w-100">
+   				<img src="../assets/images/designer/3.png" class="d-block w-100">
    			</div>
    		</div>
    		<div class="floortop">
    			<div class="floortopleft">
-   				<img src="static/images/designer/4.png" class="d-block w-100">
+   				<img src="../assets/images/designer/4.png" class="d-block w-100">
    			</div>
    			<div class="floortopright">
-   				<img src="static/images/designer/5.png" class="d-block w-100">
+   				<img src="../assets/images/designer/5.png" class="d-block w-100">
    			</div>
    		</div>	
    	</div>
@@ -44,7 +44,7 @@
    	<li>其他类型</li>
    </ul>
 	<div class="cartImg">
-		<img src="static/images/designer/cartImg.png" class="d-block w-100">
+		<img src="../assets/images/designer/cartImg.png" class="d-block w-100">
 	</div>
 	<div class="title marginTop">
    	<h1>03/</h1><h2>金牌设计师</h2>
@@ -52,7 +52,7 @@
    <!-- <div class="floor3">
    	<div class="cardList">
    		<div class="avator">
-   			<img class="card-img-top" src="static/images/designer/avator.png" alt="Card image cap">
+   			<img class="card-img-top" src="../assets/images/designer/avator.png" alt="Card image cap">
    		</div>
    		<div class="card-body">
    			<h5 class="card-title">张三</h5>
@@ -74,8 +74,18 @@ export default {
   name: 'Designer',
   data () {
     return {
-     
+     index:7,
+     isScroll:false,
     }
+  },
+  methods:{
+   menu() {
+    this.isScroll = window.scrollY>0;
+  },
+
+  },
+   mounted(){
+    window.addEventListener('scroll', this.menu)
   }
 }
 </script>

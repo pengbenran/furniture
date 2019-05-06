@@ -4,15 +4,15 @@
             <div class="Fan"><span @click="to">《 返回首页</span></div>
             <div class="row Warp">
                 <div class="col-md-7 WarpImg">
-                    <div class="Left"><img src="../../static/images/productCenter/hot2.png" /></div>
+                    <div class="Left"><img src="../assets/images/productCenter/hot2.png" /></div>
                     <div class="right">
-                        <div><img src="../../static/images/productCenter/up.png" /></div>
+                        <div><img src="../assets/images/productCenter/up.png" /></div>
                         <div class="ImgList">
-                           <div><img src="../../static/images/productCenter/hot2.png"/></div>
-                           <div><img src="../../static/images/productCenter/hot2.png"/></div>
-                           <div><img src="../../static/images/productCenter/hot2.png"/></div>
+                           <div><img src="../assets/images/productCenter/hot2.png"/></div>
+                           <div><img src="../assets/images/productCenter/hot2.png"/></div>
+                           <div><img src="../assets/images/productCenter/hot2.png"/></div>
                         </div>
-                        <div><img src="../../static/images/productCenter/bw.png" /></div>
+                        <div><img src="../assets/images/productCenter/bw.png" /></div>
                     </div>
                 </div>
                 <div class="col-md-5 WarpInfo">
@@ -48,7 +48,7 @@ export default {
     components:{Footer},  
     data () {
          return {
-
+            
          }
     },
     methods: {

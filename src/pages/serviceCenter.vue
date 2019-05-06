@@ -1,13 +1,13 @@
 <template>
   <div class="mobileServer">
-     <Header/>
+     <Header :curretIndex="index" :isScroll='isScroll'/>
      <Banner/>
      <div class="container Tab mt150">
        <div class="row">
-         <div class="col-3"><img src="../../static/images/serviceCenter/tab1.png" /><span>售后服务</span></div>
-         <div class="col-3"><img src="../../static/images/serviceCenter/tab2.png" /><span>售后服务</span></div>
-         <div class="col-3"><img src="../../static/images/serviceCenter/tab3.png" /><span>售后服务</span></div>
-         <div class="col-3"><img src="../../static/images/serviceCenter/tab4.png" /><span>售后服务</span></div>
+         <div class="col-3"><img src="../assets/images/serviceCenter/tab1.png" /><span>售后服务</span></div>
+         <div class="col-3"><img src="../assets/images/serviceCenter/tab2.png" /><span>售后服务</span></div>
+         <div class="col-3"><img src="../assets/images/serviceCenter/tab3.png" /><span>售后服务</span></div>
+         <div class="col-3"><img src="../assets/images/serviceCenter/tab4.png" /><span>售后服务</span></div>
        </div>
      </div>
      <!--Tab end-->
@@ -15,8 +15,8 @@
     <div class="container Process">
       <div class="LineWarp"><div class="Line"><span></span><label>保质期内维护</label></div><div class="Line"><span></span><label>保质期内保养</label></div></div> 
       <div class="LineWarpImg">
-        <div class="LineCase"><img src="../../static/images/serviceCenter/pople2.jpg" /></div>
-        <div class="LineCase"><img src="../../static/images/serviceCenter/pople.jpg" /></div>
+        <div class="LineCase"><img src="../assets/images/serviceCenter/pople2.jpg" /></div>
+        <div class="LineCase"><img src="../assets/images/serviceCenter/pople.jpg" /></div>
       </div>
     </div>
 
@@ -48,32 +48,32 @@
               </div>
             </div>
             <div class="col-md-6 TabImg">
-                <img src="../../static/images/serviceCenter/bz.png" />
+                <img src="../assets/images/serviceCenter/bz.png" />
             </div>
           </div>
         </div>
      </div>
      
      <div class="product">
-       <div class="title"><span><img src="../../static/images/serviceCenter/productTit.png" /></span></div>
+       <div class="title"><span><img src="../assets/images/serviceCenter/productTit.png" /></span></div>
        <div class="productInfo">
          <div class="row">
           <div class="col-md-6">
             <label>使用</label>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。4小时内尽量减少走动，至少48小时后可搬入重物存放</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。4小时内尽量减少走动，至少48小时后可搬入重物存放</p>
           </div>
           <div class="col-md-6">
             <div class="row ImgList">
-              <div class=""><img src="../../static/images/serviceCenter/product1.png" /></div>
-              <div><img src="../../static/images/serviceCenter/product1.png" /></div>
+              <div class=""><img src="../assets/images/serviceCenter/product1.png" /></div>
+              <div><img src="../assets/images/serviceCenter/product1.png" /></div>
             </div>
           </div>
          </div>
@@ -87,14 +87,14 @@
             <label>清洁</label>
             <div class="tit">日常用吸尘器或用不滴水的拖布顺地板的走向摩擦，保持地板的干燥清洁，局部有污渍，局部有污渍可用清洁剂清除；禁止使用酸、碱有机性汽油等物品。</div>
             <label>特殊污渍处理方法</label>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小重物存放。</p>
           </div>
           <div class="col-md-6">
             <div class="ImgList">
-              <div><img src="../../static/images/serviceCenter/Clean.png" /></div>
+              <div><img src="../assets/images/serviceCenter/Clean.png" /></div>
             </div>
           </div>
          </div>
@@ -113,7 +113,7 @@
           </div>
           <div class="col-md-6">
             <div class="ImgList">
-              <div><img src="../../static/images/serviceCenter/Clean.png" /></div>
+              <div><img src="../assets/images/serviceCenter/Clean.png" /></div>
             </div>
           </div>
          </div>
@@ -121,9 +121,9 @@
      </div>
 
      <div class="container Map">
-       <img src="../../static/images/serviceCenter/map.png" />
+       <img src="../assets/images/serviceCenter/map.png" />
        <div class="MapF">
-         <img src="../../static/images/serviceCenter/mapf.png"/>
+         <img src="../assets/images/serviceCenter/mapf.png"/>
        </div>
      </div>
 
@@ -139,8 +139,17 @@ export default {
   components:{Header,Banner,Footer},
   data () {
     return {
-     
+     index:6,
+     isScroll:false,
     }
+  },
+  methods:{
+   menu() {
+    this.isScroll = window.scrollY>0;
+  }
+},
+ mounted(){
+    window.addEventListener('scroll', this.menu)
   }
 }
 </script>

@@ -10,6 +10,14 @@ export default {
     return {
      
     }
+  },
+  methods:{
+  	menu() {
+  		this.isScroll = window.scrollY>0;
+  	}
+  },
+   mounted(){
+    window.addEventListener('scroll', this.menu)
   }
 }
 </script>

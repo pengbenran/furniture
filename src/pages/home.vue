@@ -13,7 +13,7 @@
      <div class="hotTitle">
        <label>热销产品</label>
        <div class="hotline"></div>
-       <span>前往查看更多》</span>
+       <span @click="to">前往查看更多》</span>
      </div>
      <div class="hotConent">
        <div class="Lits" v-for="(item,index) in kindObj"><a href="javascript:;"><img :src="item.goodImg" alt=".."><div class="hotMask"><span><img src="../assets/cat.png" />{{item.name}}</span></div></a></div>
@@ -94,7 +94,12 @@ export default {
     },
     menu() {
     this.isScroll = window.scrollY>0;
-   }
+   },
+   to(){
+      this.$router.push({
+        path:`/productCenter`
+      })
+    },
   },
   mounted(){
     window.addEventListener('scroll', this.menu)

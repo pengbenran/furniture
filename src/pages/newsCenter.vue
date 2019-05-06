@@ -59,16 +59,16 @@
    	 	industry &nbsp; news
    	 </div>
    	 <div class="industryConent">
-   	 	<div class="left">
+   	 	<div class="left" @click="to">
    	 		<img src="../assets/images/newsCenter/industry1.png" class="d-block w-100" >
    	 	</div>
    	 	<div class="right">
    	 		<div class="top">
-   	 			<div class="imglist">
+   	 			<div class="imglist" @click="to">
    	 				<img src="../assets/images/newsCenter/industry3.png" class="d-block w-100" >
    	 				<div class="mode"></div>
    	 			</div>
-   	 			<div class="imglist">
+   	 			<div class="imglist" @click="to">
    	 				<img src="../assets/images/newsCenter/industry4.png" class="d-block w-100" >
    	 			</div>
    	 			<div class="imglist">
@@ -76,10 +76,10 @@
    	 			</div>
    	 		</div>
    	 		<div class="bottom">
-   	 			<div class="imglist">
+   	 			<div class="imglist" @click="to">
    	 				<img src="../assets/images/newsCenter/industry2.png" class="d-block w-100" >
    	 			</div>
-   	 			<div class="imglist">
+   	 			<div class="imglist" @click="to">
    	 				<img src="../assets/images/newsCenter/industry6.png" class="d-block w-100" >
    	 			</div>
    	 		</div>

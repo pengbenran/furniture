@@ -15,7 +15,7 @@
    	   <div>
    	   	<input type="email" name="" placeholder="email">
    	   </div>
-   	   <div class="btn">submit</div>
+   	   <div class="subBtn">submit</div>
    	</div>
    </div>
    <div class="joinConent">
@@ -67,9 +67,10 @@ export default {
 			}
 
 		}
-		.btn{
+		.subBtn{
 			width: 130px;
 			height: 42px;
+			line-height: 42px;
 			background: #0E887A;
 			color: #fff;
 			float: right;
@@ -80,5 +81,51 @@ export default {
 .joinConent{
 	width: 80%;
 	margin: 268px auto 312px;
+}
+@media (max-width: 767px) { 
+.join{
+	position: relative;
+	.ipt{
+		position:absolute;
+		width: 43.8%;
+		top: 25%;
+		left: 10%;
+		div{
+			margin-bottom: 6px;
+			input{
+				width: 100%;
+				height: 25px;
+				background: #F3F5F6;
+				padding-left: 10px;
+				box-sizing: border-box;
+				border: none;
+				outline: 0;
+			}
+			textarea{
+				width: 100%;
+				height:43px;
+				background: #F3F5F6;
+				padding-left: 10px;
+				box-sizing: border-box;
+				border: none;
+				outline: 0; 
+			}
+
+		}
+		.subBtn{
+			width: 80px;
+			height: 30px;
+			line-height: 30px;
+			background: #0E887A;
+			color: #fff;
+			float: right;
+		}
+	}
+
+}	
+.joinConent{
+	width: 80%;
+	margin: 70px auto 112px;
+}
 }
 </style>

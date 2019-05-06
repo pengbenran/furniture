@@ -172,4 +172,26 @@ export default {
  		}
  	}
  }
+@media (max-width: 767px) { 
+ .cart{
+  list-style: none;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background: #AECEC4;
+  li{
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+    color:#fff;
+  }
+  .select{
+    color:#1B8D80;
+  }
+}
+}
+
+
 </style>

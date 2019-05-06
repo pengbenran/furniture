@@ -1,5 +1,5 @@
 <template>
-  <div class="containt">
+  <div class="containt mobile">
     <Header/>
     <!-- banner图 -->
     <Banner/>
@@ -33,8 +33,8 @@
   <!-- 热销产品 -->
 
 
-<div class="row magTop">
-  <div class="col-xs-12">
+<div class="row magTop ">
+  <div class="col-xs-12 responsive">
     <img src="static/images/home/desigen.png" class="img-responsive">
   </div>
 </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="containt">
+  <div class="containt mobileNew">
   	<!-- 导航栏 -->
   	<Header/>
   	<!-- banner图 -->
@@ -8,7 +8,7 @@
    <div class="title">
    	公司新闻
    </div>
-   <div class="companyNew">
+   <div class="companyNew ">
    	<div class="companyNewLeft">
    		<img src="static/images/newsCenter/companynew.png" class="d-block w-100" >
    	</div>

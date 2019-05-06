@@ -1,0 +1,25 @@
+/* 首页响应式 */
+@media screen and (max-width:768px){
+    .mobile .CaseOur{width: 100%!important;}
+    .mobile .CaseOur strong{font-size: 2rem!important;}
+    .mobile .CaseBnt{
+        display: flex;justify-content: center;
+    }
+    .mobile .Case_List{width: 95%!important;}
+    .mobile .hotTitle label{font-size: .9rem!important;}
+    .mobile .hotCase .hotMask span{font-size: .7rem;}
+    .mobile .hotCase .hotMask img{    width: 20px;height: 20px;}
+    .mobile .btnMore{float: none;width: 80%;margin-top: .6rem;}
+    .mobile .magTop{margin-top: 2rem !important;}
+    .mobile .mag100 {margin-top: 1rem !important;}
+    .mobile .responsive{text-align: left;}
+    .mobile .img-responsive{width: 100%;}
+    .mobile .homeDesignInfo{padding: 2rem 1rem!important;}
+
+
+    /* 设置底部响应式 */
+    .footer_Nav .footer_NavList{border-left: none!important; }
+
+    /* 设置产品中心 */
+    .mobileProduct .Recommend{padding-top: 2rem!important;}
+}   

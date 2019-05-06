@@ -1,9 +1,9 @@
 <template>
-  <div class="containt">
+  <div class="containt mobileProduct">
     <Header/>
     <Banner/>
     <main>
-      <div class="Recommend">
+      <div class="container Recommend">
         <div class="RecommendInfo">
           <div>
             <strong class="tit"><span>特别</span>推荐</strong>

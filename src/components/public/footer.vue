@@ -1,26 +1,29 @@
 <template>
    <div class="footer">
     <div class="footer_Nav">
-        <div class="footer_NavList">
-         <!--  <div class="Left"><img src="../../assets/phone.png" alt="联系电话"/></div> -->
-         <!-- <div class="line"></div> -->
-            <strong>联系电话</strong>
-            <p>办公司电话：（028）8336 8327</p>
-            <p>手机：18980699677</p>               
-        </div>
-        <div class="footer_NavList">
-             <!--  <div class="Left"><img src="../../assets/address.png" alt="办公地址"/></div> -->
-             <!-- <div class="line"></div> -->
-             <strong>办公地址</strong>
-             <p>成都市金牛区天力商务楼501室</p>              
-        </div>
-        <div class="footer_NavList">
-            <!-- <div class="Left"><img src="../../assets/time.png" alt="工作时间"/></div> -->
+        <div class="row">
+            <div class="col-md-4 footer_NavList">
+            <!--  <div class="Left"><img src="../../assets/phone.png" alt="联系电话"/></div> -->
             <!-- <div class="line"></div> -->
-            <strong>工作时间</strong>
-            <p>周一至周六</p>
-            <p>早上8:30 - 下午17:30</p>                
+                <strong>联系电话</strong>
+                <p>办公司电话：（028）8336 8327</p>
+                <p>手机：18980699677</p>               
+            </div>
+            <div class="col-md-4  footer_NavList">
+                <!--  <div class="Left"><img src="../../assets/address.png" alt="办公地址"/></div> -->
+                <!-- <div class="line"></div> -->
+                <strong>办公地址</strong>
+                <p>成都市金牛区天力商务楼501室</p>              
+            </div>
+            <div class="col-md-4  footer_NavList">
+                <!-- <div class="Left"><img src="../../assets/time.png" alt="工作时间"/></div> -->
+                <!-- <div class="line"></div> -->
+                <strong>工作时间</strong>
+                <p>周一至周六</p>
+                <p>早上8:30 - 下午17:30</p>                
+            </div>
         </div>
+
      </div>
    <div class="bq">版权所有 &copy; 2018 四川匠兴日升木业有限责任公司 保留所有版权 粤ICP备05046166号-8</div>
    </div>

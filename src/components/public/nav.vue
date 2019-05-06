@@ -34,7 +34,7 @@
                         </li>
                         <li class="nav-item"><router-link class="nav-link" to='/newsCenter'>新闻中心</router-link></li>
                         <li class="nav-item"><router-link class="nav-link" to='/productCenter'>产品中心</router-link></li>
-                        <li class="nav-item"><router-link class="nav-link" to='/salesCenter'>销售中心</router-link></li>
+                        <li class="nav-item"><router-link class="nav-link" to='/'>销售中心</router-link></li>
                         <li class="nav-item"><router-link class="nav-link" to='/serviceCenter'>服务中心</router-link></li>
                         <li class="nav-item"><router-link class="nav-link" to='/Designer'>设计中心</router-link></li>
                         <li class="nav-item"><router-link class="nav-link" to='/Join'>招商加盟</router-link></li>

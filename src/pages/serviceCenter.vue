@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="mobileServer">
      <Header/>
      <Banner/>
      <div class="container Tab mt150">
        <div class="row">
-         <div class="col-md-3"><img src="../../static/images/serviceCenter/tab1.png" /><span>售后服务</span></div>
-         <div class="col-md-3"><img src="../../static/images/serviceCenter/tab2.png" /><span>售后服务</span></div>
-         <div class="col-md-3"><img src="../../static/images/serviceCenter/tab3.png" /><span>售后服务</span></div>
-         <div class="col-md-3"><img src="../../static/images/serviceCenter/tab4.png" /><span>售后服务</span></div>
+         <div class="col-3"><img src="../../static/images/serviceCenter/tab1.png" /><span>售后服务</span></div>
+         <div class="col-3"><img src="../../static/images/serviceCenter/tab2.png" /><span>售后服务</span></div>
+         <div class="col-3"><img src="../../static/images/serviceCenter/tab3.png" /><span>售后服务</span></div>
+         <div class="col-3"><img src="../../static/images/serviceCenter/tab4.png" /><span>售后服务</span></div>
        </div>
      </div>
      <!--Tab end-->
@@ -71,8 +71,8 @@
             <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。4小时内尽量减少走动，至少48小时后可搬入重物存放</p>
           </div>
           <div class="col-md-6">
-            <div class="ImgList">
-              <div><img src="../../static/images/serviceCenter/product1.png" /></div>
+            <div class="row ImgList">
+              <div class=""><img src="../../static/images/serviceCenter/product1.png" /></div>
               <div><img src="../../static/images/serviceCenter/product1.png" /></div>
             </div>
           </div>
@@ -168,6 +168,7 @@ export default {
 .ImgList{display: flex;}
 .ImgList>div{margin: 0 0.5rem;}
 .ImgList>div:nth-child(2){margin-top: 10rem;}
+.ImgList img{width: 100%;}
 
 .Clean{background: #f8f8f8;}
 .Clean p{margin-bottom: .6rem;}

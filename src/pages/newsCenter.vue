@@ -141,7 +141,8 @@ export default {
 		.companyNewRightList{
 			display: flex;
 			background: #EAEAEA;
-			.date{
+			.date{display: flex;flex-direction: column;justify-content:center;
+				p{margin-bottom: 0;}
 				.day{
 					font-size:48px;
 					width: 100px;
@@ -151,12 +152,13 @@ export default {
 				}
 			}
 			.intro{
+				padding: 1rem 0;
 				text-align: left;
 				.newTitle{
 					font-size:18px;
 					font-weight: bold;
-					height: 70px;
-					line-height: 70px;
+					height: 50px;
+					line-height: 50px;
 				}
 				.newsDetail{
 					font-size:16px;

@@ -68,6 +68,7 @@ export default {
 .WarpImg img{width: 100%;}
 
 .Main .Fan{margin-bottom: 1rem;}
+.Main .Fan span{color: #0e887a;text-decoration: none;}
 .WarpInfo{display: flex;align-items: center;justify-content: center;}
 .WarpInfo .Price,.WarpInfo .Btn{text-align: center;margin-bottom: 1.2rem;}
 .WarpInfo .Name{font-size: 1.5rem;letter-spacing:8px;font-weight: bold;margin-bottom: 1.5rem;}

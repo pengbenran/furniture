@@ -21,7 +21,7 @@
     .header .nav-item{text-align: left;padding: .5rem 0;}
 
     /* 设置底部响应式 */
-    .footer_Nav .footer_NavList{border-left: none!important; }
+    .footer_Nav .footer_NavList{justify-content: flex-start!important;}
 
     /* 设置产品中心 */
     .mobileProduct .Recommend{padding-top: 2rem!important;}

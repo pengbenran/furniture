@@ -87,7 +87,7 @@ export default {
 </script>
 <style scoped>
 .header{position: fixed;top: 0;left: 0;width: 100%;z-index: 999;}
-.navbar-nav .nav-link{font-family:'STFangsong';padding: 0 20px;box-sizing: border-box;}
+.navbar-nav .nav-link{font-family:'STFangsong';padding: 0 20px;box-sizing: border-box;color: #fff;}
 .navbar-nav .nav-link:hover{ 
  color: #379589;
  background-color: transparent !important;

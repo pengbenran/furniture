@@ -6,8 +6,8 @@
     <!-- 关于我们 -->
     <OurCase/>
     <!-- 产品分类 -->
-      <div class="Case_List">
-        <div class="Lits" v-for='(item,index) in kindData' ><a href="javascript:;" @click='changTab(index)'><img :src="item.kindImg" alt=".."></a> </div>
+      <div class="Case_List magTop">
+        <div class="Lits" v-for='(item,index) in kindData' ><a href="javascript:;" @click='changTab(index)'><img :src="item.kindImg" alt=".."><div class="mask"><span>{{item.kindName}}</span></div></a></div>
       </div>
     <div class="hotCase">
      <div class="hotTitle">
@@ -32,14 +32,19 @@
         <img src="../assets/images/home/desigen1.png" class="img-responsive">
       </div>
       <div class="col-xs-12 col-lg-5 DesignCase">
-       <div class="homeDesignInfo">
-         <p class="title">清新北欧风设计 -- 李强</p>
+       <div class="homeDesignInfo" >
+         <router-link to='/Designer' >
+            <p>你想要的设计我们都有</p>
+            <p><span>找设计</span><span>到七音</span></p>
+         </router-link>
+         <!-- <p class="title">清新北欧风设计 -- 李强</p>
          <p>李强毕业于哈是李强毕业于哈是李强毕业于哈是李强毕业于哈是李强毕业于哈是李强毕业于哈是</p>
          <p>大小：128m<sup>3</sup>   结构：三室一厅一卫    预算：15万    耗时：三个月</p>
          <p>设计理念：航空公司航空公司航空公司航空公司航空公司航空公司航空公司航空公司公司航空公司航空公司航空公公司航空公司航空公司航空公</p>
          <div class="DesignBtn">
           <span>M O R E 》</span>
-          </div>
+          </div> -->
+
       </div>
     </div>
   </div> 
@@ -52,30 +57,31 @@ import Footer from "@/components/public/footer";
 import Banner from "@/components/public/banner";
 import OurCase from "@/components/public/caseOur"
 
+
 export default {
   components:{Header,Banner,OurCase,Footer},
   name: 'Home',
   data () {
     return {
       kindIndex:0,
-      isScroll:false,
+      isScroll:false, 
       index:1,
       kindData:[
       {
         kindName:'橱柜',
-        kindImg:require('../assets/images/home/kind1.png'),
+        kindImg:require('../assets/images/home/kindon01.jpg'),
         goodList:[{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')}]
       }, {
         kindName:'地板',
-        kindImg:require('../assets/images/home/kind2.png'),
+        kindImg:require('../assets/images/home/kindon02.jpg'),
         goodList:[{name:'北欧风橱柜',goodImg:require('../assets/images/home/good5.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good5.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good5.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good5.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good5.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good5.png')}]
       }, {
         kindName:'实木家具',
-        kindImg:require('../assets/images/home/kind3.png'),
+        kindImg:require('../assets/images/home/kindon03.jpg'),
        goodList:[{name:'北欧风橱柜',goodImg:require('../assets/images/home/good3.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good3.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good3.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good3.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good3.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good3.png')}]
       }, {
         kindName:'正装订制',
-        kindImg:require('../assets/images/home/kind4.png'),
+        kindImg:require('../assets/images/home/kindon04.jpg'),
        goodList:[{name:'北欧风橱柜',goodImg:require('../assets/images/home/good4.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good4.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good4.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good4.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good4.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good4.png')}]
       }
       ]
@@ -160,15 +166,20 @@ width: 100%;
   /*font-size: 18px;*/
   font-weight: bold;
 }
-.Case_List{width: 70%;margin:50px auto;display: flex;justify-content: space-around;
+.Case_List{width: 64%;margin:120px auto;display: flex;justify-content: space-around;
  .Lits{
     width: 22%;
   }
+  
 }
-.Case_List a{display: inline-block;}
+.Case_List a{display: inline-block;position: relative}
+.Case_List .mask{position: absolute;left: 0;top: 0;height: 100%;width: 100%;background: rgba(255, 255, 255, 0.4);transition: all 0.5s;}
+.Case_List .mask span{color:#000;position: absolute;bottom: 1rem;left: 0;width: 100%;text-align: center;}
 .Case_List a img{transition: all 0.3s;border-radius: 2px;}
-.Case_List a:hover{box-shadow: 0 0 10px rgba(0, 0, 0, 0.46);}
+.Case_List a:hover{box-shadow: 0 0 20px rgba(0, 0, 0, 0.46);}
 .Case_List a:hover img{transform: scale(1.1);}
+.Case_List a:hover .mask{transform: scale(1.1);background: rgba(255, 255, 255, 0.0);}
+.Case_List a:hover span{display: none;}
 .Case_List a img{width: 100%;}
 
 .hotCase{text-align: center;margin: 50px auto;width: 90%;
@@ -179,18 +190,22 @@ width: 100%;
 .hotTitle .hotline{height: 4px;width: 100%;background: #ccc;}
 .hotTitle span{font-size: 14px;letter-spacing:12px;color: #666;}
 .hotCase .Lits img{width: 100%;}
-.hotCase .Lits{margin-top: 30px;width: 32%;}
-.hotCase a{display: inline-block;position: relative;}
+.hotCase .Lits{margin-top: 30px;width: 33.3%;padding: 0 15px;}
+.hotCase a{display: inline-block;position: relative;width: 100%;}
 .hotMask{z-index: 2;position: absolute;left: 0;top: 0;height: 100%;width: 100%;background: rgba(204, 204, 204, 0.45);opacity: 0;transition: all 0.3s;}
 .hotCase a:hover .hotMask{opacity: 1;}
 .hotCase .hotMask span{position: absolute;top: 48%;width: 100%;display: block;left: 0;color: #0d7569;}
 .hotCase .hotMask img{width: 25px;height: 25px;margin-right: 4px;}
 .mag100{margin-top: 100px;}
 
-.homeDesign .DesignCase{position: relative;padding: 0;font-family: "Microsoft YaHei";}
+.homeDesign .DesignCase{position: relative;padding: 0;}
 .DesignCase{display: flex;align-items: center;}
-.homeDesignInfo{text-align: left;padding: 65px; box-sizing: border-box;}
-.homeDesignInfo .title{font-weight: bold;}
+.homeDesignInfo{width: 100%;text-align: left;}
+.homeDesignInfo a{text-decoration: none;color: #000;}
+.homeDesignInfo p{font-size: 2rem;letter-spacing: .5rem;}
+.homeDesignInfo p:nth-child(1){padding-left: 10%;margin-bottom: 2rem;}
+.homeDesignInfo p:nth-child(2){padding-left: 50%;}
+.homeDesignInfo p:nth-child(2) span{margin-right: 1rem;}
 .DesignBtn{text-align: right;margin-right: 30px;}
 .DesignBtn a{color: #000;font-size: 15px;text-decoration:none;}
 .homeDesign img{width: 100%;}

@@ -24,4 +24,5 @@ export default {
 <style scoped>
 .Main{margin-top: 6rem;text-align: left;}
 .Info{margin: 6rem 0;}
+.Fan a{color:#0e887a;text-decoration: none;}
 </style>

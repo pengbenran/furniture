@@ -4,31 +4,35 @@
     <Banner/>
     <main>
       <div class="container Recommend">
-        <div class="RecommendInfo">
-          <div>
-            <strong class="tit"><span>特别</span>推荐</strong>
-            <div class="row">
-              <div class="col-5 col-md-12 Price">
-                <p>L O C K 铁制书桌灯</p>
-                <span>销量：18</span>
-                <span>￥ 124</span>
+        <div class="row">
+          <div class="col-md-4 FlexWarp">
+              <div class="RecommendInfo">
+                  <strong class="tit"><span>特别</span>推荐</strong>
+                  <div class="row">
+                    <div class="col-5 col-md-12 Price">
+                      <p>L O C K 铁制书桌灯</p>
+                      <span>销量：18</span>
+                      <span>￥ 124</span>
+                    </div>
+                    <div class="col-7 col-md-12  info">
+                    <strong>商品详情</strong>
+                    <ul>
+                      <li>LOCK</li>
+                      <li>长 27 * 宽 18 * 高 53cm</li>
+                      <li>灯体 ： 黑色&nbsp;&nbsp;&nbsp;&nbsp;灯罩：透明</li>
+                      <li>灯体 ： 黑色&nbsp;&nbsp;&nbsp;&nbsp;灯罩：透明</li>
+                    </ul>
+                  </div>
+                  </div>
               </div>
-              <div class="col-7 col-md-12  info">
-              <strong>商品详情</strong>
-              <ul>
-                <li>LOCK</li>
-                <li>长 27 * 宽 18 * 高 53cm</li>
-                <li>灯体 ： 黑色&nbsp;&nbsp;&nbsp;&nbsp;灯罩：透明</li>
-                <li>灯体 ： 黑色&nbsp;&nbsp;&nbsp;&nbsp;灯罩：透明</li>
-              </ul>
-            </div>
-            </div>
-
-
           </div>
+          <div class="col-md-4">
+                <div class="RecommendList"><img src="../assets/images/productCenter/recommend1.png" /></div>
+          </div>
+          <div class="col-md-4">
+                <div class="RecommendList"><img src="../assets/images/productCenter/recommend2.png" /></div>
+          </div>          
         </div>
-        <div class="RecommendList"><img src="../assets/images/productCenter/recommend1.png" /></div>
-        <div class="RecommendList"><img src="../assets/images/productCenter/recommend2.png" /></div>
       </div>
       <!--特别推荐 end-->
 
@@ -47,15 +51,15 @@
       <div class="container Nordic">
         <div class="HotTitle"><span>热销产品</span></div>
         <div class="row">
-          <div class="col-md-6 left"><img src="../assets/images/productCenter/nordic1.png" /></div>
+          <div class="col-md-6 left"><a href="javascript;"><img src="../assets/images/productCenter/nordic1.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
           <div class="col-md-6 right">
             <div class="ImgTwo">
-              <div><img src="../assets/images/productCenter/nordic2.png"></div>
-              <div><img src="../assets/images/productCenter/nordic2.png"></div>
+              <div><a href="javascript;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
+              <div><a href="javascript;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
             </div>
             <div class="ImgTwo ">
-               <div><img src="../assets/images/productCenter/nordic2.png"></div>
-               <div><img src="../assets/images/productCenter/nordic2.png"></div>
+               <div><a href="javascript;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
+               <div><a href="javascript;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
             </div>
           </div>
         </div>
@@ -93,10 +97,9 @@ export default {
 }
 </script>
 <style scoped lang="less">
-.Recommend{text-align: left;font-family:"STHeiti";padding: 10rem 0;display: flex;align-items: center;width: 90%;margin: 0 auto;
-  .RecommendInfo{width: 38%;}
-  .RecommendList{width: 38%;}
+.Recommend{text-align: left;font-family:"SimHei";padding: 10rem 0;display: flex;align-items: center;margin: 0 auto;
 }
+.FlexWarp{display: flex;align-items: center;}
 .Recommend .tit{display: block;margin-bottom: 2.2rem;font-size: 1.5rem;letter-spacing:8px;}
 .Recommend .tit span{border-bottom: .4rem solid #ccc;}
 .Price{margin-bottom: 2rem;}
@@ -111,6 +114,10 @@ export default {
 
 .Nordic{margin-bottom: 10rem;}
 .Nordic img{width: 100%;}
+.Nordic  a{position: relative;display: inline-block;}
+.Nordic  .tip{position: absolute;bottom:10%;left: 0;background: rgb(191,191,191);color: #fff;padding: .5rem 1rem;opacity: 0;transition: all 0.3s;}
+.Nordic  a:hover .tip{opacity: 1;}
+.Nordic .right span{font-size: .9rem; padding: .2rem .5rem;}
 .Nordic .HotTitle{margin-bottom: 3rem;}
 .Nordic .right{display: flex;flex-direction: column;justify-content: space-between;}
 .Nordic .right .ImgTwo{width: 100%;display: flex;justify-content: space-between; }

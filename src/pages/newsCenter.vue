@@ -60,27 +60,74 @@
    	 </div>
    	 <div class="industryConent">
    	 	<div class="left" @click="to">
-   	 		<img src="../assets/images/newsCenter/industry1.png" class="d-block w-100" >
+			<a href="javasrcipt:;">
+			    <img src="../assets/images/newsCenter/industry1.png" class="d-block w-100" >
+				<div class="Mask">
+					<div class="MaskInfo">
+						<p>宜家新出了这些家具你还不知道吗？</p>
+						<span>了解更多》</span>
+					</div>
+				</div>
+			</a>
    	 	</div>
    	 	<div class="right">
    	 		<div class="top">
    	 			<div class="imglist" @click="to">
-   	 				<img src="../assets/images/newsCenter/industry3.png" class="d-block w-100" >
-   	 				<div class="mode"></div>
+					<router-link  to='/newsInfo' >
+						<img src="../assets/images/newsCenter/industry3.png" class="d-block w-100" >
+						<div class="Mask">
+							<div class="MaskInfo">
+								<p>宜家新出了这些家具你还不知道吗？</p>
+								<span>了解更多》</span>
+							</div>
+					    </div>
+					</router-link>
    	 			</div>
    	 			<div class="imglist" @click="to">
-   	 				<img src="../assets/images/newsCenter/industry4.png" class="d-block w-100" >
+					<router-link  to='/newsInfo' >
+						<img src="../assets/images/newsCenter/industry4.png" class="d-block w-100" >
+						<div class="Mask">
+							<div class="MaskInfo">
+								<p>宜家新出了这些家具你还不知道吗？</p>
+								<span>了解更多》</span>
+							</div>
+					    </div>
+					</router-link>
    	 			</div>
    	 			<div class="imglist">
-   	 				<img src="../assets/images/newsCenter/industry5.png" class="d-block w-100" >
+					<router-link  to='/newsInfo' >
+						<img src="../assets/images/newsCenter/industry5.png" class="d-block w-100" >
+						<div class="Mask">
+							<div class="MaskInfo">
+								<p>宜家新出了这些家具你还不知道吗？</p>
+								<span>了解更多》</span>
+							</div>
+					    </div>
+					</router-link>
    	 			</div>
    	 		</div>
    	 		<div class="bottom">
    	 			<div class="imglist" @click="to">
-   	 				<img src="../assets/images/newsCenter/industry2.png" class="d-block w-100" >
+					<router-link  to='/newsInfo' >
+						<img src="../assets/images/newsCenter/industry2.png" class="d-block w-100" >
+						<div class="Mask">
+							<div class="MaskInfo">
+								<p>宜家新出了这些家具你还不知道吗？</p>
+								<span>了解更多》</span>
+							</div>
+					    </div>
+					</router-link>
    	 			</div>
    	 			<div class="imglist" @click="to">
-   	 				<img src="../assets/images/newsCenter/industry6.png" class="d-block w-100" >
+					<router-link  to='/newsInfo' >
+						<img src="../assets/images/newsCenter/industry6.png" class="d-block w-100" >
+						<div class="Mask">
+							<div class="MaskInfo">
+								<p>宜家新出了这些家具你还不知道吗？</p>
+								<span>了解更多》</span>
+							</div>
+					    </div>
+					</router-link>
    	 			</div>
    	 		</div>
    	 	</div>
@@ -141,7 +188,8 @@ export default {
 		.companyNewRightList{
 			display: flex;
 			background: #EAEAEA;
-			.date{
+			.date{display: flex;flex-direction: column;justify-content:center;
+				p{margin-bottom: 0;}
 				.day{
 					font-size:48px;
 					width: 100px;
@@ -151,12 +199,13 @@ export default {
 				}
 			}
 			.intro{
+				padding: 1rem 0;
 				text-align: left;
 				.newTitle{
 					font-size:18px;
 					font-weight: bold;
-					height: 70px;
-					line-height: 70px;
+					height: 50px;
+					line-height: 50px;
 				}
 				.newsDetail{
 					font-size:16px;
@@ -193,6 +242,12 @@ export default {
 		margin:auto;
 		display: flex;
 		justify-content: space-between;
+		a{display: inline-block;position: relative;color: #fff;}
+		a .Mask{background: rgba(14, 136, 122, 0.3);position: absolute;left: 0;top: 0;height: 100%;width: 100%;display: flex;align-items: center;opacity: 0;transition: all 0.3s;}
+		a .MaskInfo{width: 100%;text-align: left;padding: 0 10%;}
+		a .Mask p{font-size: 1.1rem;}
+		a .Mask span{border:1px solid #fff;font-size: .9rem;display: inline-block;padding: .2rem 1rem;}
+		a:hover .Mask{opacity: 1;}
 		.left{
 			width: 23%;
 			height:100%;

@@ -9,6 +9,7 @@ import newsCenter from '@/pages/newsCenter'
 import newsInfo from '@/pages/newsInfo'
 import productCenter from '@/pages/productCenter'
 import productInfo from '@/pages/productInfo'
+import productwarp from '@/pages/productwarp'
 import salesCenter from '@/pages/salesCenter'
 Vue.use(Router)
 export default new Router({
@@ -57,6 +58,11 @@ export default new Router({
       path: '/productInfo',
       name: 'productInfo',
       component: productInfo
+    },
+    {
+      path: '/productwarp',
+      name: 'productwarp',
+      component: productwarp
     },
     {
       path: '/salesCenter',

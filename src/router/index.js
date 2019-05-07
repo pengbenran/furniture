@@ -10,6 +10,7 @@ import newsInfo from '@/pages/newsInfo'
 import productCenter from '@/pages/productCenter'
 import productInfo from '@/pages/productInfo'
 import productwarp from '@/pages/productwarp'
+import productlist from '@/pages/productlist'
 import salesCenter from '@/pages/salesCenter'
 import productKind from '@/pages/productKind'
 Vue.use(Router)
@@ -69,6 +70,11 @@ export default new Router({
       path: '/productwarp',
       name: 'productwarp',
       component: productwarp
+    },
+    {
+      path: '/productlist',
+      name: 'productlist',
+      component: productlist
     },
     {
       path: '/salesCenter',

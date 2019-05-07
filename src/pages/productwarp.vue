@@ -1,7 +1,7 @@
 <template>
     <div class="mobilePinfo">
         <div class="container Main ">
-            <div class="Fan"><span @click="to">《 返回首页</span></div>
+            <div class="Fan"><span @click="to">《 返回上一页</span></div>
             <div class="row Warp">
                 <div class="col-md-7 WarpImg">
                     <div class="Left"><img src="../assets/images/productCenter/hot2.png" /></div>

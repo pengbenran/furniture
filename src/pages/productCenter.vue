@@ -51,15 +51,15 @@
       <div class="container Nordic">
         <div class="HotTitle"><span>热销产品</span></div>
         <div class="row">
-          <div class="col-md-6 left"><a href="javascript;"><img src="../assets/images/productCenter/nordic1.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
+          <div class="col-md-6 left" @click="to"><a href="javascript:;"><img src="../assets/images/productCenter/nordic1.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
           <div class="col-md-6 right">
             <div class="ImgTwo">
-              <div><a href="javascript;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
-              <div><a href="javascript;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
+              <div @click="to"><a href="javascript:;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
+              <div @click="to"><a href="javascript:;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
             </div>
             <div class="ImgTwo ">
-               <div><a href="javascript;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
-               <div><a href="javascript;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
+               <div @click="to"><a href="javascript:;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
+               <div @click="to"><a href="javascript:;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
             </div>
           </div>
         </div>
@@ -89,7 +89,12 @@ export default {
   methods:{
    menu() {
     this.isScroll = window.scrollY>0;
-  }
+  },
+  to(){
+            this.$router.push({
+                path:`/productInfo`
+            })
+        }
 },
  mounted(){
     window.addEventListener('scroll', this.menu)

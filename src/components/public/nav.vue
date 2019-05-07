@@ -124,6 +124,7 @@ export default {
           let that=this
           that.timer=setTimeout(function(res){
             that.ShowNav = false;
+            that.ShowNav2=false;
           },150)   
         },
         mouseEnter(){
@@ -133,6 +134,7 @@ export default {
         mouseLeave(){
             let that=this
             that.ShowNav = false;  
+            that.ShowNav2=false;
         }
     }
 }
@@ -152,7 +154,7 @@ export default {
    list-style: none;position: absolute;top:50px;left: 0;background: rgba(255, 255, 255, 0.35);border-radius: 4px;padding:0;color: #000; 
 }
 .navbar-nav .nav-item .childNav2 li{width: 120px;text-align: center;line-height: 40px;}
-
+.navbar-nav .nav-item .childNav2 li:hover{color: #379589;}
 
 .navbar-nav .nav-item .childNavUl .childNavli{width: 120px;}
 .navbar-nav .nav-item .childNavUl .childNavli:hover{ color: #379589;}

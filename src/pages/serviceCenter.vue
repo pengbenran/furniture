@@ -120,7 +120,11 @@
      <div class="container Map">
        <img src="../assets/images/serviceCenter/map.png" />
        <div class="MapF">
-         <img src="../assets/images/serviceCenter/mapf.png"/>
+        <div class="icon" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()"><img src="../assets/images/serviceCenter/mapf.png" class="w-100 d-block" /></div>
+        <div class="sj" v-show="isShow"></div>
+        <div class="addressInfo" v-show="isShow">
+           地址:四川省成都市金牛区天力商务楼501
+         </div>
        </div>
      </div>
 
@@ -136,13 +140,14 @@ export default {
   components:{Header,Banner,Footer},
   data () {
     return {
-     index:6,
+     index:5,
      isScroll:false,
      serviveIndex:0,
+     isShow:false,
      serviceData:[
      {serviceKind:'售前服务',
      icon:require('../assets/images/serviceCenter/tab1.png'),
-     imgList:[{img:require('../assets/images/serviceCenter/pople2.jpg'),name:'1、保质期内维护'},{img:require('../assets/images/serviceCenter/pople.jpg'),name:'2、保质期内保养'}]
+     imgList:[{img:require('../assets/images/serviceCenter/pople2.png'),name:'1、保质期内维护'},{img:require('../assets/images/serviceCenter/pople.png'),name:'2、保质期内保养'}]
       },
       {serviceKind:'售中服务',
      icon:require('../assets/images/serviceCenter/tab2.png'),
@@ -163,6 +168,12 @@ export default {
    menu() {
     this.isScroll = window.scrollY>0;
   }, 
+  mouseEnter(){
+    this.isShow=true
+  },
+  mouseLeave(){
+    this.isShow=false
+  },
   changTab(index){
     let that=this
     that.serviveIndex=index
@@ -179,11 +190,11 @@ computed:{
   }
 }
 </script>
-<style scoped>
+<style scoped lang="less">
 .Tab{width: 60%;}
 .Tab .list-on{color: #379589;}
 .Tab img{width: 2.8rem;height: 2.8rem;}
-.Tab span{display: block;margin-top: 1rem;}
+.Tab span{display: block;margin-top: 1rem; font-weight: bold;}
 .mt150{margin-top: 8rem;}
 
 .TabWarp{text-align: center;}
@@ -212,7 +223,7 @@ computed:{
 .Maintenance .Info{display: flex;align-items: center;}
 
 .Process{text-align: center;margin-top: 50px;width: 50%;margin: auto;display: flex; justify-content: space-around;}
-.LineWarp{align-items: center;margin-top:50px;}
+.LineWarp{align-items: center;margin-top:50px;flex-grow: 1;}
 .LineWarp .Line{position: relative;width: 100%;background: #000;height: 4px;margin-bottom: 50px;}
 .LineWarp .Line span{ position: absolute;bottom: -.8rem;width: 0;height: 0;border: .8rem solid red;border-top-color: black;border-bottom: none;border-left-color: transparent;border-right-color: transparent;}
 .LineWarp .Line:first-child span{left: 30%;}
@@ -227,5 +238,26 @@ computed:{
 
 .Map{position: relative;padding: 4rem;}
 .Map img{width: 70%;}
-.MapF{position: absolute;top: 50%;left: 45%;}
+.MapF{position: absolute;top: 54%;left: 45%;display:flex;
+  .sj{
+    height:0;
+    width:0;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    border-color:transparent #E6E6E6 transparent transparent;
+    border-style:solid dashed solid dashed;
+    border-width:20px;
+    margin-top:20px;
+  }
+ .addressInfo{
+  background: #fff;
+  opacity: 0.8;
+  height: 80px;
+  background: #E6E6E6;
+  font-size: 14px;
+  padding:30px 10px;
+  box-sizing: border-box;
+ }
+}
 </style>

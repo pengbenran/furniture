@@ -32,7 +32,7 @@ export default {
   name: 'Join',
   data () {
     return {
-     index:8,
+     index:7,
      isScroll:false,
     }
   },
@@ -55,10 +55,10 @@ export default {
 		top: 20%;
 		left: 10%;
 		div{
-			margin-bottom: 16px;
+			margin-bottom: 32px;
 			input{
 				width: 100%;
-				height: 30px;
+				height: 60px;
 				background: #F3F5F6;
 				padding-left: 10px;
 				box-sizing: border-box;
@@ -67,7 +67,7 @@ export default {
 			}
 			textarea{
 				width: 100%;
-				height:133px;
+				height:266px;
 				background: #F3F5F6;
 				padding-left: 10px;
 				box-sizing: border-box;
@@ -91,7 +91,7 @@ export default {
 	width: 80%;
 	margin: 268px auto 312px;
 }
-@media (max-width: 767px) { 
+@media (max-width: 1024px) { 
 .join{
 	position: relative;
 	.ipt{
@@ -100,10 +100,58 @@ export default {
 		top: 25%;
 		left: 10%;
 		div{
-			margin-bottom: 6px;
+			margin-bottom: 16px;
 			input{
 				width: 100%;
-				height: 25px;
+				height: 40px;
+				background: #F3F5F6;
+				padding-left: 10px;
+				box-sizing: border-box;
+				border: none;
+				outline: 0;
+			}
+			textarea{
+				width: 100%;
+				height:120px;
+				background: #F3F5F6;
+				padding-left: 10px;
+				box-sizing: border-box;
+				border: none;
+				outline: 0; 
+			}
+
+		}
+		.subBtn{
+			width: 130px;
+			height: 50px;
+			line-height: 50px;
+			background: #0E887A;
+			color: #fff;
+			float: right;
+		}
+	}
+
+}	
+.joinConent{
+	width: 80%;
+	margin: 70px auto 112px;
+}
+
+
+}
+@media (max-width: 767px) { 
+.join{
+	position: relative;
+	.ipt{
+		position:absolute;
+		width: 43.8%;
+		top: 30%;
+		left: 10%;
+		div{
+			margin-bottom: 4px;
+			input{
+				width: 100%;
+				height: 20px;
 				background: #F3F5F6;
 				padding-left: 10px;
 				box-sizing: border-box;
@@ -123,8 +171,8 @@ export default {
 		}
 		.subBtn{
 			width: 80px;
-			height: 30px;
-			line-height: 30px;
+			height: 25px;
+			line-height: 25px;
 			background: #0E887A;
 			color: #fff;
 			float: right;

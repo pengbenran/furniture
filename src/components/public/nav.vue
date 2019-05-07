@@ -8,40 +8,23 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto nav-ul">
-                        <li class="nav-item"><router-link class="nav-link" :class="curretIndex==1?'selectOn':''" to='/'>首页</router-link></li>
-                        <li class="nav-item ">
-                            <router-link class="nav-link" to='/corporateCulture' :class="curretIndex==2?'selectOn':''">
-                            企业文化
-                            </router-link>
+                        <!-- <li class="nav-item" v-for="(item,index) in navDate"></li> -->
+                         <li class="nav-item " v-for="(item,index) in navDate" :class="curretIndex==index?'selectOn':''" @click="jumpTo(item.jumpUrl)"  @mouseenter.self="enter(index)" @mouseleave.self="leave()">
+                            {{item.navName}}
+                            <ul class="childNavUl" v-if="index==3&&ShowNav" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
+                                <li class="childNavli" v-for="(innerItem,innerIndex) in item.childNav">
+                                    {{innerItem.childNavName}}
+                                    <ul>
+                                        <li v-for="(innerTwoItem,innerTwoIndex) in innerItem.childtwoNav">{{innerTwoItem.name}}</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="childNav2" v-if="index==4&&ShowNav2" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
+                                <li>淘宝店铺</li>
+                                <li>微店</li>
+                                <li>微信小程序</li>
+                            </ul>
                         </li>
-                        <li class="nav-item"><router-link class="nav-link" to='/newsCenter' :class="curretIndex==3?'selectOn':''">新闻中心</router-link></li>
-                        <li class="nav-item dropdown">
-                            <router-link class="nav-link" to='/productCenter' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" :class="curretIndex==4?'selectOn':''">
-                                <div @mouseenter.self="enter()" @mouseleave.self="leave()">产品中心</div>
-                                <span class="NavPos" :class="ShowNav?'SpanShow':'SpanHide'"></span>
-                                <div class="dropdown-menu NavMenu" :class="ShowNav?'show':''" aria-labelledby="navbarDropdown" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
-                                    <div class="row">
-                                        <div class="col-md-3 List">
-                                            <span><label>地板</label></span>
-                                            <ul>
-                                                <li>强化地板</li>
-                                                <li>实木地板</li>
-                                                <li>进口地板</li>
-                                                <li>强化地板</li>
-                                                <li>强化地板</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-3 List"><span><label>实木家具</label></span></div>
-                                        <div class="col-md-3 List"><span><label>软装</label></span></div>
-                                        <div class="col-md-3 List"><span><label>整体家庭</label></span></div>
-                                    </div>
-                                </div>
-                            </router-link>
-                        </li>
-                        <li class="nav-item"><router-link class="nav-link" to='/'>销售中心</router-link></li>
-                        <li class="nav-item"><router-link class="nav-link" to='/serviceCenter' :class="curretIndex==6?'selectOn':''">服务中心</router-link></li>
-                        <li class="nav-item"><router-link class="nav-link" to='/Designer' :class="curretIndex==7?'selectOn':''">设计中心</router-link></li>
-                        <li class="nav-item"><router-link class="nav-link" to='/Join' :class="curretIndex==8?'selectOn':''">招商加盟</router-link></li>
                     </ul>
                 </div>
             </nav>
@@ -54,43 +37,126 @@ export default {
     data () {
         return {
            ShowNav:false,
+           ShowNav2:false,
+           timer:'',
+           navDate:[
+           {
+            navName:'首页',
+            jumpUrl:'/',
+            childNav:[]
+           },
+           {
+            navName:'企业文化',
+            jumpUrl:'/corporateCulture',
+            childNav:[]
+           },
+           {
+            navName:'新闻中心',
+            jumpUrl:'/newsCenter',
+            childNav:[]
+           },
+           {
+            navName:'产品中心',
+            jumpUrl:'/productCenter',
+            childNav:[
+            {childNavName:'地板',
+             childtwoNav:
+               [{name:'强化地板'},{name:'强化地板'},{name:'强化地板'},{name:'强化地板'}]
+            },
+            {childNavName:'实木家具',
+            childtwoNav:
+               [{name:'强化家具'},{name:'强化家具'},{name:'强化家具'},{name:'强化家具'}]
+            },
+            {childNavName:'软装',
+             childtwoNav:
+               [{name:'强化软装'},{name:'强化软装'},{name:'强化软装'},{name:'强化软装'}]
+            },
+            {childNavName:'整装家庭',
+            childtwoNav:
+               [{name:'强化整装'},{name:'强化整装'},{name:'强化整装'},{name:'强化整装'}]
+            }
+            ]
+           },
+           {
+            navName:'销售中心',
+            jumpUrl:'/',
+            childNav:[]
+           },
+           {
+            navName:'服务中心',
+            jumpUrl:'/serviceCenter',
+            childNav:[]
+           },
+           {
+            navName:'设计中心',
+            jumpUrl:'/Designer',
+            childNav:[]
+           },
+           {
+            navName:'招商加盟',
+            jumpUrl:'/Join',
+            childNav:[]
+           },
+
+
+
+           ]
         }
     },
     methods:{
-        ClickNav(){
-            console.log(this.ShowNav ,"你好世界")
+        jumpTo(url){
+            this.$router.push({
+                path:url
+            })
         //    this.ShowNav = !this.ShowNav;
         },
-        enter(){//鼠标进入
-          this.ShowNav = true;
+        enter(index){//鼠标进入
+          if(index==3){
+            this.ShowNav = true;
+          } 
+          else if(index==4){
+            this.ShowNav2=true
+          }   
         },
         leave(){//鼠标出去
           let that=this
-          // setTimeout(function(res){
-          //   that.ShowNav = false;
-          // },1000)   
+          that.timer=setTimeout(function(res){
+            that.ShowNav = false;
+          },150)   
         },
         mouseEnter(){
-            console.log('我进来了');
-           this.ShowNav = true; 
+          let that=this
+          clearTimeout(that.timer);
         },
         mouseLeave(){
             let that=this
-            setTimeout(function(res){
-                that.ShowNav = false;
-            },1000)  
+            that.ShowNav = false;  
         }
     }
 }
 </script>
 <style scoped>
 .header{position: fixed;top: 0;left: 0;width: 100%;z-index: 999;}
-.navbar-nav .nav-link{font-family:'STFangsong';padding: 0 20px;box-sizing: border-box;}
-.navbar-nav .nav-link:hover{ 
+.navbar-nav .nav-item{font-family:'STFangsong';padding: 0 20px;box-sizing: border-box;position: relative;}
+.navbar-nav .nav-item:hover{ 
  color: #379589;
  background-color: transparent !important;
 }
 .navbar-nav .selectOn{color:#379589;}
+
+.navbar-nav .nav-item .childNavUl{list-style: none;display:-webkit-box;position: absolute;top:50px;left: 0;background: rgba(255, 255, 255, 0.35);border-radius: 4px;padding:0;color: #000;}
+
+.navbar-nav .nav-item .childNav2{
+   list-style: none;position: absolute;top:50px;left: 0;background: rgba(255, 255, 255, 0.35);border-radius: 4px;padding:0;color: #000; 
+}
+.navbar-nav .nav-item .childNav2 li{width: 120px;text-align: center;line-height: 40px;}
+
+
+.navbar-nav .nav-item .childNavUl .childNavli{width: 120px;}
+.navbar-nav .nav-item .childNavUl .childNavli:hover{ color: #379589;}
+.navbar-nav .nav-item .childNavUl .childNavli ul{list-style: none;padding:0;text-align: center;line-height: 40px;font-size: 14px; color: #000;}
+.navbar-nav .nav-item .childNavUl .childNavli ul li:hover{color: #379589;}
+
 .SpanShow{display: block;}
 .SpanHide{display: none;}
 

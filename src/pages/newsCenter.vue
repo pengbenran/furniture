@@ -99,7 +99,7 @@ export default {
   name: 'newsCenter',
   data () {
     return {
-     index:3,
+     index:2,
      isScroll:false,
     }
   },

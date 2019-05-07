@@ -59,7 +59,7 @@ export default {
     return {
       kindIndex:0,
       isScroll:false,
-      index:1,
+      index:0,
       kindData:[
       {
         kindName:'橱柜',

@@ -75,7 +75,7 @@ export default {
   components:{Header,Banner,Footer,ImgList},
   data () {
     return {
-      index:4,
+      index:3,
       isScroll:false,
        ImgListData:[{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},
                 {ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1}

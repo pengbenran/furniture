@@ -74,7 +74,7 @@ export default {
   name: 'Designer',
   data () {
     return {
-     index:7,
+     index:6,
      isScroll:false,
     }
   },
@@ -94,7 +94,7 @@ export default {
 	margin-top: 30px;
  } 
  .title{
- 	margin-top: 50px;
+ 	margin-top: 130px;
  	margin-bottom: 10px;
  	text-align: center;
  	h1{
@@ -146,7 +146,7 @@ export default {
  }
  .floor{
  	width: 90%;
- 	margin: 0 auto;
+ 	margin: 40px auto 70px auto;
  	display: flex;
  	justify-content: space-around;
  	.floorleft{

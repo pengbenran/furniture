@@ -27,7 +27,7 @@ export default {
   components:{Header,Footer},
   data () {
     return {
-     index:2,
+     index:1,
      selectIndex:0,
      isScroll:false,
      corporate:[

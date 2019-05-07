@@ -1,26 +1,26 @@
 <template>
   <div class="mobileServer">
-     <Header/>
+     <Header :curretIndex="index" :isScroll='isScroll'/>
      <Banner/>
      <div class="container Tab mt150">
        <div class="row">
-         <div class="col-3"><img src="../../static/images/serviceCenter/tab1.png" /><span>售后服务</span></div>
-         <div class="col-3"><img src="../../static/images/serviceCenter/tab2.png" /><span>售后服务</span></div>
-         <div class="col-3"><img src="../../static/images/serviceCenter/tab3.png" /><span>售后服务</span></div>
-         <div class="col-3"><img src="../../static/images/serviceCenter/tab4.png" /><span>售后服务</span></div>
+         <div class="col-3" v-for="(item,index) in serviceData" :class="serviveIndex==index?'list-on':''" @click="changTab(index)"><img :src="item.icon" /><span>{{item.serviceKind}}</span></div>
        </div>
      </div>
      <!--Tab end-->
     
     <div class="container Process">
-      <div class="LineWarp"><div class="Line"><span></span><label>保质期内维护</label></div><div class="Line"><span></span><label>保质期内保养</label></div></div> 
-      <div class="LineWarpImg">
-        <div class="LineCase"><img src="../../static/images/serviceCenter/pople2.jpg" /></div>
-        <div class="LineCase"><img src="../../static/images/serviceCenter/pople.jpg" /></div>
-      </div>
+      <div class="LineWarp" v-for="(item,index) in serviceObj.imgList">
+        <div class="Line">
+          <span></span>
+          <label>{{item.name}}</label>
+        </div>
+        <div class="LineCase"><img :src="item.img" class="d-block w-100" /></div>
+      </div> 
+      <!-- <div class="LineWarpImg">
+        <div class="LineCase" v-for="(item,index) in serviceObj.imgList"><img :src="item.img"/></div>
+      </div> -->
     </div>
-
-
      <div class="TabWarp mt150">
         <span class="TabTitle">国家标准</span>
         <div class="TabList">
@@ -48,38 +48,36 @@
               </div>
             </div>
             <div class="col-md-6 TabImg">
-                <img src="../../static/images/serviceCenter/bz.png" />
+                <img src="../assets/images/serviceCenter/bz.png" />
             </div>
           </div>
         </div>
-     </div>
-     
+     </div>    
      <div class="product">
-       <div class="title"><span><img src="../../static/images/serviceCenter/productTit.png" /></span></div>
+       <div class="title"><span><img src="../assets/images/serviceCenter/productTit.png" /></span></div>
        <div class="productInfo">
          <div class="row">
           <div class="col-md-6">
             <label>使用</label>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。4小时内尽量减少走动，至少48小时后可搬入重物存放</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。4小时内尽量减少走动，至少48小时后可搬入重物存放</p>
           </div>
           <div class="col-md-6">
             <div class="row ImgList">
-              <div class=""><img src="../../static/images/serviceCenter/product1.png" /></div>
-              <div><img src="../../static/images/serviceCenter/product1.png" /></div>
+              <div class=""><img src="../assets/images/serviceCenter/product1.png" /></div>
+              <div><img src="../assets/images/serviceCenter/product1.png" /></div>
             </div>
           </div>
          </div>
        </div>
      </div>
-
      <div class="product Clean">
        <div class="productInfo">
          <div class="row">
@@ -87,20 +85,19 @@
             <label>清洁</label>
             <div class="tit">日常用吸尘器或用不滴水的拖布顺地板的走向摩擦，保持地板的干燥清洁，局部有污渍，局部有污渍可用清洁剂清除；禁止使用酸、碱有机性汽油等物品。</div>
             <label>特殊污渍处理方法</label>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，入重物存放。</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，</p>
-            <p><img src="../../static/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小重物存放。</p>
           </div>
           <div class="col-md-6">
             <div class="ImgList">
-              <div><img src="../../static/images/serviceCenter/Clean.png" /></div>
+              <div><img src="../assets/images/serviceCenter/Clean.png" /></div>
             </div>
           </div>
          </div>
        </div>
      </div>
-
       <div class="product Maintenance">
        <div class="productInfo">
          <div class="row">
@@ -113,7 +110,7 @@
           </div>
           <div class="col-md-6">
             <div class="ImgList">
-              <div><img src="../../static/images/serviceCenter/Clean.png" /></div>
+              <div><img src="../assets/images/serviceCenter/Clean.png" /></div>
             </div>
           </div>
          </div>
@@ -121,9 +118,9 @@
      </div>
 
      <div class="container Map">
-       <img src="../../static/images/serviceCenter/map.png" />
+       <img src="../assets/images/serviceCenter/map.png" />
        <div class="MapF">
-         <img src="../../static/images/serviceCenter/mapf.png"/>
+         <img src="../assets/images/serviceCenter/mapf.png"/>
        </div>
      </div>
 
@@ -139,13 +136,52 @@ export default {
   components:{Header,Banner,Footer},
   data () {
     return {
-     
+     index:6,
+     isScroll:false,
+     serviveIndex:0,
+     serviceData:[
+     {serviceKind:'售前服务',
+     icon:require('../assets/images/serviceCenter/tab1.png'),
+     imgList:[{img:require('../assets/images/serviceCenter/pople2.jpg'),name:'1、保质期内维护'},{img:require('../assets/images/serviceCenter/pople.jpg'),name:'2、保质期内保养'}]
+      },
+      {serviceKind:'售中服务',
+     icon:require('../assets/images/serviceCenter/tab2.png'),
+     imgList:[{img:require('../assets/images/serviceCenter/1366088.jpg'),name:'1、测量'},{img:require('../assets/images/serviceCenter/t013f60b20a2a8daa17.jpg'),name:'2、设计方案'}]
+      },
+      {serviceKind:'售后服务',
+     icon:require('../assets/images/serviceCenter/tab3.png'),
+     imgList:[{img:require('../assets/images/serviceCenter/114719j95h9q4v2485i9cv.jpg'),name:'1、图纸确定'},{img:require('../assets/images/serviceCenter/114719j95h9q4v2485i9cv.jpg'),name:'2、施工'},{img:require('../assets/images/serviceCenter/114719j95h9q4v2485i9cv.jpg'),name:'3、验收'}]
+      },
+      {serviceKind:'投诉服务',
+     icon:require('../assets/images/serviceCenter/tab4.png'),
+     imgList:[{img:require('../assets/images/serviceCenter/email.png'),name:'邮箱投诉'},{img:require('../assets/images/serviceCenter/phone.png'),name:'电话投诉'}]
+      }
+     ]
     }
+  },
+  methods:{
+   menu() {
+    this.isScroll = window.scrollY>0;
+  }, 
+  changTab(index){
+    let that=this
+    that.serviveIndex=index
+  }
+},
+computed:{
+    serviceObj(){
+      let that=this
+      return that.serviceData[that.serviveIndex]
+    }
+  },
+ mounted(){
+    window.addEventListener('scroll', this.menu)
   }
 }
 </script>
 <style scoped>
 .Tab{width: 60%;}
+.Tab .list-on{color: #379589;}
 .Tab img{width: 2.8rem;height: 2.8rem;}
 .Tab span{display: block;margin-top: 1rem;}
 .mt150{margin-top: 8rem;}
@@ -175,18 +211,18 @@ export default {
 
 .Maintenance .Info{display: flex;align-items: center;}
 
-.Process{text-align: center;margin-top: 5rem;}
-.LineWarp{width: 50%;margin: auto;display: flex;align-items: center}
-.LineWarp .Line{position: relative;width: 50%;background: #000;height: 4px;}
+.Process{text-align: center;margin-top: 50px;width: 50%;margin: auto;display: flex; justify-content: space-around;}
+.LineWarp{align-items: center;margin-top:50px;}
+.LineWarp .Line{position: relative;width: 100%;background: #000;height: 4px;margin-bottom: 50px;}
 .LineWarp .Line span{ position: absolute;bottom: -.8rem;width: 0;height: 0;border: .8rem solid red;border-top-color: black;border-bottom: none;border-left-color: transparent;border-right-color: transparent;}
 .LineWarp .Line:first-child span{left: 30%;}
 .LineWarp .Line:last-child span{right: 30%;}
 .LineWarp .Line label{position: absolute;top: 1rem}
 .LineWarp .Line:first-child label{left: 18%;}
 .LineWarp .Line:last-child label{right: 18%;}
-.LineWarpImg{width: 70%;margin: auto;display: flex;align-items: center;margin-top: 2rem;}
-.LineWarpImg .LineCase{width: 50%;}
-.LineWarpImg .LineCase img{width: 13rem;}
+.LineWarpImg{width: 70%;margin: auto;display: flex;align-items: center;margin-top: 2rem; justify-content: space-around;}
+.LineWarpImg .LineCase{}
+.LineWarpImg .LineCase img{width: 100%;height: 100%;display: block;}
 .LineWarp .tit{width: 50%;text-align: center;}
 
 .Map{position: relative;padding: 4rem;}

@@ -1,7 +1,7 @@
 <template>
   <div class="containt mobileNew">
   	<!-- 导航栏 -->
-  	<Header/>
+  	<Header :curretIndex="index" :isScroll='isScroll'/>
   	<!-- banner图 -->
    <Banner/>
    <!-- 公司新闻 -->
@@ -10,7 +10,7 @@
    </div>
    <div class="companyNew ">
    	<div class="companyNewLeft">
-   		<img src="static/images/newsCenter/companynew.png" class="d-block w-100" >
+   		<img src="../assets/images/newsCenter/companynew.png" class="d-block w-100" >
    	</div>
    	<div class="companyNewRight">
    		<div class="companyNewRightList"  @click="to">
@@ -59,28 +59,28 @@
    	 	industry &nbsp; news
    	 </div>
    	 <div class="industryConent">
-   	 	<div class="left">
-   	 		<img src="static/images/newsCenter/industry1.png" class="d-block w-100" >
+   	 	<div class="left" @click="to">
+   	 		<img src="../assets/images/newsCenter/industry1.png" class="d-block w-100" >
    	 	</div>
    	 	<div class="right">
    	 		<div class="top">
-   	 			<div class="imglist">
-   	 				<img src="static/images/newsCenter/industry3.png" class="d-block w-100" >
+   	 			<div class="imglist" @click="to">
+   	 				<img src="../assets/images/newsCenter/industry3.png" class="d-block w-100" >
    	 				<div class="mode"></div>
    	 			</div>
-   	 			<div class="imglist">
-   	 				<img src="static/images/newsCenter/industry4.png" class="d-block w-100" >
+   	 			<div class="imglist" @click="to">
+   	 				<img src="../assets/images/newsCenter/industry4.png" class="d-block w-100" >
    	 			</div>
    	 			<div class="imglist">
-   	 				<img src="static/images/newsCenter/industry5.png" class="d-block w-100" >
+   	 				<img src="../assets/images/newsCenter/industry5.png" class="d-block w-100" >
    	 			</div>
    	 		</div>
    	 		<div class="bottom">
-   	 			<div class="imglist">
-   	 				<img src="static/images/newsCenter/industry2.png" class="d-block w-100" >
+   	 			<div class="imglist" @click="to">
+   	 				<img src="../assets/images/newsCenter/industry2.png" class="d-block w-100" >
    	 			</div>
-   	 			<div class="imglist">
-   	 				<img src="static/images/newsCenter/industry6.png" class="d-block w-100" >
+   	 			<div class="imglist" @click="to">
+   	 				<img src="../assets/images/newsCenter/industry6.png" class="d-block w-100" >
    	 			</div>
    	 		</div>
    	 	</div>
@@ -99,7 +99,8 @@ export default {
   name: 'newsCenter',
   data () {
     return {
-     
+     index:3,
+     isScroll:false,
     }
   },
 	methods: {
@@ -107,8 +108,15 @@ export default {
 			this.$router.push({
 				path:`/newsInfo`
 			})
+		},
+		menu() {
+			this.isScroll = window.scrollY>0;
 		}
-	}
+
+	},
+	 mounted(){
+    window.addEventListener('scroll', this.menu)
+  }
 }
 </script>
 <style scoped lang="less">
@@ -168,7 +176,7 @@ export default {
 	}
 }
 .industry{
-	background-image: url('/static/images/newsCenter/industrybcg.png');
+	background-image: url('../assets/images/newsCenter/industrybcg.png');
 	color:#fff;
 	padding-top: 80px;
 	padding-bottom: 20px;

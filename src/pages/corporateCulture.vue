@@ -1,6 +1,6 @@
 <template>
   <div class="containt">
-    <Header/>
+    <Header :curretIndex="index" :isScroll='isScroll'/>
     <!--header end-->
 
     <div class="main">
@@ -27,7 +27,9 @@ export default {
   components:{Header,Footer},
   data () {
     return {
+     index:2,
      selectIndex:0,
+     isScroll:false,
      corporate:[
      {
       titile:'企业简介',
@@ -53,12 +55,18 @@ export default {
     changTab(index){
       let that=this
       that.selectIndex=index
-    }
+    },
+    menu() {
+    this.isScroll = window.scrollY>0;
+   }
+  },
+  mounted(){
+    window.addEventListener('scroll', this.menu)
   }
 }
 </script>
 <style scoped>
-.main{background-image: url('../../static/images/corporateCulture/bg.png');background-size: cover;width:100%;}
+.main{background-image: url('../assets/images/corporateCulture/bg.png');background-size: cover;width:100%;}
 .mainWarp{height: 530px;width:42%;background: rgba(255, 255, 255, 0.45);margin-top: 200px;margin-bottom: 150px;}
 .main{position: relative;display: flex;align-items: center;justify-content: center;}
 .main strong{display: block;font-size: 22px;padding: 20px 0;text-align: center;}

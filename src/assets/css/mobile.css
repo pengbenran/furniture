@@ -16,6 +16,9 @@
     .mobile .img-responsive{width: 100%;}
     .mobile .homeDesignInfo{padding: 2rem 1rem!important;}
 
+    /* 导航响应式 */
+    .header{background: #fff;}
+    .header .nav-item{text-align: left;padding: .5rem 0;}
 
     /* 设置底部响应式 */
     .footer_Nav .footer_NavList{border-left: none!important; }

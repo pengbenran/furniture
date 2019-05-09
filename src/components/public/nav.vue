@@ -12,7 +12,7 @@
                          <li class="nav-item " v-for="(item,index) in navDate" :class="curretIndex==index?'selectOn':''" @click="jumpTo(item.jumpUrl)"  @mouseenter.self="enter(index)" @mouseleave.self="leave()">
                             {{item.navName}}
                             <ul class="childNavUl" v-if="index==3&&ShowNav" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
-                                <li class="childNavli" v-for="(innerItem,innerIndex) in item.childNav">
+                                <li class="childNavli" v-for="(innerItem,innerIndex) in item.childNav" @click.stop="jumpToKind('/productKind')">
                                     {{innerItem.childNavName}}
                                     <ul>
                                         <li v-for="(innerTwoItem,innerTwoIndex) in innerItem.childtwoNav">{{innerTwoItem.name}}</li>
@@ -62,20 +62,24 @@ export default {
             jumpUrl:'/productCenter',
             childNav:[
             {childNavName:'地板',
+             jumpUrl:'/productKind',
              childtwoNav:
-               [{name:'强化地板'},{name:'强化地板'},{name:'强化地板'},{name:'强化地板'}]
+               [{name:'强化地板'},{name:'实木地板'},{name:'进口地板'},{name:'地暖专用'}]
             },
-            {childNavName:'实木家具',
+            {childNavName:'实木家具', 
+            jumpUrl:'/productKind',
             childtwoNav:
-               [{name:'强化家具'},{name:'强化家具'},{name:'强化家具'},{name:'强化家具'}]
+               [{name:'木门'},{name:'衣橱柜'},{name:'沙发'},{name:'桌椅'}]
             },
             {childNavName:'软装',
+            jumpUrl:'/productKind',
              childtwoNav:
-               [{name:'强化软装'},{name:'强化软装'},{name:'强化软装'},{name:'强化软装'}]
+               [{name:'窗帘'},{name:'墙纸'}]
             },
-            {childNavName:'整装家庭',
+            {childNavName:'整体家装',
+            jumpUrl:'/productKind',
             childtwoNav:
-               [{name:'强化整装'},{name:'强化整装'},{name:'强化整装'},{name:'强化整装'}]
+               [{name:'轻北欧风'},{name:'精致北欧风'},{name:'经典北欧风'}]
             }
             ]
            },
@@ -112,6 +116,11 @@ export default {
             })
         //    this.ShowNav = !this.ShowNav;
         },
+        jumpToKind(url){
+           this.$router.push({
+                path:url
+            }) 
+       },
         enter(index){//鼠标进入
           if(index==3){
             this.ShowNav = true;
@@ -156,7 +165,7 @@ export default {
 .navbar-nav .nav-item .childNav2 li{width: 120px;text-align: center;line-height: 40px;}
 .navbar-nav .nav-item .childNav2 li:hover{color: #379589;}
 
-.navbar-nav .nav-item .childNavUl .childNavli{width: 120px;}
+.navbar-nav .nav-item .childNavUl .childNavli{width: 120px;border-bottom: 1px solid #ddd;}
 .navbar-nav .nav-item .childNavUl .childNavli:hover{ color: #379589;}
 .navbar-nav .nav-item .childNavUl .childNavli ul{list-style: none;padding:0;text-align: center;line-height: 40px;font-size: 14px; color: #000;}
 .navbar-nav .nav-item .childNavUl .childNavli ul li:hover{color: #379589;}

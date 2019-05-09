@@ -49,19 +49,25 @@
 	<div class="title marginTop">
    	<h1>03/</h1><h2>金牌设计师</h2>
    </div>
-   <!-- <div class="floor3">
-   	<div class="cardList">
-   		<div class="avator">
-   			<img class="card-img-top" src="../assets/images/designer/avator.png" alt="Card image cap">
-   		</div>
-   		<div class="card-body">
-   			<h5 class="card-title">张三</h5>
-   			<p class="card-text">性别:男 年龄:26</p>
-   			<p class="card-text">毕业于四川美术学院室内设计系， 之前工作过三家装修公司。具有丰富的 设计经验，对于装修和设计有自己独特的眼光和 技巧。为人平和</p>
-   			<a href="#" class="btn btn-primary">点击查看作品>></a>
-   		</div>
-   	</div>
-   </div> -->
+    <div class="floor3">
+
+		<div class="cardList" v-for="(item,index) in ListData" :index='index' @mouseenter.self="mouseEnter(index)" @mouseleave.self="mouseLeave()" :class ="select == index ? 'selectItem':''">
+			<span class="lin1"></span>
+			<div class="case">
+			<div class="avator">
+				<img class="card-img-top" src="../assets/images/designer/avator.png" alt="Card image cap">
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">张三</h5>
+				<p class="card-text">性别:男 年龄:26</p>
+				<p class="card-text">毕业于四川美术学院室内设计系， 之前工作过三家装修公司。具有丰富的 设计经验，对于装修和设计有自己独特的眼光和 技巧。为人平和</p>
+				<a href="#" class="btn styBtn">点击查看作品>></a>
+			</div>
+			</div>
+			<span class="lin2"></span>
+		</div>
+
+   </div> 
    <Footer/>
   </div>
 </template>
@@ -76,12 +82,22 @@ export default {
     return {
      index:6,
      isScroll:false,
+	 select:1,
+	 ListData:[
+		 {name:'张三',sex:'男',age:'17',info:'毕业于四川美术学院室内设计系， 之前工作过三家装修公司。具有丰富的 设计经验，对于装修和设计有自己独特的眼光和 技巧。为人平和'},
+		 {name:'张三',sex:'男',age:'17',info:'毕业于四川美术学院室内设计系， 之前工作过三家装修公司。具有丰富的 设计经验，对于装修和设计有自己独特的眼光和 技巧。为人平和'},
+		 {name:'张三',sex:'男',age:'17',info:'毕业于四川美术学院室内设计系， 之前工作过三家装修公司。具有丰富的 设计经验，对于装修和设计有自己独特的眼光和 技巧。为人平和'}
+	 ]
     }
   },
   methods:{
    menu() {
     this.isScroll = window.scrollY>0;
-  },
+},
+mouseEnter(index){
+	this.select = index
+},
+mouseleave(){}
 
   },
    mounted(){
@@ -95,7 +111,7 @@ export default {
  } 
  .title{
  	margin-top: 130px;
- 	margin-bottom: 10px;
+ 	margin-bottom: 5rem;
  	text-align: center;
  	h1{
  		display: inline-block;
@@ -167,13 +183,17 @@ export default {
  	}
  }
  .floor3{
- 	width: 90%;
+ 	width: 80%;
  	margin: 30px auto;
+	 margin-bottom: 5rem;
  	display: flex;
+	justify-content: space-between;
+	transition: all 0.5s;
  	.cardList{
- 		width: 33%;
+		 /*width: 32%;*/
+		padding-top: 2rem;
+		padding-bottom: 5rem;
  		background: #DADBDB;
- 		padding: 20px;
  		box-sizing: border-box;
  		.avator{
  			width: 100px;
@@ -182,6 +202,19 @@ export default {
  		}
  	}
  }
+ .floor3 .cardList .card-body{padding: 1rem 2.5rem;}
+ .floor3 .cardList:nth-child(1){background: -webkit-linear-gradient(left,#fff,#DADBDB);}
+ .floor3 .cardList:nth-child(3){background: -webkit-linear-gradient(right,#fff,#DADBDB);}
+ .floor3 .selectItem{position: relative;background: #fff!important;}
+ .floor3 .styBtn{border:1px solid #0d7569;color: #0d7569;font-size: .9rem;opacity: 0;transition: all 0.5s;}
+ .floor3 .lin1{transition: all 0.5s;}
+ .floor3 .lin2{transition: all 0.5s;}
+ .floor3 .case{transition: all 0.2s;}
+ .selectItem .lin1{position: absolute;left:0;top:-2rem;background: #0d7569;display: block;height: .4rem;width: 100%;}
+ .selectItem .lin2{position: absolute;left:0;bottom:-2rem;background: #0d7569;display: block;height: .4rem;width: 100%;}
+ .selectItem .case{transform: translate3d(0,2rem,0);}
+.selectItem .styBtn{opacity: 1;}
+
 @media (max-width: 767px) { 
  .cart{
   list-style: none;

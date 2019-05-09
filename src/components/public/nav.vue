@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <div class="">
+        <div :class="MaskShow?'Maskbg':''">
             <nav class="navbar navbar-expand-lg navbar-light inav" :class="isScroll?'socllo':''">
                 <div class="logo"><img src="../../assets/logo.png" alt="七音" class="d-block w-100"></div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-label="Toggle navigation">
@@ -22,14 +22,19 @@
                             <ul class="childNav2" v-if="index==4&&ShowNav2" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
                                 <li>淘宝店铺</li>
                                 <li>微店</li>
-                                <li>微信小程序</li>
+                                <li @click="ShowQc">微信小程序</li>
                             </ul>
                         </li>
                     </ul>
                 </div>
             </nav>
 
-            <div></div>
+            <div class="NavMask" v-if="MaskShow" @click="HideMask">
+                <div class="MaskImg">
+                    <img src="../../assets/images/home/qc.png" alt="..."/>
+                </div>
+                
+            </div>
         </div>
     </header>
 </template>
@@ -40,6 +45,7 @@ export default {
         return {
            ShowNav:false,
            ShowNav2:false,
+           MaskShow:false,
            timer:'',
            navDate:[
            {
@@ -144,7 +150,16 @@ export default {
             let that=this
             that.ShowNav = false;  
             that.ShowNav2=false;
+        },
+
+        //显示二维码
+        ShowQc(){
+            this.MaskShow = !this.MaskShow;
+        },
+        HideMask(){
+            this.MaskShow = !this.MaskShow;
         }
+
     }
 }
 </script>
@@ -183,6 +198,10 @@ export default {
 .inav .NavMenu .List ul{list-style: none;padding: 0;}
 .inav .NavMenu .List li{text-align: center;font-size: .9rem;margin-bottom: .4rem;}
 .socllo{background: #fff;}
+.Maskbg{background: rgba(204, 204, 204, 0.5);}
+.NavMask{display: flex;align-items: center;justify-content: center;height: 90vh;}
+.MaskImg{width: 35%;display: inline-block;}
+.MaskImg img{width: 100%;}
 @media (max-width: 768px) { 
     .inav .logo{width: 80px;}
 }

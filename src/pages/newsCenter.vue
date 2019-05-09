@@ -1,7 +1,7 @@
 <template>
   <div class="containt mobileNew">
   	<!-- 导航栏 -->
-  	<Header :curretIndex="index" :isScroll='isScroll'/>
+  	<Header :curretIndex="index"/>
   	<!-- banner图 -->
    <Banner/>
    <!-- 公司新闻 -->
@@ -147,7 +147,6 @@ export default {
   data () {
     return {
      index:2,
-     isScroll:false,
     }
   },
 	methods: {
@@ -156,13 +155,9 @@ export default {
 				path:`/newsInfo`
 			})
 		},
-		menu() {
-			this.isScroll = window.scrollY>0;
-		}
-
 	},
 	 mounted(){
-    window.addEventListener('scroll', this.menu)
+   
   }
 }
 </script>

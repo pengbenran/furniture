@@ -13,6 +13,7 @@ import productwarp from '@/pages/productwarp'
 import productlist from '@/pages/productlist'
 import salesCenter from '@/pages/salesCenter'
 import productKind from '@/pages/productKind'
+import productMore from '@/pages/productMore'
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -22,6 +23,11 @@ export default new Router({
       component: home
     },
     {
+      path: '/productMore',
+      name: 'productMore',
+      component: productMore
+    },
+      {
       path: '/productKind',
       name: 'productKind',
       component: productKind

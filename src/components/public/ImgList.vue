@@ -11,10 +11,10 @@
 <script>
 export default {
     props:{
-      ImgListData:{
-          type:Array,
-          default:[]
-      }
+      // ImgListData:{
+      //     type:Array,
+      //     default:[]
+      // }
     },
     data () {
         return {

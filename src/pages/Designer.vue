@@ -33,17 +33,17 @@
    	</div>
    </div>
    <!-- 装饰设计 -->
-   <div class="title2">
+   <div class="title2" @click="jump">
    	<h1>02/</h1><h2>装饰设计</h2>
    </div>
-   <ul class="cart">
+   <ul class="cart" @click="jump">
    	<li class="select">三室一厅</li>
    	<li>两室一厅</li>
    	<li>一室独居</li>
    	<li>公司装修</li>
    	<li>其他类型</li>
    </ul>
-	<div class="cartImg">
+	<div class="cartImg" @click="jump">
 		<img src="../assets/images/designer/cartImg.png" class="d-block w-100">
 	</div>
 	<div class="title margBot marginTop">
@@ -90,16 +90,18 @@ export default {
     }
   },
   methods:{
-    mouseEnter(index){
-     this.select = index
-   },
    mouseleave(){},
    menu() {
     this.isScroll = window.scrollY>0;
-   },
-    mouseEnter(index){
-  	// this.select = index
-    },
+  },
+  mouseEnter(index){
+  	this.select = index
+  },
+    jump(){
+      this.$router.push({
+        path:`/productMore`
+      })
+    }
 },
    mounted(){
 

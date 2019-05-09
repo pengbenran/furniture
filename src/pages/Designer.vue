@@ -46,7 +46,7 @@
 	<div class="cartImg">
 		<img src="../assets/images/designer/cartImg.png" class="d-block w-100">
 	</div>
-	<div class="title marginTop">
+	<div class="title margBot marginTop">
    	<h1>03/</h1><h2>金牌设计师</h2>
    </div>
     <div class="floor3">
@@ -93,8 +93,13 @@ export default {
     mouseEnter(index){
      this.select = index
    },
-   mouseleave(){}
-
+   mouseleave(){},
+   menu() {
+    this.isScroll = window.scrollY>0;
+   },
+    mouseEnter(index){
+  	// this.select = index
+    },
 },
    mounted(){
 
@@ -102,12 +107,13 @@ export default {
 }
 </script>
 <style scoped lang="less">
+h1,h2{font-weight: bold;}
+ .margBot{margin-bottom: 5rem;}
  .marginTop{
 	margin-top: 30px;
  } 
  .title{
  	margin-top: 130px;
- 	margin-bottom: 5rem;
  	text-align: center;
  	h1{
  		display: inline-block;
@@ -154,7 +160,8 @@ export default {
  	width: 100%;
  }
  .intro{
-	font-size: 12px;
+	font-size: .9rem;
+
  }
  .floor{
  	width: 90%;
@@ -179,7 +186,7 @@ export default {
  	}
  }
  .floor3{
- 	width: 80%;
+ 	width: 72%;
  	margin: 30px auto;
 	 margin-bottom: 5rem;
  	display: flex;

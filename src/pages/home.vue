@@ -28,14 +28,13 @@
   </div>
 </div>
  <div class="row mag100 homeDesign">
-      <div class="col-xs-12 col-lg-7">
+      <div class="col-xs-12 col-lg-7 DesignCase">
         <img src="../assets/images/home/desigen1.png" class="img-responsive">
       </div>
       <div class="col-xs-12 col-lg-5 DesignCase">
        <div class="homeDesignInfo" >
          <router-link to='/Designer' >
-            <p>你想要的设计我们都有</p>
-            <p><span>找设计</span><span>到七音</span></p>
+            <img src="../assets/images/home/sheji.png" alt="..." />
          </router-link>
          <!-- <p class="title">清新北欧风设计 -- 李强</p>
          <p>李强毕业于哈是李强毕业于哈是李强毕业于哈是李强毕业于哈是李强毕业于哈是李强毕业于哈是</p>
@@ -195,14 +194,9 @@ width: 100%;
 
 .homeDesign .DesignCase{position: relative;padding: 0;}
 .DesignCase{display: flex;align-items: center;}
-.homeDesignInfo{width: 100%;text-align: left;}
-.homeDesignInfo a{text-decoration: none;color: #000;}
-.homeDesignInfo p{font-size: 2rem;letter-spacing: .5rem;}
-.homeDesignInfo p:nth-child(1){padding-left: 10%;margin-bottom: 2rem;}
-.homeDesignInfo p:nth-child(2){padding-left: 50%;}
-.homeDesignInfo p:nth-child(2) span{margin-right: 1rem;}
+
 .DesignBtn{text-align: right;margin-right: 30px;}
 .DesignBtn a{color: #000;font-size: 15px;text-decoration:none;}
-.homeDesign img{width: 100%;}
+.homeDesign img{width: 100%;height: 100%;}
 /* .homeDesignInfo{position: absolute;top: 44%;margin-top: -120px;} */
 </style>

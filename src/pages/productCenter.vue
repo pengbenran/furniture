@@ -49,7 +49,7 @@
       <!--网红家具 end-->
 
       <div class="container Nordic">
-        <div class="HotTitle"><span>热销产品</span></div>
+        <div class="HotTitle"><span>北欧整装</span></div>
         <div class="row">
           <div class="col-md-6 left" @click="to"><a href="javascript:;"><img src="../assets/images/productCenter/nordic1.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
           <div class="col-md-6 right">
@@ -115,9 +115,9 @@ export default {
 
 .Nordic{margin-bottom: 10rem;}
 .Nordic img{width: 100%;}
-.Nordic  a{position: relative;display: inline-block;}
-.Nordic  .tip{position: absolute;bottom:10%;left: 0;background: rgb(191,191,191);color: #fff;padding: .5rem 1rem;opacity: 0;transition: all 0.3s;}
-.Nordic  a:hover .tip{opacity: 1;}
+.Nordic  a{position: relative;display: inline-block;overflow: hidden;}
+.Nordic  .tip{position: absolute;bottom:10%;background: rgb(191,191,191);color: #fff;padding: .5rem 1rem;left: -4rem;;opacity: 0;transition: all 0.5s;}
+.Nordic  a:hover .tip{opacity: 1;left: 0;}
 .Nordic .right span{font-size: .9rem; padding: .2rem .5rem;}
 .Nordic .HotTitle{margin-bottom: 3rem;}
 .Nordic .right{display: flex;flex-direction: column;justify-content: space-between;}

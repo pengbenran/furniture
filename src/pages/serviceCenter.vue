@@ -22,18 +22,16 @@
       </div> -->
     </div>
      <div class="TabWarp mt150">
-        <span class="TabTitle">国家标准</span>
+        <span class="TabTitle">国&nbsp;家&nbsp;标&nbsp;准</span>
         <div class="TabList">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 newList">
               <div class="Case">
                 <div class="tit">
                   <strong>国家木地板环保等级标准</strong><p>2019年4月26日</p>
                 </div>
                 <div class="info">
-                  国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准
-                  国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准,
-                  国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准等级标准国家木地板环保等级标准等级标准国家木地板环保等级标准等级标准国家木地板环保等级标准
+                    我国的人造板及其制品的标准体系是参照欧洲和日本的。国家质量监督检验检 疫总局发布了《室内装饰装修材料人造板及其制品中甲醛释放限量》(GB18580--2017),标示了我国的人造板及其制品的标准体系是参照欧洲和日本的。国家质量监督检验检 疫总局发布了《室内装饰装修材料人造板及其制品中甲醛释放限量》(GB18580--2017),标示了
                 </div>
               </div>
               <div class="Case">
@@ -41,9 +39,7 @@
                   <strong>国家木地板环保等级标准</strong><p>2019年4月26日</p>
                 </div>
                 <div class="info">
-                  国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准
-                  国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准国家木地板环保等级标准,国家木地板环保等级标准,
-                  国家木地板环保等级标准国家木地板环保等级标准国家木地板环保等级标准等级标准国家木地板环保等级标准等级标准国家木地板环保等级标准
+                  我国的人造板及其制品的标准体系是参照欧洲和日本的。国家质量监督检验检 疫总局发布了《室内装饰装修材料人造板及其制品中甲醛释放限量》(GB18580--2017),标示了我国的人造板及其制品的标准体系是参照欧洲和日本的。国家质量监督检验检 疫总局发布了《室内装饰装修材料人造板及其制品中甲醛释放限量》(GB18580--2017),标示了
                 </div>
               </div>
             </div>
@@ -57,23 +53,18 @@
        <div class="title"><span><img src="../assets/images/serviceCenter/productTit.png" /></span></div>
        <div class="productInfo">
          <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 maintenance">
             <label>使用</label>
             <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
             <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
             <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
             <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，</p>
             <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。4小时内尽量减少走动，至少48小时后可搬入重物存放</p>
+             <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+              <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
           </div>
-          <div class="col-md-6">
-            <div class="row ImgList">
-              <div class=""><img src="../assets/images/serviceCenter/product1.png" /></div>
-              <div><img src="../assets/images/serviceCenter/product1.png" /></div>
-            </div>
+          <div class="col-md-6 TabImg">
+            <img src="../assets/images/serviceCenter/bz.png"/>
           </div>
          </div>
        </div>
@@ -81,14 +72,14 @@
      <div class="product Clean">
        <div class="productInfo">
          <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 maintenance">
             <label>清洁</label>
             <div class="tit">日常用吸尘器或用不滴水的拖布顺地板的走向摩擦，保持地板的干燥清洁，局部有污渍，局部有污渍可用清洁剂清除；禁止使用酸、碱有机性汽油等物品。</div>
             <label>特殊污渍处理方法</label>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动。</p>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，入重物存放。</p>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，</p>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 油渍、油漆、油墨可使用专用去渍油擦拭； </p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/>血迹、果汁、红酒、啤酒等残渍可以用湿抹布或用抹布蘸上适量的地板清洁剂擦拭；</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 油渍、油漆、油墨可使用专用去渍油擦拭；</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 油渍、油漆、油墨可使用专用去渍油擦拭；</p>
           </div>
           <div class="col-md-6">
             <div class="ImgList">
@@ -101,11 +92,11 @@
       <div class="product Maintenance">
        <div class="productInfo">
          <div class="row">
-          <div class="col-md-6 Info">
+          <div class="col-md-6 maintain">
             <div>
               <label>保养</label>
-              <div class="tit">日常用吸尘器或用不滴水的拖布顺地板的走向摩擦，保持地板的干燥清洁，局部有污渍，局部有污渍可用清洁剂清除；禁止使用酸、碱有机性汽油等物品。</div>
-              <div>日常用吸尘器或用不滴水的拖布顺地板的走向摩擦，保持地板的干燥清洁，局部有污渍，局部有</div>
+              <div class="tit">强化复合地板无需使用油精或打蜡保养；</div>
+              <div>实木、实木复合地板定期打蜡，或使用大自然地板木质专用油精护理保养，  保养周期为每季度</div>
             </div>
           </div>
           <div class="col-md-6">
@@ -194,19 +185,23 @@ computed:{
 .mt150{margin-top: 8rem;}
 
 .TabWarp{text-align: center;}
-.TabTitle{display: inline-block;padding: 0 2.5rem;background: #f8f8f8;font-size: 1.2rem;}
+.TabTitle{display: inline-block;height: 40px;line-height: 40px;width: 200px; text-align: center;background: #f8f8f8;font-size: 1.2rem;}
 .TabList{padding: 6rem 10%;text-align: left;background: #f8f8f8;}
+.TabList .newList{display: flex; justify-content: space-between;flex-direction: column;}
 .TabList>div>div{padding: 0 3rem;}
 .TabList .tit{margin-bottom: 1.8rem;}
-.TabList .info{font-size: 1rem;font-weight: 100;text-indent:2rem;justify-content: content;}
+.TabList .info{font-size: 0.8rem;font-weight: 100;text-indent:2rem;justify-content: content;}
 .TabList .tit p{font-weight: 100;font-size: 1rem;}
 .TabImg img{width: 100%;}
-.TabList .Case{padding: 3rem 0;}
+.TabList .Case{padding-bottom:20px;}
 
 .productInfo{padding: 6rem 10%;text-align: left;}
-.productInfo label{font-size: 2rem;}
+.productInfo>div>div{padding: 0 3rem;}
+.productInfo label{font-size: 1.5rem;}
 .product .title{text-align: left;margin-left: 1rem;margin-top: 5rem;}
 .productInfo .tit{margin: 1.5rem 0 2rem;}
+.productInfo .maintenance{display: flex;flex-direction: column;justify-content: space-around;font-size: 0.8rem;}
+.productInfo .maintenance p{padding: 0;margin:0;}
 
 .ImgList{display: flex;}
 .ImgList>div{margin: 0 0.5rem;}
@@ -232,6 +227,23 @@ computed:{
 .LineWarpImg .LineCase img{width: 100%;height: 100%;display: block;}
 .LineWarp .tit{width: 50%;text-align: center;}
 
+
+.maintain{
+position: relative;
+margin: 0 auto;
+width: 100%;
+}
+.maintain>div{
+  padding-left: 10px;
+box-sizing: border-box;
+position: absolute;
+top: 50%;
+/* 这里有兼容性问题 */
+-webkit-transform: translateY(-50%);
+-ms-transform: translateY(-50%);
+-o-transform: translateY(-50%);
+transform: translateY(-50%);
+}
 .Map{position: relative;padding: 4rem;}
 .Map img{width: 70%;}
 .MapF{position: absolute;top: 54%;left: 45%;display:flex;

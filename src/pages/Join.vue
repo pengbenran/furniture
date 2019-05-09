@@ -52,8 +52,8 @@ export default {
 	.ipt{
 		position:absolute;
 		width: 43.8%;
-		top: 20%;
-		left: 10%;
+		top: 28%;
+		left: 8%;
 		div{
 			margin-bottom: 32px;
 			input{
@@ -97,8 +97,8 @@ export default {
 	.ipt{
 		position:absolute;
 		width: 43.8%;
-		top: 25%;
-		left: 10%;
+		top: 28%;
+		left: 8%;
 		div{
 			margin-bottom: 16px;
 			input{

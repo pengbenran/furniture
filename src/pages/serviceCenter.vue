@@ -9,7 +9,7 @@
      </div>
      <!--Tab end-->
     
-    <div class="container Process">
+    <div class="container Process" :class="`ChangTab${serviveIndex}`">
       <div class="LineWarp" v-for="(item,index) in serviceObj.imgList">
         <div class="Line">
           <span></span>
@@ -71,8 +71,8 @@
           </div>
           <div class="col-md-6">
             <div class="row ImgList">
-              <div class=""><img src="../assets/images/serviceCenter/product1.png" /></div>
-              <div><img src="../assets/images/serviceCenter/product1.png" /></div>
+              <div class=""><img src="../assets/images/serviceCenter/product1.jpg" /></div>
+              <div><img src="../assets/images/serviceCenter/product1.jpg" /></div>
             </div>
           </div>
          </div>
@@ -146,11 +146,11 @@ export default {
      serviceData:[
      {serviceKind:'售前服务',
      icon:require('../assets/images/serviceCenter/tab1.png'),
-     imgList:[{img:require('../assets/images/serviceCenter/1366088.jpg'),name:'1、测量'},{img:require('../assets/images/serviceCenter/t013f60b20a2a8daa17.jpg'),name:'2、设计方案'}]
+     imgList:[{img:require('../assets/images/serviceCenter/1366088.png'),name:'1、测量'},{img:require('../assets/images/serviceCenter/t013f60b20a2a8daa17.png'),name:'2、设计方案'}]
       },
       {serviceKind:'售中服务',
      icon:require('../assets/images/serviceCenter/tab2.png'),
-      imgList:[{img:require('../assets/images/serviceCenter/114719j95h9q4v2485i9cv.jpg'),name:'1、图纸确定'},{img:require('../assets/images/serviceCenter/114719j95h9q4v2485i9cv.jpg'),name:'2、施工'},{img:require('../assets/images/serviceCenter/114719j95h9q4v2485i9cv.jpg'),name:'3、验收'}]
+      imgList:[{img:require('../assets/images/serviceCenter/t1.png'),name:'1、图纸确定'},{img:require('../assets/images/serviceCenter/t2.png'),name:'2、施工'},{img:require('../assets/images/serviceCenter/t3.png'),name:'3、验收'}]
       },
       {serviceKind:'售后服务',
      icon:require('../assets/images/serviceCenter/tab3.png'),
@@ -256,4 +256,19 @@ computed:{
   box-sizing: border-box;
  }
 }
+.ChangTab0{
+    .LineWarp{width: 50%;}
+  .LineWarp:nth-child(1) label{left: 26%;}
+}
+.ChangTab1 {
+ 
+   .LineWarp img{padding: 0 .5rem;}
+} 
+
+.ChangTab3 {
+    .LineWarp:nth-child(1) label{left: 26%;}
+    .LineWarp:nth-child(2) label{left: 25%;}
+    .LineWarp img{width: 50%!important;margin-left: 12%;}
+}
+
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="containt">
-   <Header :curretIndex="index" :isScroll='isScroll'/>
+   <Header :curretIndex="index"/>
    <div class="join">
    	<div class="bcg">
    	   <img src="../assets/images/Join/joinbcg.png" class="d-block w-100" >
@@ -33,16 +33,13 @@ export default {
   data () {
     return {
      index:7,
-     isScroll:false,
     }
   },
    methods:{
-   menu() {
-    this.isScroll = window.scrollY>0;
-  }
+
   },
    mounted(){
-    window.addEventListener('scroll', this.menu)
+    
   }
 }
 </script>

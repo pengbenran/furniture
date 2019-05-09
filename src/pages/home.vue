@@ -1,6 +1,6 @@
 <template>
   <div class="containt mobile">
-    <Header :curretIndex="index" :isScroll='isScroll'/>
+    <Header :curretIndex="index"/>
     <!-- banner图 -->
     <Banner/>
     <!-- 关于我们 -->
@@ -63,7 +63,6 @@ export default {
   data () {
     return {
       kindIndex:0,
-      isScroll:false,
       index:0,
       kindData:[
       {
@@ -97,9 +96,6 @@ export default {
       let that=this
       that.kindIndex=index
     },
-    menu() {
-    this.isScroll = window.scrollY>0;
-   },
    to(){
       this.$router.push({
         path:`/productCenter`
@@ -107,7 +103,6 @@ export default {
     },
   },
   mounted(){
-    window.addEventListener('scroll', this.menu)
   }
 }
 </script>

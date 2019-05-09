@@ -1,6 +1,6 @@
 <template>
   <div class="mobileServer">
-     <Header :curretIndex="index" :isScroll='isScroll'/>
+     <Header :curretIndex="index" />
      <Banner/>
      <div class="container Tab mt150">
        <div class="row">
@@ -141,21 +141,20 @@ export default {
   data () {
     return {
      index:5,
-     isScroll:false,
      serviveIndex:0,
      isShow:false,
      serviceData:[
      {serviceKind:'售前服务',
      icon:require('../assets/images/serviceCenter/tab1.png'),
-     imgList:[{img:require('../assets/images/serviceCenter/pople2.png'),name:'1、保质期内维护'},{img:require('../assets/images/serviceCenter/pople.png'),name:'2、保质期内保养'}]
+     imgList:[{img:require('../assets/images/serviceCenter/1366088.jpg'),name:'1、测量'},{img:require('../assets/images/serviceCenter/t013f60b20a2a8daa17.jpg'),name:'2、设计方案'}]
       },
       {serviceKind:'售中服务',
      icon:require('../assets/images/serviceCenter/tab2.png'),
-     imgList:[{img:require('../assets/images/serviceCenter/1366088.jpg'),name:'1、测量'},{img:require('../assets/images/serviceCenter/t013f60b20a2a8daa17.jpg'),name:'2、设计方案'}]
+      imgList:[{img:require('../assets/images/serviceCenter/114719j95h9q4v2485i9cv.jpg'),name:'1、图纸确定'},{img:require('../assets/images/serviceCenter/114719j95h9q4v2485i9cv.jpg'),name:'2、施工'},{img:require('../assets/images/serviceCenter/114719j95h9q4v2485i9cv.jpg'),name:'3、验收'}]
       },
       {serviceKind:'售后服务',
      icon:require('../assets/images/serviceCenter/tab3.png'),
-     imgList:[{img:require('../assets/images/serviceCenter/114719j95h9q4v2485i9cv.jpg'),name:'1、图纸确定'},{img:require('../assets/images/serviceCenter/114719j95h9q4v2485i9cv.jpg'),name:'2、施工'},{img:require('../assets/images/serviceCenter/114719j95h9q4v2485i9cv.jpg'),name:'3、验收'}]
+     imgList:[{img:require('../assets/images/serviceCenter/pople2.png'),name:'1、保质期内维护'},{img:require('../assets/images/serviceCenter/pople.png'),name:'2、保质期内保养'}]
       },
       {serviceKind:'投诉服务',
      icon:require('../assets/images/serviceCenter/tab4.png'),
@@ -165,9 +164,6 @@ export default {
     }
   },
   methods:{
-   menu() {
-    this.isScroll = window.scrollY>0;
-  }, 
   mouseEnter(){
     this.isShow=true
   },
@@ -186,7 +182,7 @@ computed:{
     }
   },
  mounted(){
-    window.addEventListener('scroll', this.menu)
+   
   }
 }
 </script>

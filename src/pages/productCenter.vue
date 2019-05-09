@@ -1,6 +1,6 @@
 <template>
   <div class="containt mobileProduct">
-    <Header :curretIndex="index" :isScroll='isScroll'/>
+    <Header :curretIndex="index"/>
     <Banner/>
     <main>
       <div class="container Recommend">
@@ -80,16 +80,12 @@ export default {
   data () {
     return {
       index:3,
-      isScroll:false,
        ImgListData:[{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},
                 {ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1}
        ],
     }
   },
   methods:{
-   menu() {
-    this.isScroll = window.scrollY>0;
-  },
   to(){
             this.$router.push({
                 path:`/productInfo`
@@ -97,7 +93,7 @@ export default {
         }
 },
  mounted(){
-    window.addEventListener('scroll', this.menu)
+  
   }
 }
 </script>

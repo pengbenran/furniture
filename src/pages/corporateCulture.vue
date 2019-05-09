@@ -1,6 +1,6 @@
 <template>
   <div class="containt">
-    <Header :curretIndex="index" :isScroll='isScroll'/>
+    <Header :curretIndex="index"/>
     <!--header end-->
 
     <div class="main">
@@ -29,7 +29,6 @@ export default {
     return {
      index:1,
      selectIndex:0,
-     isScroll:false,
      corporate:[
      {
       titile:'企业简介',
@@ -56,12 +55,8 @@ export default {
       let that=this
       that.selectIndex=index
     },
-    menu() {
-    this.isScroll = window.scrollY>0;
-   }
   },
   mounted(){
-    window.addEventListener('scroll', this.menu)
   }
 }
 </script>

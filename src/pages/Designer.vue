@@ -1,6 +1,6 @@
 <template>
   <div class="containt">
-  	<Header :curretIndex="index" :isScroll='isScroll'/>
+  	<Header :curretIndex="index"/>
    <Banner/>
     <div class="cartImg marginTop">
 		<img src="../assets/images/designer/connect.png" class="d-block w-100">
@@ -51,7 +51,7 @@
    </div>
     <div class="floor3">
 
-		<div class="cardList" v-for="(item,index) in ListData" :index='index' @mouseenter.self="mouseEnter(index)" @mouseleave.self="mouseLeave()" :class ="select == index ? 'selectItem':''">
+		<div class="cardList" v-for="(item,index) in ListData" :index='index' @mouseenter.self="mouseEnter(index)" :class ="select == index ? 'selectItem':''">
 			<span class="lin1"></span>
 			<div class="case">
 			<div class="avator">
@@ -61,7 +61,7 @@
 				<h5 class="card-title">张三</h5>
 				<p class="card-text">性别:男 年龄:26</p>
 				<p class="card-text">毕业于四川美术学院室内设计系， 之前工作过三家装修公司。具有丰富的 设计经验，对于装修和设计有自己独特的眼光和 技巧。为人平和</p>
-				<a href="#" class="btn styBtn">点击查看作品>></a>
+				<a href="#/productlist" class="btn styBtn">点击查看作品>></a>
 			</div>
 			</div>
 			<span class="lin2"></span>
@@ -81,7 +81,6 @@ export default {
   data () {
     return {
      index:6,
-     isScroll:false,
 	 select:1,
 	 ListData:[
 		 {name:'张三',sex:'男',age:'17',info:'毕业于四川美术学院室内设计系， 之前工作过三家装修公司。具有丰富的 设计经验，对于装修和设计有自己独特的眼光和 技巧。为人平和'},
@@ -91,17 +90,19 @@ export default {
     }
   },
   methods:{
+    mouseEnter(index){
+     this.select = index
+   },
+   mouseleave(){},
    menu() {
     this.isScroll = window.scrollY>0;
+   },
+    mouseEnter(index){
+  	// this.select = index
+    },
 },
-mouseEnter(index){
-	// this.select = index
-},
-mouseleave(){}
-
-  },
    mounted(){
-    window.addEventListener('scroll', this.menu)
+
   }
 }
 </script>

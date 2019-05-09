@@ -1,7 +1,9 @@
 <template>
     <div class="mobilePinfo">
-        <div class="container Main ">
-            <div class="Fan"><span @click="to">《 返回上一页</span></div> 
+        <div class="Main">
+            <div class="list">轻北欧风</div>
+            <div class="list">精致北欧风</div>
+            <div class="list">经典欧风</div>
         </div>
         <!--Main end-->
         <div class="container ListWarp">
@@ -16,7 +18,7 @@
 </template>
 <script>
 import Footer from "@/components/public/footer";
-import ImgList from "@/components/public/ImgList"
+import ImgList from "@/components/public/ImgList2"
 export default {
     components:{Footer,ImgList},  
     data () {
@@ -34,11 +36,7 @@ export default {
 }
 </script>
 <style scoped>
-.Main{text-align: left;margin-top: 8rem;margin-bottom: 8rem;}
-
-
-.Main .Fan{margin-bottom: 1rem;}
-.Main .Fan span{color: #0e887a;text-decoration: none;}
+.Main{display:flex;justify-content:space-around;width:50%;margin:50px auto;}
 .ListWarp{margin-bottom: 8rem;}
 
 </style>

@@ -14,18 +14,18 @@
       <div class="container hotProduct">
        <div class="HotTitle"><img src="../assets/images/productCenter/icon.png"><span>轻北欧风</span></div>
        <div ><ImgList  :ImgListData="ImgListData"/></div> 
-       <div class="btn"><img src="../assets/images/productCenter/more.png"></div>
+       <div class="btn" @click="jump"><img src="../assets/images/productCenter/more.png"></div>
       </div>
       <!--热销产品 end-->
       <div class="container hotProduct">
        <div class="HotTitle"><img src="../assets/images/productCenter/icon.png"><span>精致北欧风</span></div>
        <div><ImgList  :ImgListData="ImgListData"/></div> 
-       <div class="btn"><img src="../assets/images/productCenter/more.png"></div>
+       <div class="btn"  @click="jump"><img src="../assets/images/productCenter/more.png"></div>
       </div>
        <div class="container hotProduct">
        <div class="HotTitle"><img src="../assets/images/productCenter/icon.png"><span>经典北欧风</span></div>
        <div><ImgList  :ImgListData="ImgListData"/></div> 
-       <div class="btn"><img src="../assets/images/productCenter/more.png"></div>
+       <div class="btn"  @click="jump"><img src="../assets/images/productCenter/more.png"></div>
       </div>
     </main>
 
@@ -54,10 +54,15 @@ export default {
     this.isScroll = window.scrollY>0;
   },
   to(){
-            this.$router.push({
-                path:`/productInfo`
-            })
-        }
+    this.$router.push({
+      path:`/productInfo`
+    })
+  },
+  jump(){
+    this.$router.push({
+      path:`/productlist`
+    })
+  }
 },
  mounted(){
     window.addEventListener('scroll', this.menu)

@@ -1,19 +1,22 @@
 <template>
   <div class="containt">
-   <Header :curretIndex="index"/>
+   <Header :curretIndex="index" @openMark="showMark"/>
    <div class="join">
    	<div class="bcg">
    	   <img src="../assets/images/Join/joinbcg.png" class="d-block w-100" >
    	</div>
    	<div class="ipt">
    	   <div>
-   	   	<input type="text" name="" placeholder="title">
+   	   	<input type="text" name="" placeholder="标题">
    	   </div>
    	   <div>
-   	   	<textarea></textarea>
+   	   	<textarea  placeholder="内容"></textarea>
    	   </div>
    	   <div>
-   	   	<input type="email" name="" placeholder="email">
+   	   	<input type="email" name="" placeholder="电子邮箱">
+   	   </div>
+   	   <div>
+   	   	<input type="phone" name="" placeholder="电话号码">
    	   </div>
    	   <div class="subBtn">submit</div>
    	</div>
@@ -22,13 +25,15 @@
    	<img src="../assets/images/Join/joinconent.png" class="d-block w-100" >
    </div>
    <Footer/>
+   <erCode ref="erCode"/>
   </div>
 </template>
 <script>
 import Header from "@/components/public/nav";
 import Footer from "@/components/public/footer";
+import erCode from '@/components/public/erCode'
 export default {
-  components:{Header,Footer},
+  components:{Header,Footer,erCode},
   name: 'Join',
   data () {
     return {
@@ -36,7 +41,9 @@ export default {
     }
   },
    methods:{
-
+ showMark(){
+       this.$refs.erCode.openMark();
+    }
   },
    mounted(){
     
@@ -49,10 +56,10 @@ export default {
 	.ipt{
 		position:absolute;
 		width: 43.8%;
-		top: 28%;
+		top: 20%;
 		left: 8%;
 		div{
-			margin-bottom: 32px;
+			margin-bottom: 20px;
 			input{
 				width: 100%;
 				height: 60px;

@@ -1,7 +1,6 @@
 <template>
     <header class="header">
-        <div :class="MaskShow?'Maskbg':''">
-            <nav class="navbar navbar-expand-lg navbar-light inav" :class="isScroll?'socllo':''">
+            <nav class="navbar navbar-expand-lg navbar-light inav">
                 <div class="logo"><img src="../../assets/logo.png" alt="七音" class="d-block w-100"></div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -11,31 +10,29 @@
                         <!-- <li class="nav-item" v-for="(item,index) in navDate"></li> -->
                          <li class="nav-item" v-for="(item,index) in navDate" :class="curretIndex==index?'selectOn':''" @click="jumpTo(item.jumpUrl)"  @mouseenter.self="enter(index)" @mouseleave.self="leave(index)">
                             {{item.navName}}
-                            <ul class="childNavUl" v-if="index==3&&ShowNav" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
+                            <div class="menuConent" v-if="index==3&&ShowNav">
+                              <div class="upIcon"></div>
+                              <ul class="childNavUl"  @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
                                 <li class="childNavli" v-for="(innerItem,innerIndex) in item.childNav" @click.stop="jumpToKind('/productKind')">
-                                    {{innerItem.childNavName}}
-                                    <ul>
-                                        <li v-for="(innerTwoItem,innerTwoIndex) in innerItem.childtwoNav">{{innerTwoItem.name}}</li>
-                                    </ul>
+                                  <span>{{innerItem.childNavName}}</span> 
+                                  <ul>
+                                    <li v-for="(innerTwoItem,innerTwoIndex) in innerItem.childtwoNav">{{innerTwoItem.name}}</li>
+                                  </ul>
                                 </li>
-                            </ul>
-                            <ul class="childNav2" v-if="index==4&&ShowNav2" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
+                              </ul>
+                            </div>
+                            <div class="menuConent" v-if="index==4&&ShowNav2">
+                              <div class="upIcon"></div>
+                              <ul class="childNav2" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
                                 <li><a target="_blank" href="https://item.taobao.com/item.htm?id=549469471881&ali_refid=a3_430673_1006:1106029645:N:bStCjpXiZdyzwB%2F%2BY1%2BBsA%3D%3D:73bfc8d40aafa9017bf2615044aee5dc&ali_trackid=1_73bfc8d40aafa9017bf2615044aee5dc&spm=a2e15.8261149.07626516002.7" >淘宝店铺</a></li>
                                 <li>微店</li>
-                                <li @click="ShowQc">微信小程序</li>
-                            </ul>
+                                <li @click.stop="ShowQc">微信小程序</li>
+                              </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
             </nav>
-
-            <div class="NavMask" v-if="MaskShow" @click="HideMask">
-                <div class="MaskImg">
-                    <img src="../../assets/images/home/qc.png" alt="..."/>
-                </div>
-                
-            </div>
-        </div>
     </header>
 </template>
 <script>
@@ -155,7 +152,7 @@ export default {
 
         //显示二维码
         ShowQc(){
-            this.MaskShow = !this.MaskShow;
+            this.$emit('openMark')
         },
         HideMask(){
             this.MaskShow = !this.MaskShow;
@@ -165,31 +162,44 @@ export default {
 }
 </script>
 <style scoped>
-.header{position:absolute;top: 0;left: 0;width: 100%;z-index: 999;}
-.navbar-nav .nav-item{font-family:'STFangsong';padding: 0 20px;box-sizing: border-box;position: relative;color: #fff;}
+.header{position:absolute;top: 0;left: 7.8%;width: 84.4%;z-index: 999;}
+.navbar-nav .nav-item{font-family:'STFangsong';box-sizing: border-box;position: relative;color: #fff;font-size: 20px;font-weight: bold;}
+.navbar-nav .nav-item .menuConent{position: relative;}
+.navbar-nav .nav-item .menuConent .upIcon{position: absolute; border-style: solid;
+  border-width: 10px 10px 10px 10px;
+  border-color: transparent transparent #fff transparent;
+  opacity: 0.35;
+  width: 0px;
+ height: 0px;top: -10px;left: 15px;}
+
 .navbar-nav .nav-item:hover{ 
- color: #379589;
+ color: #0e887a;
+ cursor:default ;
  background-color: transparent !important;
 }
-.navbar-nav .selectOn{color:#379589;}
+.navbar-nav .selectOn{color:#0e887a;}
 
-.navbar-nav .nav-item .childNavUl{list-style: none;display:-webkit-box;position: absolute;top:50px;left: 0;background: rgba(255, 255, 255, 0.35);border-radius: 4px;padding:0;color: #fff;}
+.navbar-nav .nav-item .childNavUl{list-style: none;display:-webkit-box;position: absolute;top:10px;left: 0;background: rgba(255, 255, 255, 0.35);border-radius: 4px;padding:0;color: #fff;padding:25px;box-sizing: border-box;}
 
 .navbar-nav .nav-item .childNav2{
-   list-style: none;position: absolute;top:50px;left: 0;background: rgba(255, 255, 255, 0.35);border-radius: 4px;padding:0;color: #fff; 
+   list-style: none;position: absolute;top:10px;left: 0;background: rgba(255, 255, 255, 0.35);border-radius: 4px;padding:25px;color: #fff;box-sizing: border-box;
 }
-.navbar-nav .nav-item .childNav2 li{width: 120px;text-align: center;line-height: 40px;color: #fff;}
+.navbar-nav .nav-item .childNav2 li{width: 120px;text-align: center;line-height: 40px;color: #fff;font-size: 18px;}
 .navbar-nav .nav-item .childNav2 li a{color: #fff;}
 .navbar-nav .nav-item .childNav2 li:hover{color: #379589;}
 
-.navbar-nav .nav-item .childNavUl .childNavli{width: 120px;border-bottom: 1px solid #ddd;}
-.navbar-nav .nav-item .childNavUl .childNavli:hover{ color: #379589;}
-.navbar-nav .nav-item .childNavUl .childNavli ul{list-style: none;padding:0;text-align: center;line-height: 40px;font-size: 14px; color: #fff;}
-.navbar-nav .nav-item .childNavUl .childNavli ul li:hover{color: #379589;}
+.navbar-nav .nav-item .childNavUl .childNavli{width: 120px;font-size: 18px;}
+.navbar-nav .nav-item .childNavUl .childNavli span{border-bottom: 2px solid #ddd;}
+.navbar-nav .nav-item .childNavUl .childNavli:hover{ color: #0e887a;}
+.navbar-nav .nav-item .childNavUl .childNavli ul{list-style: none;padding:0;text-align: center;line-height: 40px;font-size: 16px; color: #fff;}
+.navbar-nav .nav-item .childNavUl .childNavli ul li:hover{color: #0e887a;}
 
 .SpanShow{display: block;}
 .SpanHide{display: none;}
 
+#navbarSupportedContent{width: 78%;flex-grow: 0;}
+#navbarSupportedContent .nav-ul{width: 100%;justify-content: space-around;}
+.inav{display: flex;justify-content: space-between;}
 .inav .NavMenu{background: rgba(255, 255, 255, 0.35);border-radius: 4px;color: #fff;}
 .NavPos{position: absolute;left: 42%;top: 2.7rem;width:0;height:0;border-width:0 10px 10px;border-style:solid;border-color:transparent transparent rgba(255, 255, 255, 0.35);margin-top: -10px;}
 .inav .logo{width: 123px;}
@@ -199,11 +209,6 @@ export default {
 .inav .NavMenu label{display: inline-block;border-bottom: 1px solid #fff;}
 .inav .NavMenu .List ul{list-style: none;padding: 0;}
 .inav .NavMenu .List li{text-align: center;font-size: .9rem;margin-bottom: .4rem;}
-.socllo{background: #fff;}
-.Maskbg{background: rgba(204, 204, 204, 0.5);}
-.NavMask{display: flex;align-items: center;justify-content: center;height: 90vh;}
-.MaskImg{width: 35%;display: inline-block;}
-.MaskImg img{width: 100%;}
 @media (max-width: 768px) { 
     .inav .logo{width: 80px;}
 }

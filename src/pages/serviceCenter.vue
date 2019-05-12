@@ -1,10 +1,12 @@
 <template>
   <div class="mobileServer">
-     <Header :curretIndex="index" />
+     <Header :curretIndex="index" @openMark="showMark"/>
      <Banner/>
      <div class="container Tab mt150">
        <div class="row">
-         <div class="col-3" v-for="(item,index) in serviceData" :class="serviveIndex==index?'list-on':''" @click="changTab(index)"><img :src="item.icon" /><span>{{item.serviceKind}}</span></div>
+         <div class="col-3" v-for="(item,index) in serviceData" :class="serviveIndex==index?'list-on':''" @click="changTab(index)">
+          <img :src="serviveIndex==index?item.selectIcon:item.icon" v-if=""/>
+          <span>{{item.serviceKind}}</span></div>
        </div>
      </div>
      <!--Tab end-->
@@ -122,15 +124,17 @@
      </div>
 
      <Footer/>
+     <erCode ref="erCode"/>
   </div>
 </template>
 <script>
 import Header from "@/components/public/nav";
 import Footer from "@/components/public/footer";
 import Banner from "@/components/public/banner";
+import erCode from '@/components/public/erCode'
 export default {
   name: 'serviceCenter',
-  components:{Header,Banner,Footer},
+  components:{Header,Banner,Footer,erCode},
   data () {
     return {
      index:5,
@@ -139,18 +143,22 @@ export default {
      serviceData:[
      {serviceKind:'售前服务',
      icon:require('../assets/images/serviceCenter/tab1.png'),
+     selectIcon:require('../assets/images/serviceCenter/tabselect1.png'),
      imgList:[{img:require('../assets/images/serviceCenter/1366088.png'),name:'1、测量'},{img:require('../assets/images/serviceCenter/t013f60b20a2a8daa17.png'),name:'2、设计方案'}]
       },
       {serviceKind:'售中服务',
      icon:require('../assets/images/serviceCenter/tab2.png'),
+     selectIcon:require('../assets/images/serviceCenter/tabselect2.png'),
       imgList:[{img:require('../assets/images/serviceCenter/t1.png'),name:'1、图纸确定'},{img:require('../assets/images/serviceCenter/t2.png'),name:'2、施工'},{img:require('../assets/images/serviceCenter/t3.png'),name:'3、验收'}]
       },
       {serviceKind:'售后服务',
+      selectIcon:require('../assets/images/serviceCenter/tabselect3.png'),
      icon:require('../assets/images/serviceCenter/tab3.png'),
      imgList:[{img:require('../assets/images/serviceCenter/pople2.png'),name:'1、保质期内维护'},{img:require('../assets/images/serviceCenter/pople.png'),name:'2、保质期内保养'}]
       },
       {serviceKind:'投诉服务',
      icon:require('../assets/images/serviceCenter/tab4.png'),
+     selectIcon:require('../assets/images/serviceCenter/tabselect4.png'),
      imgList:[{img:require('../assets/images/serviceCenter/email.png'),name:'邮箱投诉'},{img:require('../assets/images/serviceCenter/phone.png'),name:'电话投诉'}]
       }
      ]
@@ -166,7 +174,10 @@ export default {
   changTab(index){
     let that=this
     that.serviveIndex=index
-  }
+  },
+   showMark(){
+       this.$refs.erCode.openMark();
+    }
 },
 computed:{
     serviceObj(){
@@ -191,8 +202,8 @@ computed:{
 .TabList{padding: 6rem 10%;text-align: left;background: #f8f8f8;}
 .TabList .newList{display: flex; justify-content: space-between;flex-direction: column;}
 .TabList>div>div{padding: 0 3rem;}
-.TabList .tit{margin-bottom: 1.8rem;}
-.TabList .info{font-size: 0.8rem;font-weight: 100;text-indent:2rem;justify-content: content;}
+.TabList .tit{margin-bottom: 24px;}
+.TabList .info{font-size:20px;font-weight: 100;text-indent:2rem;justify-content: content;}
 .TabList .tit p{font-weight: 100;font-size: 1rem;}
 .TabImg img{width: 100%;}
 .TabList .Case{padding-bottom:20px;}
@@ -202,7 +213,7 @@ computed:{
 .productInfo label{font-size: 1.5rem;}
 .product .title{text-align: left;margin-left: 1rem;margin-top: 5rem;}
 .productInfo .tit{margin: 1.5rem 0 2rem;}
-.productInfo .maintenance{display: flex;flex-direction: column;justify-content: space-around;font-size: 0.8rem;}
+.productInfo .maintenance{display: flex;flex-direction: column;justify-content: space-around;font-size: 18px;}
 .productInfo .maintenance p{padding: 0;margin:0;}
 
 .ImgList{display: flex;}
@@ -219,11 +230,11 @@ computed:{
 .LineWarp{align-items: center;margin-top:50px;flex-grow: 1;}
 .LineWarp .Line{position: relative;width: 100%;background: #000;height: 4px;margin-bottom: 50px;}
 .LineWarp .Line span{ position: absolute;bottom: -.8rem;width: 0;height: 0;border: .8rem solid red;border-top-color: black;border-bottom: none;border-left-color: transparent;border-right-color: transparent;}
-.LineWarp .Line:first-child span{left: 30%;}
-.LineWarp .Line:last-child span{right: 30%;}
+.LineWarp .Line:first-child span{left: 50%;}
+.LineWarp .Line:last-child span{right: 50%;}
 .LineWarp .Line label{position: absolute;top: 1rem}
-.LineWarp .Line:first-child label{left: 18%;}
-.LineWarp .Line:last-child label{right: 18%;}
+.LineWarp .Line:first-child label{left: 38%;}
+.LineWarp .Line:last-child label{right: 38%;}
 .LineWarpImg{width: 70%;margin: auto;display: flex;align-items: center;margin-top: 2rem; justify-content: space-around;}
 .LineWarpImg .LineCase{}
 .LineWarpImg .LineCase img{width: 100%;height: 100%;display: block;}
@@ -272,7 +283,7 @@ transform: translateY(-50%);
 }
 .ChangTab0{
     .LineWarp{width: 50%;}
-  .LineWarp:nth-child(1) label{left: 26%;}
+  .LineWarp:nth-child(1) label{left: 44%;}
 }
 .ChangTab1 {
  
@@ -280,9 +291,9 @@ transform: translateY(-50%);
 } 
 
 .ChangTab3 {
-    .LineWarp:nth-child(1) label{left: 26%;}
-    .LineWarp:nth-child(2) label{left: 25%;}
-    .LineWarp img{width: 50%!important;margin-left: 12%;}
+    .LineWarp:nth-child(1) label{left: 44%;}
+    .LineWarp:nth-child(2) label{left: 44%;}
+    .LineWarp img{width: 50%!important;margin-left: 30%;}
 }
 
 </style>

@@ -1,16 +1,17 @@
 <template>
   <div class="container-fluid CaseOur magTop">
     <div class="row">
-        <div class="col-xs-12 col-lg-6">
+        <div class="col-xs-12 col-lg-6 scroll opacity" data-animation="fadeInLeft">
           <img src="static/images/home/company.png" alt="...">
         </div>
-        <div class="col-xs-12 col-lg-6 CaseWarp">
+        <div class="col-xs-12 col-lg-6 CaseWarp scroll opacity" data-animation="fadeInRight">
           <div class="WarpInfo">
           <div class="CaseOurPos">
               <strong>OUR CMPANY</strong>
-              <div class="info">发源于1995年，是大自然家具环保恐惧前段时间，看到群里一些小伙伴面试的时候被面试官问到这类题目。平时大家开发vue项目的时候，相信大部分人都是使用 vue-cli
-                    脚手架生成的项目架构，然后 npm run install 安装依赖，npm run serve启动项目然后就开始写业务代码了前段时间，看到群里一些小伙伴面试的时候被面试官问到这类题目。平时大家开发vue项目的时候，相信大部分人都是使用 vue-cli脚手架生成的项目架
-                    构，然后 npm run install 安装依赖，npm run serve启动项目然后就开始写业务代码了</div>  
+              <div class="info">以促进人们的居家愉悦和生活品质为愿景，我们公司运用地板与家居产品制
+造领域的专业经验，旨在让消费者享有高品质绿色家居生活。
+为树立健全的绿化、环保意识，公司在生活公益方面身体力行，
+为了向全社会普及绿色、健康的生活方式。</div>  
             </div>
             <div class="CaseBnt">
               <button type="button" class="btn btnMore">More+</button>
@@ -30,8 +31,9 @@ export default {
   width: 80%;
   text-align: left;
 }
-.magTop{margin-top: 120px;}
+.magTop{margin-top: 200px;}
 .CaseWarp{display: flex;align-items: center;}
+.CaseOurPos{padding-left: 87px;box-sizing: border-box;}
 .CaseOur img{width: 100%;}
 .CaseOur strong{display: inline-block;margin-bottom: 1.5rem;font-size: 60px;font-weight: bold;font-family: 'STHeiti'}
 .CaseOur .info{font-size: 14px;font-weight: bold;font-family: 'STHeiti';letter-spacing:1px;}

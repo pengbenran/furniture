@@ -1,18 +1,19 @@
 <template>
   <div class="containt mobileNew">
   	<!-- 导航栏 -->
-  	<Header :curretIndex="index"/>
+  	<Header :curretIndex="index" @openMark="showMark"/>
   	<!-- banner图 -->
    <Banner/>
    <!-- 公司新闻 -->
-   <div class="title">
+   <div class="title scroll opacity"  data-animation="fadeInRight">
    	公司新闻
    </div>
+   <div class="subTitle scroll opacity"  data-animation="fadeInLeft"><img src="../assets/images/newsCenter/companyIcon.png"></div>
    <div class="companyNew ">
-   	<div class="companyNewLeft">
+   	<div class="companyNewLeft scroll opacity"  data-animation="fadeInLeft">
    		<img src="../assets/images/newsCenter/companynew.png" class="d-block w-100" >
    	</div>
-   	<div class="companyNewRight">
+   	<div class="companyNewRight scroll opacity"  data-animation="fadeInDown">
    		<div class="companyNewRightList"  @click="to">
    			<div class="date">
    				<p class="day">13</p>
@@ -52,14 +53,14 @@
    	</div>
    </div>
    <div class="industry">
-   	 <div class="industryTitle">
+   	 <div class="industryTitle scroll opacity"  data-animation="zoomIn">
    	 	行业新闻
    	 </div>
-   	 <div class="engTitle">
-   	 	industry &nbsp; news
+   	 <div class="engTitle scroll opacity"  data-animation="zoomIn">
+   	 	INDUSTRY &nbsp; NEWS
    	 </div>
    	 <div class="industryConent">
-   	 	<div class="left" @click="to">
+   	 	<div class="left scroll opacity"  data-animation="fadeInLeft" @click="to">
 			<a href="javasrcipt:;">
 			    <img src="../assets/images/newsCenter/industry1.png" class="d-block w-100" >
 				<div class="Mask">
@@ -71,7 +72,7 @@
 			</a>
    	 	</div>
    	 	<div class="right">
-   	 		<div class="top">
+   	 		<div class="top scroll opacity"  data-animation="fadeInRight">
    	 			<div class="imglist" @click="to">
 					<router-link  to='/newsInfo' >
 						<img src="../assets/images/newsCenter/industry3.png" class="d-block w-100" >
@@ -106,7 +107,7 @@
 					</router-link>
    	 			</div>
    	 		</div>
-   	 		<div class="bottom">
+   	 		<div class="bottom scroll opacity"  data-animation="fadeInDown">
    	 			<div class="imglist" @click="to">
 					<router-link  to='/newsInfo' >
 						<img src="../assets/images/newsCenter/industry2.png" class="d-block w-100" >
@@ -135,14 +136,17 @@
    </div>
    <!-- 页面底部 -->
    <Footer/>
+   <erCode ref="erCode"/>
   </div>
 </template>
 <script>
 import Header from "@/components/public/nav";
 import Footer from "@/components/public/footer";
 import Banner from "@/components/public/banner";
+import scroll from '../assets/js/scroll.js'
+import erCode from '@/components/public/erCode'
 export default {
-  components:{Header,Banner,Footer},
+  components:{Header,Banner,Footer,erCode},
   name: 'newsCenter',
   data () {
     return {
@@ -155,9 +159,12 @@ export default {
 				path:`/newsInfo`
 			})
 		},
+		 showMark(){
+       this.$refs.erCode.openMark();
+    }
 	},
 	 mounted(){
-   
+    window.addEventListener('scroll', scroll.handleScroll)
   }
 }
 </script>
@@ -166,10 +173,11 @@ export default {
 	font-size: 48px;
 	font-weight: bold;
 	margin-top: 200px;
+	font-family: STFangsong;
 }
 .companyNew{
 	width: 86.4%;
-	margin: 113px auto;
+	margin: 113px auto 270px auto;
 	display: flex;
 	justify-content: space-between;
 	.companyNewLeft{
@@ -223,14 +231,15 @@ export default {
 	background-image: url('../assets/images/newsCenter/industrybcg.png');
 	color:#fff;
 	padding-top: 80px;
-	padding-bottom: 20px;
+	padding-bottom: 205px;
 	box-sizing: border-box;
 	.industryTitle{
-		font-size: 36px;	
+		font-size: 48px;	
 	}
 	.engTitle{
 		font-size: 24px;
-		margin-bottom: 152px
+		margin-bottom: 152px;
+		font-weight: bold;
 	}
 	.industryConent{
 		width: 78%;

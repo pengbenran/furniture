@@ -64,7 +64,7 @@ export default {
  padding-bottom: 8px;
 }
 .footer .right{text-align: left;margin-left: 6px;}
-.footer .Left{height: 100%;}
+.footer .Left{height: 100%;padding-right: 15px;box-sizing: border-box;}
 .footer .Left img{height: 40px;}
 .footer .right p{margin-bottom: 2px;}
 .footer .right strong{display: inline-block;padding: 4px 0;}

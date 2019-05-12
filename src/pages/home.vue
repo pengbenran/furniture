@@ -1,21 +1,21 @@
 <template>
   <div class="containt mobile">
-    <Header :curretIndex="index"/>
+    <Header :curretIndex="index" @openMark="showMark"/>
     <!-- banner图 -->
     <Banner/>
     <!-- 关于我们 -->
     <OurCase/>
     <!-- 产品分类 -->
-      <div class="Case_List magTop">
+      <div class="Case_List magTop scroll opacity" data-animation="zoomInUp">
         <div class="Lits" v-for='(item,index) in kindData' ><a href="javascript:;" @click='changTab(index)'><img :src="item.kindImg" alt=".."><div class="mask"><span>{{item.kindName}}</span></div></a></div>
       </div>
     <div class="hotCase">
-     <div class="hotTitle">
+     <div class="hotTitle scroll opacity" data-animation="fadeInRight">
        <label>热销产品</label>
        <div class="hotline"></div>
-       <span @click="to">前往查看更多》</span>
+       <span @click="fade">前往查看更多》</span>
      </div>
-     <div class="hotConent">
+     <div class="hotConent scroll opacity"  data-animation="fadeInLeft">
        <div class="Lits" v-for="(item,index) in kindObj"><a href="javascript:;"><img :src="item.goodImg" alt=".."><div class="hotMask"><span><img src="../assets/cat.png" />{{item.name}}</span></div></a></div>
      </div>
     </div>
@@ -27,7 +27,7 @@
     <img src="../assets/images/home/desigen.png" class="img-responsive">
   </div>
 </div>
- <div class="row mag100 homeDesign">
+ <div class="row mag100 homeDesign scroll opacity"  data-animation="swing">
       <div class="col-xs-12 col-lg-7 DesignCase">
         <img src="../assets/images/home/desigen1.png" class="img-responsive">
       </div>
@@ -48,6 +48,7 @@
     </div>
   </div> 
 <Footer/>
+<erCode ref="erCode"/>
 </div>
 </template>
 <script>
@@ -55,10 +56,10 @@ import Header from "@/components/public/nav";
 import Footer from "@/components/public/footer";
 import Banner from "@/components/public/banner";
 import OurCase from "@/components/public/caseOur"
-
-
+import scroll from '../assets/js/scroll.js'
+import erCode from '@/components/public/erCode'
 export default {
-  components:{Header,Banner,OurCase,Footer},
+  components:{Header,Banner,OurCase,Footer,erCode},
   name: 'Home',
   data () {
     return {
@@ -101,8 +102,12 @@ export default {
         path:`/productCenter`
       })
     },
+    showMark(){
+       this.$refs.erCode.openMark();
+    }
   },
   mounted(){
+     window.addEventListener('scroll', scroll.handleScroll)
   }
 }
 </script>
@@ -127,7 +132,7 @@ width: 100%;
   margin: 0;
 }
 .magTop{
-  margin-top:180px; 
+  margin-top:200px; 
 }
 .positionRelative{
   position: relative;
@@ -160,7 +165,7 @@ width: 100%;
   /*font-size: 18px;*/
   font-weight: bold;
 }
-.Case_List{width: 64%;margin:120px auto;display: flex;justify-content: space-around;
+.Case_List{width: 64%;margin:200px auto 100px auto;display: flex;justify-content: space-around;
  .Lits{
     width: 22%;
   }
@@ -182,7 +187,7 @@ width: 100%;
 .hotTitle{font-weight: 100;width: 255px;margin: auto;}
 .hotTitle label{font-size: 17px;margin-bottom: 0px;letter-spacing:8px;}
 .hotTitle .hotline{height: 4px;width: 100%;background: #ccc;}
-.hotTitle span{font-size: 14px;letter-spacing:12px;color: #666;}
+.hotTitle span{font-size: 14px;letter-spacing:12px;color: #666;cursor :default;}
 .hotCase .Lits img{width: 100%;}
 .hotCase .Lits{margin-top: 30px;width: 33.3%;padding: 0 15px;}
 .hotCase a{display: inline-block;position: relative;width: 100%;}

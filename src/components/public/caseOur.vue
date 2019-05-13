@@ -13,7 +13,7 @@
 为树立健全的绿化、环保意识，公司在生活公益方面身体力行，
 为了向全社会普及绿色、健康的生活方式。</div>  
             </div>
-            <div class="CaseBnt">
+            <div class="CaseBnt" @click="jump">
               <button type="button" class="btn btnMore">More+</button>
             </div>
           </div>
@@ -23,7 +23,16 @@
 </template>
 <script>
 export default {
-    
+    data(){
+      return{
+
+      }
+    },
+    methods:{
+      jump(){
+        this.$router.push({path:'/corporateCulture'})
+      }
+    }
 }
 </script>
 <style scoped>

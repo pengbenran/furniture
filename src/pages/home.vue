@@ -13,7 +13,7 @@
      <div class="hotTitle scroll opacity" data-animation="fadeInRight">
        <label>热销产品</label>
        <div class="hotline"></div>
-       <span @click="fade">前往查看更多》</span>
+       <span @click="loadMore">前往查看更多》</span>
      </div>
      <div class="hotConent scroll opacity"  data-animation="fadeInLeft">
        <div class="Lits" v-for="(item,index) in kindObj"><a href="javascript:;"><img :src="item.goodImg" alt=".."><div class="hotMask"><span><img src="../assets/cat.png" />{{item.name}}</span></div></a></div>
@@ -27,7 +27,7 @@
     <img src="../assets/images/home/desigen.png" class="img-responsive">
   </div>
 </div>
- <div class="row mag100 homeDesign scroll opacity"  data-animation="swing">
+ <div class="row mag100 homeDesign">
       <div class="col-xs-12 col-lg-7 DesignCase">
         <img src="../assets/images/home/desigen1.png" class="img-responsive">
       </div>
@@ -97,7 +97,7 @@ export default {
       let that=this
       that.kindIndex=index
     },
-   to(){
+    loadMore(){
       this.$router.push({
         path:`/productCenter`
       })

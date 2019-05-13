@@ -6,7 +6,7 @@
 		<img src="../assets/images/designer/connect.png" class="d-block w-100">
 	</div>
    <div class="title">
-   	<h1>01/</h1><h2>产品设计</h2>
+   	<span class="leb">01/</span><span>产品设计</span>
    </div>
    <p class="intro">流程介绍：您可以根据您的想法提供设计稿，而我们则负责实现您的想法</p>
    <div class="floor">
@@ -74,7 +74,7 @@
    </div>
    <!-- 装饰设计 -->
    <div class="title2" @click="jump">
-   	<h1>02/</h1><h2>装饰设计</h2>
+   	<span class="leb">02/</span><span>装饰设计</span>
    </div>
    <ul class="cart" @click="jump">
    	<li>三室一厅</li>
@@ -87,7 +87,7 @@
 		<img src="../assets/images/designer/cartImg.png" class="d-block w-100">
 	</div>
 	<div class="title margBot">
-   	<h1>03/</h1><h2>金牌设计师</h2>
+   	<span class="leb">03/</span><span>金牌设计师</span>
    </div>
     <div class="floor3">
 
@@ -161,16 +161,17 @@ h1,h2{font-weight: bold;}
  } 
  .title{
  	text-align: center;
- 	h1{
+  span.leb{
  		display: inline-block;
  		color:#C5C5C5;
     font-size: 72px;
     font-family: SimHei;
  	}
- 	h2{
+ 	span{
  		display: inline-block;
     font-size: 48px;
     font-weight:bold;
+    vertical-align: middle;
  	}
  }
  .title2{
@@ -178,17 +179,18 @@ h1,h2{font-weight: bold;}
   text-align: center;
  	padding: 58px 0 40px 0;
  	box-sizing: border-box;
- 	h1{
+ 	span.leb{
  		display: inline-block;
  		color:#C5C5C5;
     font-size: 72px;
     font-family: SimHei;
  	}
- 	h2{
+ 	span{
  		display: inline-block;
  		color:#fff;
     font-size: 48px;
     font-weight:bold;
+    vertical-align: middle;
  	}
  }
  .cart{

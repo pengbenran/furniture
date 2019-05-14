@@ -99,10 +99,11 @@ export default {
 .join{
 	position: relative;
 	.ipt{
-		position:absolute;
-		width: 43.8%;
-		top: 28%;
-		left: 8%;
+		position:relative!important;
+		width: 100%!important;
+		padding: 1rem!important;
+		// top: 28%;
+		left: 0!important;
 		div{
 			margin-bottom: 16px;
 			input{

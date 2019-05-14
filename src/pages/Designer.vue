@@ -1,5 +1,5 @@
 <template>
-  <div class="containt">
+  <div class="containt mobileDesig">
   	<Header :curretIndex="index" @openMark="showMark"/>
    <Banner/>
     <div class="connect">

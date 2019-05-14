@@ -4,11 +4,11 @@
     <Banner/>
     <main>
       <div class="container Recommend">
-        <div class="row">
-          <div class="col-md-4 FlexWarp">
+        <div class="row rowNew">
+          <div class="col-md-4 col-12 FlexWarp">
               <div class="RecommendInfo">
                   <strong class="tit"><span>特别</span>推荐</strong>
-                  <div class="row">
+                  <div class="row rowNew">
                     <div class="col-5 col-md-12 Price">
                       <p>L O C K 铁制书桌灯</p>
                       <span>销量：18</span>
@@ -26,10 +26,10 @@
                   </div>
               </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-6">
                 <div class="RecommendList"><img src="../assets/images/productCenter/recommend1.png" /></div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-6">
                 <div class="RecommendList"><img src="../assets/images/productCenter/recommend2.png" /></div>
           </div>          
         </div>

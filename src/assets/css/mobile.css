@@ -16,27 +16,33 @@
     .mobile .img-responsive{width: 100%;}
     .mobile .homeDesignInfo{padding: 2rem 1rem!important;}
     .mobile .hotCase{width: 94%!important;}
+    .mobile .CaseOurPos{padding-left: 0!important;}
     .mobile .CaseOurPos strong{display: block!important;text-align: center;}
     .mobile .hotCase .Lits{width: 49.3%!important;padding: 0 6px!important;margin-top: 12px!important;}
     .mobile .homeDesignInfo{padding: 0!important;}
 
     /* 导航响应式 */
-    .header{background: transparent;}
+    .header{background: rgba(0, 0, 0, 0.2);width: 100%!important;left: 0!important;padding: 0 2rem;}
     .header .nav-item{text-align: left;padding: .5rem 0;}
 
     /* 设置底部响应式 */
     .footer_Nav .footer_NavList{justify-content: flex-start!important;}
+    .footer_Nav .footer_NavList .Left{width: 30%!important;}
 
     /* 设置产品中心 */
-    .mobileProduct .Recommend{padding-top: 2rem!important;}
+    .mobileProduct .Recommend{padding-top: 2rem!important;padding-bottom: 0rem!important;}
     .mobileProduct .Price{margin-bottom: 0;}
     .mobileProduct .Price p{font-size: 1rem;}
     .mobileProduct .Price span{font-size: .9rem!important;}
     .mobileProduct .Recommend ul{list-style: none;padding-left: 0!important;}
     .mobileProduct .Recommend .info strong{display: none!important;}
     .mobileProduct .Recommend ul li{font-size: .9rem!important;}
-    .mobileProduct .Nordic{margin-bottom: 2rem!important;}
+    .mobileProduct .Nordic{margin: 2rem auto!important;}
     .mobileProduct .ImgTwo{margin-top: 1rem;}
+    .mobileProduct .rowNew{width: 100%;margin: 0;}
+    .mobileProduct .Recommend .RecommendList{width: 100%!important;}
+    .mobileProduct .hotProduct{margin: 100px auto!important;}
+    .mobileProduct .Lits{width: 48%!important;}
 
     /* 设置产品中心详情*/  
     .mobilePinfo .Main{margin-top: 2.5rem!important;margin-bottom: 3rem!important;}
@@ -53,4 +59,25 @@
     .mobileServer .productInfo{padding: 2rem 1rem!important;}
     .mobileServer .TabList .col-md-6{padding: 0;}
     .mobileServer .ImgList>div:nth-child(2){margin-top: 3rem!important;}
+    .mobileServer .Process{width: 100%!important;}
+    .mobileServer .ChangTab3 .LineWarp img{width: 75%!important;margin-left: 25%!important;}
+    .mobileServer .Map{padding: 1rem!important;}
+    .mobileServer .MapF{width: 1.5rem;}
+    .mobileServer .mt150{margin-top: 4rem!important;}
+    .mobileServer .TabTitle{font-size: 2.2rem!important;}
+
+    /*设置新闻中心*/
+    .mobileNew .title,.mobileNew .industryTitle{font-size: 2rem!important;}
+
+    /*设置产品设计*/
+    .mobileDesig .connect{margin: 20px 0 30px 0!important;}
+    .mobileDesig .floor3{flex-wrap: wrap;margin: 50px 0!important;width: 100%!important;}
+    .mobileDesig .floor3 .cardList{width: 100%!important;}
+    .mobileDesig .title span{font-size: 2.5rem!important;}
+    .mobileDesig .title2{padding-bottom: .6rem!important;}
+    .mobileDesig .title2 span{font-size: 2.5rem!important;}
+    .mobileDesig  .intro{font-size: 1rem!important;margin-bottom: 2rem!important;}
+    .mobileDesig .floor{margin-bottom: 2rem!important;}
+    .mobileDesig .cartImg{margin-bottom: 4rem!important;}
+    .mobileDesig .selectItem .lin1,.mobileDesig .selectItem .lin2{opacity: 0;}
 }   

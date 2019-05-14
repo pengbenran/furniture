@@ -32,16 +32,25 @@
                 <div class="tit">
                   <strong>国家木地板环保等级标准</strong><p>2019年4月26日</p>
                 </div>
-                <div class="info">
-                    我国的人造板及其制品的标准体系是参照欧洲和日本的。国家质量监督检验检 疫总局发布了《室内装饰装修材料人造板及其制品中甲醛释放限量》(GB18580--2017),标示了我国的人造板及其制品的标准体系是参照欧洲和日本的。国家质量监督检验检 疫总局发布了《室内装饰装修材料人造板及其制品中甲醛释放限量》(GB18580--2017),标示了
+                  <div class="info">
+                    我国的人造板及其制品的标准体系是参照欧洲和日本的。国家质量监督检验检
+                    疫总局发布了《室内装饰装修材料人造板及其制品中甲醛释放限量》(GB18580--20
+                    17)，标示了国标E1≤0.124mg/L，这是该标准对甲醛释限量的唯一等级，目前行业
+                    内有《无醛人造板及其制品》的团体标准，这是目前我国人造板及其制品中甲醛释
+                    放限量的最高标准
                 </div>
               </div>
               <div class="Case">
                 <div class="tit">
-                  <strong>国家木地板环保等级标准</strong><p>2019年4月26日</p>
+                  <strong>国家安装验收标准</strong><p>2019年4月26日</p>
                 </div>
                 <div class="info">
-                  我国的人造板及其制品的标准体系是参照欧洲和日本的。国家质量监督检验检 疫总局发布了《室内装饰装修材料人造板及其制品中甲醛释放限量》(GB18580--2017),标示了我国的人造板及其制品的标准体系是参照欧洲和日本的。国家质量监督检验检 疫总局发布了《室内装饰装修材料人造板及其制品中甲醛释放限量》(GB18580--2017),标示了
+                  <p>1、面层材料和辅助材料的品种、级别、性能、规格、花色必须符合设计、产品技术标准与现行施工验收规范的要求，并符合建筑内装修设计防火有关规定。</p>
+                  <p>2、壁纸墙布必须粘结牢固，无空鼓、翘边、皱折等缺陷。</p>
+                  <p>3、表面平整，无波纹起伏。壁纸、墙布与挂镜线、贴脸板紧接，无缝隙；色泽一致，无斑污，正视无胶痕，无明显压痕。</p>
+                  <p>4、各幅拼接应横平竖直，图案端正，拼缝处图案花纹吻合，距墙1m处正视无明显接缝，阴角处搭接顺光，阳角无接缝，角度方正，边缘整齐无毛边。</p>
+                  <p>5、裱糊与挂镜线、贴脸板、踢脚板、电气槽盒等交接处应交接严密，无缝隙，无漏贴和补贴，不糊盖需拆卸的活动件，活动件四周及挂镜线、贴脸板、踢脚板等处边缘切割整齐、顺直，无毛边。</p>
+                  <p>6、裱糊好的墙纸应表面平整挺秀，拼花正确，图案完整，连续对称，无色差、无胶痕，面层无飘浮，经纬线顺直。。</p>
                 </div>
               </div>
             </div>
@@ -57,13 +66,14 @@
          <div class="row">
           <div class="col-md-6 maintenance">
             <label>使用</label>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。地板安装后，</p>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-             <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
-              <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装后，24小时内尽量减少走动，至少48小时后可搬入重物存放。</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地板安装完毕后，24小时内尽量减少走动，至少48小时后方可搬入重物；</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 在铺设地板的区域内，体积重量较大家具不要对称摆放，以免影响地板自由伸缩；</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 搬运家具时不宜托挪，不宜用铁质家具腿直接接触木地板表面；可在桌椅凳等与地板接触的地方加上缓冲垫，以减少摩擦地板的程度；</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 外出时请关好门窗，以防止雨水浸入和阳光直射，如不慎将水倒在地板上，应及时擦拭干净；</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 室内空气湿度应保持在40%-70%之间。当室内空气湿度≤40%时，应使用加湿器来调节室内湿度；</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 当室内空气湿度≥70%时，应采取排湿措施，或使用空调的除湿功能来平衡湿度；</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 严禁地板接触明火或直接在地板上放置大功率电热器；</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/> 地采暖环境使用，升降温应平缓，切不可骤冷或骤热。地热地板到达地板表面上的温度不可超过27℃,每年首次使用地热以每天调高温度3℃-5℃为宜。</p>
           </div>
 
           <div class="col-md-6 TabImg">
@@ -78,12 +88,12 @@
          <div class="row">
           <div class="col-md-6 maintenance">
             <label>清洁</label>
-            <div class="tit">日常用吸尘器或用不滴水的拖布顺地板的走向摩擦，保持地板的干燥清洁，局部有污渍，局部有污渍可用清洁剂清除；禁止使用酸、碱有机性汽油等物品。</div>
+            <div class="tit">日常用吸尘器或不滴水的拖布顺地板走向拖擦，保持地板表面干燥清洁， 局部污渍可用地板专用清洁剂清除；严禁使用酸、碱性溶剂或汽油等有机溶剂擦洗；</div>
             <label>特殊污渍处理方法</label>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 油渍、油漆、油墨可使用专用去渍油擦拭； </p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/>油渍、油漆、油墨可使用专用去渍油擦拭； </p>
             <p><img src="../assets/images/serviceCenter/sj.png"/>血迹、果汁、红酒、啤酒等残渍可以用湿抹布或用抹布蘸上适量的地板清洁剂擦拭；</p>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 油渍、油漆、油墨可使用专用去渍油擦拭；</p>
-            <p><img src="../assets/images/serviceCenter/sj.png"/> 油渍、油漆、油墨可使用专用去渍油擦拭；</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/>药物或颜料，必须在污迹未溶入木质表层以前加以清除；</p>
+            <p><img src="../assets/images/serviceCenter/sj.png"/>蜡和口香糖，用塑料膜包一块冰块放在污渍上，然后小心刮掉。</p>
           </div>
           <div class="col-md-6">
             <div class="ImgList">
@@ -96,11 +106,11 @@
       <div class="product Maintenance">
        <div class="productInfo">
          <div class="row">
-          <div class="col-md-6 maintain">
+          <div class="col-md-6 maintenance">
             <div>
               <label>保养</label>
               <div class="tit">强化复合地板无需使用油精或打蜡保养；</div>
-              <div>实木、实木复合地板定期打蜡，或使用大自然地板木质专用油精护理保养，  保养周期为每季度</div>
+              <div>实木、实木复合地板定期打蜡，或使用大自然地板木质专用油精护理保养， 保养周期为每季度一次或根据日常使用频率保养。</div>
             </div>
           </div>
           <div class="col-md-6">
@@ -205,6 +215,7 @@ computed:{
 .TabList .tit{margin-bottom: 24px;}
 .TabList .info{font-size:20px;font-weight: 100;text-indent:2rem;justify-content: content;}
 .TabList .tit p{font-weight: 100;font-size: 1rem;}
+.TabImg{display: flex;align-items: center;}
 .TabImg img{width: 100%;}
 .TabList .Case{padding-bottom:20px;}
 

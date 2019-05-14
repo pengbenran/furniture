@@ -12,9 +12,13 @@
     .mobile .btnMore{float: none;width: 80%;margin-top: .6rem;}
     .mobile .magTop{margin-top: 2rem !important;}
     .mobile .mag100 {margin-top: 1rem !important;}
-    .mobile .responsive{text-align: left;}
+    .mobile .responsive{text-align: left;}  
     .mobile .img-responsive{width: 100%;}
     .mobile .homeDesignInfo{padding: 2rem 1rem!important;}
+    .mobile .hotCase{width: 94%!important;}
+    .mobile .CaseOurPos strong{display: block!important;text-align: center;}
+    .mobile .hotCase .Lits{width: 49.3%!important;padding: 0 6px!important;margin-top: 12px!important;}
+    .mobile .homeDesignInfo{padding: 0!important;}
 
     /* 导航响应式 */
     .header{background: #fff;}

@@ -1,62 +1,57 @@
 <template>
   <div class="containt mobileProduct">
-    <Header :curretIndex="index" :isScroll='isScroll'/>
+    <Header :curretIndex="index" @openMark="showMark"/>
     <Banner/>
-    <main>
-    
+    <main> 
       <div class="productKind">
-        <div class="KindList">轻北欧风</div>
-        <div class="KindList">精致北欧风</div>
-        <div class="KindList">经典北欧风</div>
+        <div class="KindList" v-for="(item,index) in goodData" @click="changeTab(index)"><a :class="curretIndex==index?'selectOn':''" :href="`#hotProduct${index}`">{{item.kindName}}</a></div>
       </div>  
-
-
-      <div class="container hotProduct">
-       <div class="HotTitle"><img src="../assets/images/productCenter/icon.png"><span>轻北欧风</span></div>
-       <div ><ImgList  :ImgListData="ImgListData"/></div> 
+      <div class="hotProduct" v-for="(item,index) in goodData" :id="`hotProduct${index}`">
+       <div class="HotTitle"><img src="../assets/images/productCenter/icon.png"><span>{{item.kindName}}</span></div>
+       <div ><ImgList/></div> 
        <div class="btn" @click="jump"><img src="../assets/images/productCenter/more.png"></div>
-      </div>
-      <!--热销产品 end-->
-      <div class="container hotProduct">
-       <div class="HotTitle"><img src="../assets/images/productCenter/icon.png"><span>精致北欧风</span></div>
-       <div><ImgList  :ImgListData="ImgListData"/></div> 
-       <div class="btn"  @click="jump"><img src="../assets/images/productCenter/more.png"></div>
-      </div>
-       <div class="container hotProduct">
-       <div class="HotTitle"><img src="../assets/images/productCenter/icon.png"><span>经典北欧风</span></div>
-       <div><ImgList  :ImgListData="ImgListData"/></div> 
-       <div class="btn"  @click="jump"><img src="../assets/images/productCenter/more.png"></div>
       </div>
     </main>
 
-    <Footer/>   
+    <Footer/>  
+    <erCode ref="erCode"/> 
   </div>
 </template>
 <script>
 import Header from "@/components/public/nav";
 import Footer from "@/components/public/footer";
 import Banner from "@/components/public/banner";
-import ImgList from "@/components/public/ImgList"
+import ImgList from "@/components/public/ImgList2"
+import erCode from '@/components/public/erCode'
 export default {
   name: 'productCenter',
-  components:{Header,Banner,Footer,ImgList},
+  components:{Header,Banner,Footer,ImgList,erCode},
   data () {
     return {
       index:3,
-      isScroll:false,
-       ImgListData:[{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},
-                {ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1}
-       ],
+      curretIndex:0,
+      goodData:[
+        {kindName:'轻北欧风'},
+        {kindName:'精致北欧风'},
+        {kindName:'经典北欧风'}
+      ],
     }
   },
   methods:{
    menu() {
     this.isScroll = window.scrollY>0;
   },
+   showMark(){
+       this.$refs.erCode.openMark();
+    },
   to(){
     this.$router.push({
       path:`/productInfo`
     })
+  },
+  changeTab(index){
+    let that=this
+    that.curretIndex=index
   },
   jump(){
     this.$router.push({
@@ -70,11 +65,15 @@ export default {
 }
 </script>
 <style scoped lang="less">
-.productKind{display: flex;width: 80%;margin: 60px auto;
-  .KindList{flex-grow: 1;text-align: center;font-weight: bold;}
+.productKind{display: flex;width: 85%;margin: 172px auto 60px auto;
+  .KindList {flex-grow: 1;text-align: center;font-weight: bold;font-size: 24px;font-family: STFangsong;}
  }
-.hotProduct{margin-bottom: 6rem;}
+ .KindList a{color:#000;text-decoration: none;}
+ .KindList a:hover{color:#0e887a;}
+ .KindList .selectOn{color:#0e887a;}
+.hotProduct{width: 85%;margin:0 auto;margin-bottom: 200px;}
+.HotTitle{margin-bottom: 80px;}
 .HotTitle img{vertical-align: top;}
 .HotTitle span{padding: 0 1rem;letter-spacing:10px;font-size: 1.2rem;line-height: 28px;}
-.HotTitle .btn{margin-top: 30px;}
+.hotProduct .btn{margin-top: 30px;}
 </style>

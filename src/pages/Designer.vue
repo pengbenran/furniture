@@ -1,43 +1,83 @@
 <template>
   <div class="containt">
-  	<Header :curretIndex="index"/>
+  	<Header :curretIndex="index" @openMark="showMark"/>
    <Banner/>
-    <div class="cartImg marginTop">
+    <div class="connect">
 		<img src="../assets/images/designer/connect.png" class="d-block w-100">
 	</div>
    <div class="title">
-   	<h1>01/</h1><h2>产品设计</h2>
+   	<span class="leb">01/</span><span>产品设计</span>
    </div>
    <p class="intro">流程介绍：您可以根据您的想法提供设计稿，而我们则负责实现您的想法</p>
    <div class="floor">
    	<div class="floorleft">
-   		<img src="../assets/images/designer/1.png" class="d-block w-100">
+      <a href="javascript:;">
+        <img src="../assets/images/designer/1.png" class="d-block w-100">
+        <div class="designerMark">
+          <div class="detail">
+            <p>木纹地板设计</p>
+            <p>Wood flooring design</p>
+          </div>
+        </div>
+      </a>	
    	</div>
    	<div class="floorright">
    		<div class="floortop">
    			<div class="floortopleft">
+          <a href="javascript:;">
    				<img src="../assets/images/designer/2.png" class="d-block w-100">
+           <div class="designerMark">
+          <div class="detail">
+            <p>木纹地板设计</p>
+            <p>Wood flooring design</p>
+          </div>
+        </div>
+      </a>  
    			</div>
    			<div class="floortopright">
+           <a href="javascript:;">
    				<img src="../assets/images/designer/3.png" class="d-block w-100">
+           <div class="designerMark">
+          <div class="detail">
+            <p>木纹地板设计</p>
+            <p>Wood flooring design</p>
+          </div>
+        </div>
+      </a>  
    			</div>
    		</div>
    		<div class="floortop">
    			<div class="floortopleft">
+          <a href="javascript:;">
    				<img src="../assets/images/designer/4.png" class="d-block w-100">
+           <div class="designerMark">
+          <div class="detail">
+            <p>木纹地板设计</p>
+            <p>Wood flooring design</p>
+          </div>
+        </div>
+      </a>  
    			</div>
    			<div class="floortopright">
+          <a href="javascript:;">
    				<img src="../assets/images/designer/5.png" class="d-block w-100">
+           <div class="designerMark">
+          <div class="detail">
+            <p>木纹地板设计</p>
+            <p>Wood flooring design</p>
+          </div>
+        </div>
+      </a>  
    			</div>
    		</div>	
    	</div>
    </div>
    <!-- 装饰设计 -->
    <div class="title2" @click="jump">
-   	<h1>02/</h1><h2>装饰设计</h2>
+   	<span class="leb">02/</span><span>装饰设计</span>
    </div>
    <ul class="cart" @click="jump">
-   	<li class="select">三室一厅</li>
+   	<li>三室一厅</li>
    	<li>两室一厅</li>
    	<li>一室独居</li>
    	<li>公司装修</li>
@@ -46,8 +86,8 @@
 	<div class="cartImg" @click="jump">
 		<img src="../assets/images/designer/cartImg.png" class="d-block w-100">
 	</div>
-	<div class="title margBot marginTop">
-   	<h1>03/</h1><h2>金牌设计师</h2>
+	<div class="title margBot">
+   	<span class="leb">03/</span><span>金牌设计师</span>
    </div>
     <div class="floor3">
 
@@ -69,14 +109,16 @@
 
    </div> 
    <Footer/>
+    <erCode ref="erCode"/>
   </div>
 </template>
 <script>
 import Header from "@/components/public/nav";
 import Banner from "@/components/public/banner";
 import Footer from "@/components/public/footer";
+import erCode from '@/components/public/erCode'
 export default {
-  components:{Header, Banner,Footer},
+  components:{Header, Banner,Footer,erCode},
   name: 'Designer',
   data () {
     return {
@@ -101,6 +143,9 @@ export default {
       this.$router.push({
         path:`/productMore`
       })
+    },
+     showMark(){
+       this.$refs.erCode.openMark();
     }
 },
    mounted(){
@@ -115,29 +160,37 @@ h1,h2{font-weight: bold;}
 	margin-top: 30px;
  } 
  .title{
- 	margin-top: 130px;
  	text-align: center;
- 	h1{
+  span.leb{
  		display: inline-block;
  		color:#C5C5C5;
+    font-size: 72px;
+    font-family: SimHei;
  	}
- 	h2{
+ 	span{
  		display: inline-block;
+    font-size: 48px;
+    font-weight:bold;
+    vertical-align: middle;
  	}
  }
  .title2{
  	background: #AECEC4;
- 	margin-top: 50px;
-  	text-align: center;
- 	padding: 35px 0 15px 0;
+  text-align: center;
+ 	padding: 58px 0 40px 0;
  	box-sizing: border-box;
- 	h1{
+ 	span.leb{
  		display: inline-block;
- 		color:#DFDFDF;
+ 		color:#C5C5C5;
+    font-size: 72px;
+    font-family: SimHei;
  	}
- 	h2{
+ 	span{
  		display: inline-block;
  		color:#fff;
+    font-size: 48px;
+    font-weight:bold;
+    vertical-align: middle;
  	}
  }
  .cart{
@@ -154,25 +207,59 @@ h1,h2{font-weight: bold;}
  		line-height: 150px;
  		color:#fff;
  	}
+  li:hover{color:#0e887a;}
  	.select{
 		color:#1B8D80;
  	}
  }
  .cartImg{
  	width: 100%;
+ margin-bottom: 200px;
+ }
+ .connect{
+  width: 100%;
+  margin: 80px 0 120px 0;
  }
  .intro{
-	font-size: .9rem;
+	font-size: 20px;
+  font-weight:bold;
+  margin-bottom:86px; 
 
  }
  .floor{
  	width: 90%;
- 	margin: 40px auto 70px auto;
+ 	margin: 0 auto 200px auto;
  	display: flex;
  	justify-content: space-around;
  	.floorleft{
  		width: 32%;
- 	}
+    a{
+      position: relative;
+      display: inline-block;
+      .designerMark{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top:0;
+        left: 0;
+        background: rgba(174,206,196, 0.7);
+        opacity: 0;
+        transition:all 0.3s;
+        .detail{
+          color:#fff;
+          font-size: 24px;
+          font-weight: bold;
+          position: absolute;
+          bottom: 20%;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+    a:hover .designerMark{
+     opacity: 1;
+   }
+ 	} 
  	.floorright{
  		width:67.5%;
  		display: flex;
@@ -181,16 +268,43 @@ h1,h2{font-weight: bold;}
  		.floortop{
  			display: flex;
  			justify-content: space-between;
- 			div{
+ 			.floortopleft,.floortopright{
  				width: 49.8%;
+        position: relative;
+        a{
+          position: relative;
+          display: inline-block;
+          .designerMark{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left: 0;
+            background: rgba(174,206,196, 0.7);
+            opacity: 0;
+            transition:all 0.3s;
+            .detail{
+              color:#fff;
+              font-size: 24px;
+              font-weight: bold;
+              position: absolute;
+              bottom: 20%;
+              width: 100%;
+              text-align: center;
+            }
+          }
+        }
+        a:hover .designerMark{
+         opacity: 1;
+       }
+
  			}
  		}
  	}
  }
  .floor3{
  	width: 72%;
- 	margin: 30px auto;
-	 margin-bottom: 5rem;
+	 margin:0 auto 200px auto;
  	display: flex;
 	justify-content: space-between;
 	transition: all 0.5s;

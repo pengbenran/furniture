@@ -1,6 +1,6 @@
 <template>
   <div class="containt mobileProduct">
-    <Header :curretIndex="index"/>
+    <Header :curretIndex="index" @openMark="showMark"/>
     <Banner/>
     <main>
       <div class="container Recommend">
@@ -36,19 +36,19 @@
       </div>
       <!--特别推荐 end-->
 
-      <div class="container hotProduct">
+      <div class="hotProduct">
        <div class="HotTitle"><span>热销产品</span></div>
        <div ><ImgList  :ImgListData="ImgListData"/></div> 
       </div>
       <!--热销产品 end-->
 
-      <div class="container hotProduct">
+      <div class="hotProduct">
        <div class="HotTitle"><span>网红家具</span></div>
        <div><ImgList  :ImgListData="ImgListData"/></div> 
       </div>
       <!--网红家具 end-->
 
-      <div class="container Nordic">
+      <div class="Nordic">
         <div class="HotTitle"><span>北欧整装</span></div>
         <div class="row">
           <div class="col-md-6 left" @click="to"><a href="javascript:;"><img src="../assets/images/productCenter/nordic1.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
@@ -67,6 +67,7 @@
     </main>
 
     <Footer/>   
+    <erCode ref="erCode"/>
   </div>
 </template>
 <script>
@@ -74,9 +75,10 @@ import Header from "@/components/public/nav";
 import Footer from "@/components/public/footer";
 import Banner from "@/components/public/banner";
 import ImgList from "@/components/public/ImgList"
+import erCode from '@/components/public/erCode'
 export default {
   name: 'productCenter',
-  components:{Header,Banner,Footer,ImgList},
+  components:{Header,Banner,Footer,ImgList,erCode},
   data () {
     return {
       index:3,
@@ -90,7 +92,10 @@ export default {
             this.$router.push({
                 path:`/productInfo`
             })
-        }
+        },
+         showMark(){
+       this.$refs.erCode.openMark();
+    }
 },
  mounted(){
   
@@ -110,10 +115,10 @@ export default {
 .Recommend .info strong{display: block;margin-bottom: .6rem;font-size: 1.2rem;letter-spacing:5px;}
 .Recommend .info li{font-size: 1rem;}
 .Recommend img{width: 100%;}
-.hotProduct{margin-bottom: 6rem;}
+.hotProduct{width: 85%;margin:200px auto;}
+.HotTitle{margin-bottom: 80px;}
 .HotTitle span{padding: 0 3rem;letter-spacing:10px;border-bottom: 3px solid #ccc;font-size: 1.2rem;}
-
-.Nordic{margin-bottom: 10rem;}
+.Nordic{margin-bottom: 10rem;width: 85%;margin:200px auto;}
 .Nordic img{width: 100%;}
 .Nordic  a{position: relative;display: inline-block;overflow: hidden;}
 .Nordic  .tip{position: absolute;bottom:10%;background: rgb(191,191,191);color: #fff;padding: .5rem 1rem;left: -4rem;;opacity: 0;transition: all 0.5s;}

@@ -12,6 +12,7 @@ export default {
 
 <style>
  @import "./assets/css/mobile";
+ @import "./assets/css/animate";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -19,5 +20,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   font-family:'STFangsong';
+  cursor :default;
 }
 </style>

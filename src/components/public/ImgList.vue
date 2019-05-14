@@ -35,8 +35,8 @@ export default {
 .Lits img{width: 100%;}
 .Lits{margin-top: 30px;width: 33%;}
 a{display: inline-block;position: relative;}
-.hotMask{z-index: 2;position: absolute;left: 0;top: 0;height: 100%;width: 100%;background: rgba(227, 227, 227, 0.8);opacity: 0;transition: all 0.3s;}
-a:hover .hotMask{opacity: 1;}
+.hotMask{z-index: 2;position: absolute;left: 0;top: 0;height: 100%;width: 100%;background:#e3e3e3;opacity: 0;transition: all 0.3s;font-size: 18px;color:#0c3e38;}
+a:hover .hotMask{opacity: 0.8;}
 .hotMask span{position: absolute;top: 48%;width: 100%;display: block;left: 0;color: #0d7569;}
 .hotMask img{width: 25px;height: 25px;margin-right: 4px;}
 </style>

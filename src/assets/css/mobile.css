@@ -22,9 +22,14 @@
     .mobile .homeDesignInfo{padding: 0!important;}
 
     /* 导航响应式 */
-    .header{background: rgba(0, 0, 0, 0.2);width: 100%!important;left: 0!important;padding: 0 2rem;}
+    .header{background: rgba(0, 0, 0, 0.3);width: 100%!important;left: 0!important;padding: 0 2rem;}
     .header .nav-item{text-align: left;padding: .5rem 0;}
-
+    .menuConent .upIcon{display: none!important;}
+    .menuConent .childNav2{position: relative!important;}
+    .menuConent .childNavUl{position: relative!important;}
+    .childNavUl{display: flex!important;flex-wrap: wrap!important;}
+    .childNavli{width: 50%!important;text-align: center;margin-bottom: 8px;}
+    .childNavli ul{line-height: 32px;}
     /* 设置底部响应式 */
     .footer_Nav .footer_NavList{justify-content: flex-start!important;}
     .footer_Nav .footer_NavList .Left{width: 30%!important;}
@@ -73,9 +78,9 @@
     .mobileDesig .connect{margin: 20px 0 30px 0!important;}
     .mobileDesig .floor3{flex-wrap: wrap;margin: 50px 0!important;width: 100%!important;}
     .mobileDesig .floor3 .cardList{width: 100%!important;}
-    .mobileDesig .title span{font-size: 2.5rem!important;}
+    .mobileDesig .title span{font-size: 1.8rem!important;}
     .mobileDesig .title2{padding-bottom: .6rem!important;}
-    .mobileDesig .title2 span{font-size: 2.5rem!important;}
+    .mobileDesig .title2 span{font-size: 1.8rem!important;}
     .mobileDesig  .intro{font-size: 1rem!important;margin-bottom: 2rem!important;}
     .mobileDesig .floor{margin-bottom: 2rem!important;}
     .mobileDesig .cartImg{margin-bottom: 4rem!important;}

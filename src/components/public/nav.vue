@@ -211,6 +211,7 @@ export default {
 .inav .NavMenu .List li{text-align: center;font-size: .9rem;margin-bottom: .4rem;}
 @media (max-width: 768px) { 
     .inav .logo{width: 80px;}
+    /* .menuConent{display: none;} */
 }
 @media (max-width: 375px) { 
     .inav .logo{width: 50px;}

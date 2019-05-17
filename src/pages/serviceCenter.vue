@@ -1,7 +1,7 @@
 <template>
   <div class="mobileServer">
      <Header :curretIndex="index" @openMark="showMark"/>
-     <Banner/>
+     <Banner ref='banner'/>
      <div class="container Tab mt150">
        <div class="row">
          <div class="col-3" v-for="(item,index) in serviceData" :class="serviveIndex==index?'list-on':''" @click="changTab(index)">
@@ -196,7 +196,7 @@ computed:{
     }
   },
  mounted(){
-   
+    this.$refs.banner.getBannerList()
   }
 }
 </script>

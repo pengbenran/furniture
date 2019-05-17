@@ -2,12 +2,12 @@
   <div class="containt mobile">
     <Header :curretIndex="index" @openMark="showMark"/>
     <!-- banner图 -->
-    <Banner/>
+    <Banner ref='banner'/>
     <!-- 关于我们 -->
     <OurCase/>
     <!-- 产品分类 -->
-      <div class="Case_List magTop scroll opacity" data-animation="zoomInUp">
-        <div class="Lits" v-for='(item,index) in kindData' ><a href="javascript:;" @click='changTab(index)'><img :src="item.kindImg" alt=".."><div class="mask"><span>{{item.kindName}}</span></div></a></div>
+    <div class="Case_List magTop scroll opacity" data-animation="zoomInUp">
+        <div class="Lits" v-for='(item,index) in kindRootData' ><a href="javascript:;" @click='changTab(index)'><img :src="item.itemImg" alt=".."><div class="mask"><span>{{item.itemName}}</span></div></a></div>
       </div>
     <div class="hotCase">
      <div class="hotTitle scroll opacity" data-animation="fadeInRight">
@@ -16,7 +16,7 @@
        <span @click="loadMore">前往查看更多》</span>
      </div>
      <div class="hotConent scroll opacity"  data-animation="fadeInLeft">
-       <div class="Lits" v-for="(item,index) in kindObj"><a href="javascript:;"><img :src="item.goodImg" alt=".."><div class="hotMask"><span><img src="../assets/cat.png" />{{item.name}}</span></div></a></div>
+       <div class="Lits" v-for="(item,index) in goodList"><a href="javascript:;"><img :src="item.goodImg" alt=".."><div class="hotMask"><span><img src="../assets/cat.png" />{{item.name}}</span></div></a></div>
      </div>
     </div>
   <!-- 热销产品 -->
@@ -36,14 +36,6 @@
          <router-link to='/Designer' >
             <img src="../assets/images/home/sheji.png" alt="..." />
          </router-link>
-         <!-- <p class="title">清新北欧风设计 -- 李强</p>
-         <p>李强毕业于哈是李强毕业于哈是李强毕业于哈是李强毕业于哈是李强毕业于哈是李强毕业于哈是</p>
-         <p>大小：128m<sup>3</sup>   结构：三室一厅一卫    预算：15万    耗时：三个月</p>
-         <p>设计理念：航空公司航空公司航空公司航空公司航空公司航空公司航空公司航空公司公司航空公司航空公司航空公公司航空公司航空公司航空公</p>
-         <div class="DesignBtn">
-          <span>M O R E 》</span>
-          </div> -->
-
       </div>
     </div>
   </div> 
@@ -58,6 +50,7 @@ import Banner from "@/components/public/banner";
 import OurCase from "@/components/public/caseOur"
 import scroll from '../assets/js/scroll.js'
 import erCode from '@/components/public/erCode'
+import Api from '@/Api/kind.js'
 export default {
   components:{Header,Banner,OurCase,Footer,erCode},
   name: 'Home',
@@ -65,25 +58,8 @@ export default {
     return {
       kindIndex:0,
       index:0,
-      kindData:[
-      {
-        kindName:'橱柜',
-        kindImg:require('../assets/images/home/kindon01.jpg'),
-        goodList:[{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')}]
-      }, {
-        kindName:'地板',
-        kindImg:require('../assets/images/home/kindon02.jpg'),
-        goodList:[{name:'北欧风橱柜',goodImg:require('../assets/images/home/good5.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good5.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good5.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good5.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good5.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good5.png')}]
-      }, {
-        kindName:'实木家具',
-        kindImg:require('../assets/images/home/kindon03.jpg'),
-       goodList:[{name:'北欧风橱柜',goodImg:require('../assets/images/home/good3.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good3.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good3.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good3.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good3.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good3.png')}]
-      }, {
-        kindName:'正装订制',
-        kindImg:require('../assets/images/home/kindon04.jpg'),
-       goodList:[{name:'北欧风橱柜',goodImg:require('../assets/images/home/good4.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good4.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good4.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good4.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good4.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good4.png')}]
-      }
-      ]
+      kindRootData:[],
+      goodList:[{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')}]
     }
   },
   computed:{
@@ -97,6 +73,16 @@ export default {
       let that=this
       that.kindIndex=index
     },
+    // 获取根分类
+    getRootList(){
+      let params={}
+      let that=this
+      params.pageIndex=1
+      params.pageSize=5
+      Api.getRootList(params).then(function(res){
+        that.kindRootData=res
+      })
+    },
     loadMore(){
       this.$router.push({
         path:`/productCenter`
@@ -108,6 +94,8 @@ export default {
   },
   mounted(){
      window.addEventListener('scroll', scroll.handleScroll)
+     this.$refs.banner.getBannerList()
+     this.getRootList()
   }
 }
 </script>

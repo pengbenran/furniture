@@ -1,14 +1,14 @@
 <template>
   <div class="containt mobileProduct">
     <Header :curretIndex="index" @openMark="showMark"/>
-    <Banner/>
+    <Banner ref='banner'/>
     <main> 
       <div class="productKind">
-        <div class="KindList" v-for="(item,index) in goodData" @click="changeTab(index)"><a :class="curretIndex==index?'selectOn':''" :href="`#hotProduct${index}`">{{item.kindName}}</a></div>
+        <div class="KindList" v-for="(item,index) in KindData" @click="changeTab(index)"><a :class="curretIndex==index?'selectOn':''" :href="`#hotProduct${index}`">{{item.itemName}}</a></div>
       </div>  
-      <div class="hotProduct" v-for="(item,index) in goodData" :id="`hotProduct${index}`">
-       <div class="HotTitle"><img src="../assets/images/productCenter/icon.png"><span>{{item.kindName}}</span></div>
-       <div ><ImgList/></div> 
+      <div class="hotProduct" v-for="(item,index) in KindData" :id="`hotProduct${index}`">
+       <div class="HotTitle"><img src="../assets/images/productCenter/icon.png"><span>{{item.itemName}}</span></div>
+       <div ><ImgList :goodArry="item.goodList"/></div> 
        <div class="btn" @click="jump"><img src="../assets/images/productCenter/more.png"></div>
       </div>
     </main>
@@ -23,6 +23,7 @@ import Footer from "@/components/public/footer";
 import Banner from "@/components/public/banner";
 import ImgList from "@/components/public/ImgList2"
 import erCode from '@/components/public/erCode'
+import Api from '@/Api/kind'
 export default {
   name: 'productCenter',
   components:{Header,Banner,Footer,ImgList,erCode},
@@ -30,16 +31,41 @@ export default {
     return {
       index:3,
       curretIndex:0,
-      goodData:[
-        {kindName:'轻北欧风'},
-        {kindName:'精致北欧风'},
-        {kindName:'经典北欧风'}
+      KindData:[
+      
       ],
+      kindId:''
     }
   },
   methods:{
    menu() {
     this.isScroll = window.scrollY>0;
+  },
+  // 根据父id获取子分类
+  getItemsByParentId(parentId){
+    let params={}
+    let that=this
+    params.parentId =parentId 
+    that.KindData=[]
+    Api.getItemsByParentId(params).then(function(res){
+      for(var i in res){
+        that.listbyItem(res[i])
+      }
+      
+
+    })
+  },
+  // 获取改分类下的商品
+  listbyItem(row){
+    let params={}
+    let that=this
+    params.pageIndex=0
+    params.pageSize=6
+    params.itemId=row.id
+    Api.listbyItem(params).then(function(res){
+      row.goodList=res
+      that.KindData.push(row)
+    })
   },
    showMark(){
        this.$refs.erCode.openMark();
@@ -54,13 +80,18 @@ export default {
     that.curretIndex=index
   },
   jump(){
-    this.$router.push({
-      path:`/productlist`
+    let that=this
+    that.$router.push({
+      path:`/productlist?id=${that.kindId}`
     })
   }
 },
  mounted(){
+    let that=this
     window.addEventListener('scroll', this.menu)
+    that.$refs.banner.getBannerList()
+    that.kindId=that.$route.query.id
+    that.getItemsByParentId(that.kindId)
   }
 }
 </script>

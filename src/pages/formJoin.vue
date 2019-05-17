@@ -1,10 +1,6 @@
 <template>
   <div class="containt">
-   <Header :curretIndex="index" @openMark="showMark"/>
    <div class="join">
-   	<div class="bcg">
-   	   <img src="../assets/images/Join/joinbcg.png" class="d-block w-100" >
-   	</div>
    	<div class="ipt">
    	   <div>
    	   	<input type="text" name="" placeholder="标题">
@@ -21,23 +17,15 @@
    	   <div class="subBtn">submit</div>
    	</div>
    </div>
-   <div class="joinConent">
-   	<img src="../assets/images/Join/joinconent.png" class="d-block w-100" >
-   </div>
    <Footer/>
-   <erCode ref="erCode"/>
   </div>
 </template>
 <script>
-import Header from "@/components/public/nav";
-import Footer from "@/components/public/footer";
-import erCode from '@/components/public/erCode'
 export default {
-  components:{Header,Footer,erCode},
+  components:{},
   name: 'Join',
   data () {
     return {
-     index:7,
     }
   },
    methods:{
@@ -86,7 +74,7 @@ export default {
 			line-height: 42px;
 			background: #0E887A;
 			color: #fff;
-			margin-left:84.2%; 
+			float: right;
 		}
 	}
 
@@ -132,7 +120,7 @@ export default {
 			line-height: 50px;
 			background: #0E887A;
 			color: #fff;
-			margin: 20px auto 0 auto;
+			float: right;
 		}
 	}
 
@@ -156,7 +144,7 @@ export default {
 			margin-bottom: 4px;
 			input{
 				width: 100%;
-				height: 40px;
+				height: 20px;
 				background: #F3F5F6;
 				padding-left: 10px;
 				box-sizing: border-box;
@@ -165,7 +153,7 @@ export default {
 			}
 			textarea{
 				width: 100%;
-				height:90px;
+				height:43px;
 				background: #F3F5F6;
 				padding-left: 10px;
 				box-sizing: border-box;
@@ -176,11 +164,11 @@ export default {
 		}
 		.subBtn{
 			width: 80px;
-			height: 40px;
-			line-height: 40px;
+			height: 25px;
+			line-height: 25px;
 			background: #0E887A;
 			color: #fff;
-			
+			float: right;
 		}
 	}
 

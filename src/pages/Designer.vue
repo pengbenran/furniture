@@ -1,7 +1,7 @@
 <template>
   <div class="containt mobileDesig">
   	<Header :curretIndex="index" @openMark="showMark"/>
-   <Banner/>
+   <Banner ref='banner'/>
     <div class="connect">
 		<img src="../assets/images/designer/connect.png" class="d-block w-100">
 	</div>
@@ -12,11 +12,11 @@
    <div class="floor">
    	<div class="floorleft">
       <a href="javascript:;">
-        <img src="../assets/images/designer/1.png" class="d-block w-100">
+        <img :src="productList[0].lordImg" class="d-block w-100">
         <div class="designerMark">
           <div class="detail">
-            <p>木纹地板设计</p>
-            <p>Wood flooring design</p>
+            <p>{{productList[0].name}}</p>
+            <p>{{productList[0].egName}}</p>
           </div>
         </div>
       </a>	
@@ -25,22 +25,22 @@
    		<div class="floortop">
    			<div class="floortopleft">
           <a href="javascript:;">
-   				<img src="../assets/images/designer/2.png" class="d-block w-100">
+   				<img :src="productList[1].lordImg" class="d-block w-100">
            <div class="designerMark">
           <div class="detail">
-            <p>木纹地板设计</p>
-            <p>Wood flooring design</p>
+            <p>{{productList[1].name}}</p>
+            <p>{{productList[1].egName}}</p>
           </div>
         </div>
       </a>  
    			</div>
    			<div class="floortopright">
            <a href="javascript:;">
-   				<img src="../assets/images/designer/3.png" class="d-block w-100">
+   				<img :src="productList[2].lordImg" class="d-block w-100">
            <div class="designerMark">
           <div class="detail">
-            <p>木纹地板设计</p>
-            <p>Wood flooring design</p>
+            <p>{{productList[2].name}}</p>
+            <p>{{productList[2].egName}}</p>
           </div>
         </div>
       </a>  
@@ -49,22 +49,22 @@
    		<div class="floortop">
    			<div class="floortopleft">
           <a href="javascript:;">
-   				<img src="../assets/images/designer/4.png" class="d-block w-100">
+   				<img :src="productList[3].lordImg" class="d-block w-100">
            <div class="designerMark">
           <div class="detail">
-            <p>木纹地板设计</p>
-            <p>Wood flooring design</p>
+            <p>{{productList[3].name}}</p>
+            <p>{{productList[3].egName}}</p>
           </div>
         </div>
       </a>  
    			</div>
    			<div class="floortopright">
           <a href="javascript:;">
-   				<img src="../assets/images/designer/5.png" class="d-block w-100">
+   				<img :src="productList[4].lordImg" class="d-block w-100">
            <div class="designerMark">
           <div class="detail">
-            <p>木纹地板设计</p>
-            <p>Wood flooring design</p>
+            <p>{{productList[4].name}}</p>
+            <p>{{productList[4].egName}}</p>
           </div>
         </div>
       </a>  
@@ -76,31 +76,27 @@
    <div class="title2" @click="jump">
    	<span class="leb">02/</span><span>装饰设计</span>
    </div>
-   <ul class="cart" @click="jump">
-   	<li>三室一厅</li>
-   	<li>两室一厅</li>
-   	<li>一室独居</li>
-   	<li>公司装修</li>
-   	<li>其他类型</li>
+   <ul class="cart">
+   	<li @click="changTab(index)" v-for="(item,index) in decorateList" :class ="selectIndex == index ? 'select':''">{{item.name}}</li>
    </ul>
 	<div class="cartImg" @click="jump">
-		<img src="../assets/images/designer/cartImg.png" class="d-block w-100">
+		<img :src="selectDecorate.lordImg" class="d-block w-100">
 	</div>
 	<div class="title margBot">
    	<span class="leb">03/</span><span>金牌设计师</span>
    </div>
     <div class="floor3">
 
-		<div class="cardList" v-for="(item,index) in ListData" :index='index' @mouseenter.self="mouseEnter(index)" :class ="select == index ? 'selectItem':''">
+		<div class="cardList" v-for="(item,index) in designerList" :index='index' @mouseenter.self="mouseEnter(index)" :class ="select == index ? 'selectItem':''">
 			<span class="lin1"></span>
 			<div class="case">
 			<div class="avator">
-				<img class="card-img-top" src="../assets/images/designer/avator.png" alt="Card image cap">
+				<img class="card-img-top" :src="item.photo" :alt="item.name">
 			</div>
 			<div class="card-body">
-				<h5 class="card-title">张三</h5>
-				<p class="card-text">性别:男 年龄:26</p>
-				<p class="card-text">毕业于四川美术学院室内设计系， 之前工作过三家装修公司。具有丰富的 设计经验，对于装修和设计有自己独特的眼光和 技巧。为人平和</p>
+				<h5 class="card-title">{{item.name}}</h5>
+				<p class="card-text">性别:{{item.sex}} 年龄:{{item.age}}</p>
+				<p class="card-text">{{item.introduce}}</p>
 				<a href="#/productlist" class="btn styBtn">点击查看作品>></a>
 			</div>
 			</div>
@@ -117,19 +113,23 @@ import Header from "@/components/public/nav";
 import Banner from "@/components/public/banner";
 import Footer from "@/components/public/footer";
 import erCode from '@/components/public/erCode'
+import Api from '@/Api/designer'
 export default {
   components:{Header, Banner,Footer,erCode},
   name: 'Designer',
   data () {
     return {
      index:6,
-	 select:1,
-	 ListData:[
-		 {name:'张三',sex:'男',age:'17',info:'毕业于四川美术学院室内设计系， 之前工作过三家装修公司。具有丰富的 设计经验，对于装修和设计有自己独特的眼光和 技巧。为人平和'},
-		 {name:'张三',sex:'男',age:'17',info:'毕业于四川美术学院室内设计系， 之前工作过三家装修公司。具有丰富的 设计经验，对于装修和设计有自己独特的眼光和 技巧。为人平和'},
-		 {name:'张三',sex:'男',age:'17',info:'毕业于四川美术学院室内设计系， 之前工作过三家装修公司。具有丰富的 设计经验，对于装修和设计有自己独特的眼光和 技巧。为人平和'}
-	 ]
+  	 select:1,
+     selectIndex:0,
+  	 designerList:[],
+     decorateList:[],
+     selectDecorate:{},
+     productList:[{lordImg:'',egName:'',name:''},{lordImg:'',egName:'',name:''},{lordImg:'',egName:'',name:''},{lordImg:'',egName:'',name:''},{lordImg:'',egName:'',name:''}]
     }
+  },
+  computed:{
+    
   },
   methods:{
    mouseleave(){},
@@ -140,16 +140,65 @@ export default {
   	this.select = index
   },
     jump(){
-      this.$router.push({
+      let that=this
+      that.$router.push({
         path:`/productMore`
       })
     },
-     showMark(){
+    showMark(){
        this.$refs.erCode.openMark();
+    },
+    changTab(index){
+      this.selectIndex=index
+      this.selectDecorate=this.decorateList[index]
+    },
+    // 装饰设计列表
+    getDecorate(){
+      let params={};
+      let that=this
+      params.pageIndex=1
+      params.pageSize=10
+      params.key=''
+      Api.getDecorateList(params).then(function(res){
+        that.decorateList=res
+        that.selectDecorate=that.decorateList[0]
+      })
+    },
+    // 设计师列表
+    getDesignerList(){
+      let params={};
+      let that=this
+      params.pageIndex=1
+      params.pageSize=3
+      params.key=''
+      Api.getDesignerList(params).then(function(res){
+        res.map((item)=>{
+          if(item.sex==1){
+            item.sex='男'
+          }else{
+            item.sex='女'
+          }
+        })
+        that.designerList=res
+      })
+    },
+    // 产品设计列表
+    getProductList(){
+      let params={};
+      let that=this
+      params.pageIndex=1
+      params.pageSize=10
+      params.key=''
+      Api.getProductList(params).then(function(res){
+        that.productList=res
+      })
     }
 },
-   mounted(){
-
+  mounted(){
+     this.$refs.banner.getBannerList()
+     this.getDesignerList()
+     this.getDecorate()
+     this.getProductList()
   }
 }
 </script>
@@ -318,6 +367,8 @@ h1,h2{font-weight: bold;}
  			width: 100px;
  			height: 100px;
  			margin: 20px auto;
+      border-radius: 50%;
+      overflow: hidden;
  		}
  	}
  }

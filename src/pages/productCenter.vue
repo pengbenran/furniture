@@ -1,7 +1,7 @@
 <template>
   <div class="containt mobileProduct">
     <Header :curretIndex="index" @openMark="showMark"/>
-    <Banner/>
+    <Banner ref='banner'/>
     <main>
       <div class="container Recommend">
         <div class="row rowNew">
@@ -36,16 +36,12 @@
       </div>
       <!--特别推荐 end-->
 
-      <div class="hotProduct">
-       <div class="HotTitle"><span>热销产品</span></div>
-       <div ><ImgList  :ImgListData="ImgListData"/></div> 
+      <div class="hotProduct" v-for="(item,index) in labelGoodList">
+       <div class="HotTitle"><span>{{item.name}}</span></div>
+       <div ><ImgList  :goodArry="item.goodList"/></div> 
       </div>
-      <!--热销产品 end-->
-
-      <div class="hotProduct">
-       <div class="HotTitle"><span>网红家具</span></div>
-       <div><ImgList  :ImgListData="ImgListData"/></div> 
-      </div>
+    
+  
       <!--网红家具 end-->
 
       <div class="Nordic">
@@ -76,29 +72,53 @@ import Footer from "@/components/public/footer";
 import Banner from "@/components/public/banner";
 import ImgList from "@/components/public/ImgList"
 import erCode from '@/components/public/erCode'
+import Api from '@/Api/kind'
 export default {
   name: 'productCenter',
   components:{Header,Banner,Footer,ImgList,erCode},
   data () {
     return {
       index:3,
-       ImgListData:[{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},
-                {ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1},{ImgUrl:'../../assets/good2.png',id:1}
-       ],
+      labelGoodList:[]
     }
   },
   methods:{
-  to(){
-            this.$router.push({
-                path:`/productInfo`
-            })
-        },
-         showMark(){
-       this.$refs.erCode.openMark();
-    }
+    to(){
+      this.$router.push({
+        path:`/productInfo`
+      })
+    },
+    showMark(){
+     this.$refs.erCode.openMark();
+   },
+   // 获取所有标签
+   getLabelList(){
+    let that=this
+    that.labelGoodList=[]
+    Api.getLabelList().then(function(res){
+      for(var i in res){
+        that.getListbyLabel(res[i])
+      }
+    })
+   },
+   // 获取标签分类下的商品
+   getListbyLabel(row){
+    let params={}
+    let that=this
+    params.pageIndex=0
+    params.pageSize=6
+    params.labelId=row.id
+    Api.getListbyLabel(params).then(function(res){
+      row.goodList=res
+      that.labelGoodList.push(row)
+      console.log('that.labelGoodList',that.labelGoodList)
+    })
+   }
 },
  mounted(){
-  
+   let that=this
+   that.$refs.banner.getBannerList()
+   that.getLabelList()
   }
 }
 </script>

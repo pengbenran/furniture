@@ -13,10 +13,10 @@
                             <div class="menuConent" v-if="index==3&&ShowNav">
                               <div class="upIcon"></div>
                               <ul class="childNavUl"  @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
-                                <li class="childNavli" v-for="(innerItem,innerIndex) in item.childNav" @click.stop="jumpToKind('/productKind')">
-                                  <span>{{innerItem.childNavName}}</span> 
+                                <li class="childNavli" v-for="(innerItem,innerIndex) in item.childNav" @click.stop="jumpToKind(innerItem.id)">
+                                  <span>{{innerItem.itemName}}</span> 
                                   <ul>
-                                    <li v-for="(innerTwoItem,innerTwoIndex) in innerItem.childtwoNav">{{innerTwoItem.name}}</li>
+                                    <li v-for="(innerTwoItem,innerTwoIndex) in innerItem.children">{{innerTwoItem.itemName}}</li>
                                   </ul>
                                 </li>
                               </ul>
@@ -36,6 +36,7 @@
     </header>
 </template>
 <script>
+import Api from "@/Api/kind"
 export default {
     props: ['curretIndex','isScroll'],
     data () {
@@ -44,6 +45,7 @@ export default {
            ShowNav2:false,
            MaskShow:false,
            timer:'',
+           rootKind:[],
            navDate:[
            {
             navName:'首页',
@@ -63,28 +65,7 @@ export default {
            {
             navName:'产品中心',
             jumpUrl:'/productCenter',
-            childNav:[
-            {childNavName:'地板',
-             jumpUrl:'/productKind',
-             childtwoNav:
-               [{name:'强化地板'},{name:'实木地板'},{name:'进口地板'},{name:'地暖专用'}]
-            },
-            {childNavName:'实木家具', 
-            jumpUrl:'/productKind',
-            childtwoNav:
-               [{name:'木门'},{name:'衣橱柜'},{name:'沙发'},{name:'桌椅'}]
-            },
-            {childNavName:'软装',
-            jumpUrl:'/productKind',
-             childtwoNav:
-               [{name:'窗帘'},{name:'墙纸'}]
-            },
-            {childNavName:'整体家装',
-            jumpUrl:'/productKind',
-            childtwoNav:
-               [{name:'轻北欧风'},{name:'精致北欧风'},{name:'经典北欧风'}]
-            }
-            ]
+            childNav:[]
            },
            {
             navName:'销售中心',
@@ -113,17 +94,58 @@ export default {
         jumpTo(url){
             this.$router.push({
                 path:url
-            })
+            }) 
         //    this.ShowNav = !this.ShowNav;
         },
-        jumpToKind(url){
+        jumpToKind(id){
            this.$router.push({
-                path:url
+                path:`productKind?id=${id}`
             }) 
        },
+       // 获取所有分类
+       getallKindList(){
+        let that=this
+        console.log(that.rootKind)
+        if(that.rootKind.length!=0){
+           that.navDate[3].childNav=that.rootKind
+           that.ShowNav = true;
+        }
+        else{
+         Api.getallKindList().then(function(res){
+          that.rootKind=that.toTree(res)
+          that.navDate[3].childNav=that.rootKind
+          that.ShowNav = true;
+        })
+        }
+       },
+       toTree(data){
+         // 删除 所有 children,以防止多次调用
+         data.forEach(function (item) {
+          delete item.children;
+        });
+        // 将数据存储为 以 id 为 KEY 的 map 索引数据列
+        var map = {};
+        data.forEach(function (item) {
+            map[item.id] = item;
+        });
+        var val = [];
+        data.forEach(function (item) {
+            // 以当前遍历项，的pid,去map对象中找到索引的id
+            var parent = map[item.parentId];
+            // 好绕啊，如果找到索引，那么说明此项不在顶级当中,那么需要把此项添加到，他对应的父级中
+            if (parent) {
+                (parent.children || ( parent.children = [] )).push(item);
+            } else {
+                //如果没有在map中找到对应的索引ID,那么直接把 当前的item添加到 val结果集中，作为顶级
+                val.push(item);
+            }
+        });
+        return val;
+       },
         enter(index){//鼠标进入
+          let that=this
           if(index==3){
-            this.ShowNav = true;
+            that.getallKindList()
           } 
           else if(index==4){
             this.ShowNav2=true

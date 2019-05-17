@@ -1,34 +1,34 @@
 <template>
   <div class="content">
-   <div class="Lits" @click="to"><a href="javascript:;"><img src="static/images/productCenter/hot1.png" alt="..."><div class="hotMask"><span>极致向阳</span><span><img src="../../assets/cat.png" /></span></div></a></div>
-   <div class="Lits" @click="to"><a href="javascript:;"><img src="static/images/productCenter/hot2.png" alt="..."><div class="hotMask"><span>极致向阳</span><span><img src="../../assets/cat.png" /></span></div></a></div>
-   <div class="Lits" @click="to"><a href="javascript:;"><img src="static/images/productCenter/hot3.png" alt="..."><div class="hotMask"><span>极致向阳</span><span><img src="../../assets/cat.png" /></span></div></a></div>
-   <div class="Lits" @click="to"><a href="javascript:;"><img src="static/images/productCenter/hot4.png" alt="..."><div class="hotMask"><span>极致向阳</span><span><img src="../../assets/cat.png" /></span></div></a></div>
-   <div class="Lits" @click="to"><a href="javascript:;"><img src="static/images/productCenter/hot5.png" alt="..."><div class="hotMask"><span>极致向阳</span><span><img src="../../assets/cat.png" /></span></div></a></div>
-   <div class="Lits" @click="to"><a href="javascript:;"><img src="static/images/productCenter/hot6.png" alt="..."><div class="hotMask"><span>极致向阳</span><span><img src="../../assets/cat.png" /></span></div></a></div>
+   <div class="Lits" @click="to(item.id)"  v-for="(item,index) in goodArry">
+    <a href="javascript:;"><img :src="item.imgUrls[0]" alt="...">
+      <div class="hotMask">
+        <span>{{item.name}}</span>
+        <span><img src="../../assets/cat.png" /></span>
+      </div>
+    </a>
+  </div>
   </div>
 </template>
 <script>
 export default {
-    props:{
-    
-    },
+    props:['goodArry'],
     data () {
         return {
 
         }
     },
     methods: {
-        to(){
+        to(id){
             this.$router.push({
-                path:`/productwarp`
+                path:`/productInfo?id=${id}`
             })
         }
     }
 }
 </script>
 <style scoped lang="less">
-.content{display: flex;justify-content: space-around;flex-wrap: wrap;}
+.content{display: flex;flex-wrap: wrap;}
 .Lits img{width: 100%;}
 .Lits{margin-top: 30px;width: 33%;}
 a{display: inline-block;position: relative;}

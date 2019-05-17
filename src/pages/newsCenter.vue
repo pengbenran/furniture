@@ -3,7 +3,7 @@
   	<!-- 导航栏 -->
   	<Header :curretIndex="index" @openMark="showMark"/>
   	<!-- banner图 -->
-   <Banner/>
+   <Banner ref='banner'/>
    <!-- 公司新闻 -->
    <div class="title scroll opacity"  data-animation="fadeInRight">
    	公司新闻
@@ -14,39 +14,15 @@
    		<img src="../assets/images/newsCenter/companynew.png" class="d-block w-100" >
    	</div>
    	<div class="companyNewRight scroll opacity"  data-animation="fadeInDown">
-   		<div class="companyNewRightList"  @click="to">
+   		<div class="companyNewRightList"  @click="to(item.id)" v-for="(item,index) in companyNewList" >
    			<div class="date">
-   				<p class="day">13</p>
-   				<p class="mont">2018-04</p>
+   				<p class="day">{{item.createDay}}</p>
+   				<p class="mont">{{item.createMonth}}</p>
    			</div>
    			<div class="intro">
-   				<div class="newTitle">空间十分深刻发货</div>
-   				<div class="newsDetail">三点后分为离开合肥市是是地方就送非师范手动阀ISO放假是粉丝哦积分水电费是否是的覅偶
-				三点后分为离开合肥市是是地方就送非师范手动阀ISO放假是粉丝哦积分水电费是否是的覅偶
-   				</div>
-   			</div>
-   		</div>
-   		<div class="companyNewRightList" @click="to">
-   			<div class="date">
-   				<p class="day">13</p>
-   				<p class="mont">2018-04</p>
-   			</div>
-   			<div class="intro">
-   				<div class="newTitle">空间十分深刻发货</div>
-   				<div class="newsDetail">三点后分为离开合肥市是是地方就送非师范手动阀ISO放假是粉丝哦积分水电费是否是的覅偶
-				三点后分为离开合肥市是是地方就送非师范手动阀ISO放假是粉丝哦积分水电费是否是的覅偶
-   				</div>
-   			</div>
-   		</div>
-   		<div class="companyNewRightList"  @click="to">
-   			<div class="date">
-   				<p class="day">13</p>
-   				<p class="mont">2018-04</p>
-   			</div>
-   			<div class="intro">
-   				<div class="newTitle">空间十分深刻发货</div>
-   				<div class="newsDetail">三点后分为离开合肥市是是地方就送非师范手动阀ISO放假是粉丝哦积分水电费是否是的覅偶
-				三点后分为离开合肥市是是地方就送非师范手动阀ISO放假是粉丝哦积分水电费是否是的覅偶
+   				<div class="newTitle">{{item.title}}</div>
+   				<div class="newsDetail">
+   					{{item.intro}}
    				</div>
    			</div>
    		</div>
@@ -60,12 +36,12 @@
    	 	INDUSTRY &nbsp; NEWS
    	 </div>
    	 <div class="industryConent">
-   	 	<div class="left scroll opacity"  data-animation="fadeInLeft" @click="to">
+   	 	<div class="left scroll opacity"  data-animation="fadeInLeft" @click="to(industryNewsList[0].id)">
 			<a href="javasrcipt:;">
-			    <img src="../assets/images/newsCenter/industry1.png" class="d-block w-100" >
+			    <img :src="industryNewsList[0].back_img" class="d-block w-100" >
 				<div class="Mask">
 					<div class="MaskInfo">
-						<p>宜家新出了这些家具你还不知道吗？</p>
+						<p>{{industryNewsList[0].title}}</p>
 						<span>了解更多》</span>
 					</div>
 				</div>
@@ -73,62 +49,62 @@
    	 	</div>
    	 	<div class="right">
    	 		<div class="top scroll opacity"  data-animation="fadeInRight">
-   	 			<div class="imglist" @click="to">
-					<router-link  to='/newsInfo' >
-						<img src="../assets/images/newsCenter/industry3.png" class="d-block w-100" >
+   	 			<div class="imglist" @click="to(industryNewsList[1].id)">
+   	 				<a href="javasrcipt:;">
+						<img :src="industryNewsList[1].back_img" class="d-block w-100" >
 						<div class="Mask">
 							<div class="MaskInfo">
-								<p>宜家新出了这些家具你还不知道吗？</p>
+								<p>{{industryNewsList[1].title}}</p>
 								<span>了解更多》</span>
 							</div>
 					    </div>
-					</router-link>
+					</a>
    	 			</div>
-   	 			<div class="imglist" @click="to">
-					<router-link  to='/newsInfo' >
-						<img src="../assets/images/newsCenter/industry4.png" class="d-block w-100" >
+   	 			<div class="imglist" @click="to(industryNewsList[2].id)">
+   	 				<a href="javasrcipt:;">
+						<img :src="industryNewsList[2].back_img" class="d-block w-100" >
 						<div class="Mask">
 							<div class="MaskInfo">
-								<p>宜家新出了这些家具你还不知道吗？</p>
+								<p>{{industryNewsList[2].title}}</p>
 								<span>了解更多》</span>
 							</div>
 					    </div>
-					</router-link>
+					</a>
    	 			</div>
-   	 			<div class="imglist">
-					<router-link  to='/newsInfo' >
-						<img src="../assets/images/newsCenter/industry5.png" class="d-block w-100" >
+   	 			<div class="imglist" @click="to(industryNewsList[3].id)">
+					<a href="javasrcipt:;">
+						<img :src="industryNewsList[3].back_img" class="d-block w-100" >
 						<div class="Mask">
 							<div class="MaskInfo">
-								<p>宜家新出了这些家具你还不知道吗？</p>
+								<p>{{industryNewsList[3].title}}</p>
 								<span>了解更多》</span>
 							</div>
 					    </div>
-					</router-link>
+					</a>
    	 			</div>
    	 		</div>
    	 		<div class="bottom scroll opacity"  data-animation="fadeInDown">
-   	 			<div class="imglist" @click="to">
-					<router-link  to='/newsInfo' >
-						<img src="../assets/images/newsCenter/industry2.png" class="d-block w-100" >
+   	 			<div class="imglist" @click="to(industryNewsList[4].id)">
+   	 				<a href="javasrcipt:;">
+					<img :src="industryNewsList[4].back_img" class="d-block w-100" >
 						<div class="Mask">
 							<div class="MaskInfo">
-								<p>宜家新出了这些家具你还不知道吗？</p>
+								<p>{{industryNewsList[4].title}}</p>
 								<span>了解更多》</span>
 							</div>
 					    </div>
-					</router-link>
+					</a>
    	 			</div>
-   	 			<div class="imglist" @click="to">
-					<router-link  to='/newsInfo' >
-						<img src="../assets/images/newsCenter/industry6.png" class="d-block w-100" >
+   	 			<div class="imglist"@click="to(industryNewsList[5].id)">
+   	 				<a href="javasrcipt:;">
+						<img :src="industryNewsList[5].back_img" class="d-block w-100" >
 						<div class="Mask">
 							<div class="MaskInfo">
-								<p>宜家新出了这些家具你还不知道吗？</p>
+								<p>{{industryNewsList[5].title}}</p>
 								<span>了解更多》</span>
 							</div>
 					    </div>
-					</router-link>
+					</a>
    	 			</div>
    	 		</div>
    	 	</div>
@@ -145,26 +121,66 @@ import Footer from "@/components/public/footer";
 import Banner from "@/components/public/banner";
 import scroll from '../assets/js/scroll.js'
 import erCode from '@/components/public/erCode'
+import Api from '@/Api/news'
 export default {
   components:{Header,Banner,Footer,erCode},
   name: 'newsCenter',
   data () {
     return {
      index:2,
+     companyNewList:[],
+     industryNewsList:[{title:''},{title:''},{title:''},{title:''},{title:''},{title:''}]
     }
   },
 	methods: {
-		to(){
+		to(id){
 			this.$router.push({
-				path:`/newsInfo`
+				path:`/newsInfo?id=${id}`
 			})
 		},
-		 showMark(){
-       this.$refs.erCode.openMark();
-    }
+		showMark(){
+			this.$refs.erCode.openMark();
+		},
+		// 获取公司新闻列表
+		getCompanyList(){
+			let params={}
+			params.key=''
+			let that=this
+			params.pageIndex=1
+			params.pageSize=3
+			params.style=1
+			Api.CompanyList(params).then(function(res){
+				res.map(item=>{
+					let createDate=item.createTime.split(' ')[0]
+					console.log(createDate)
+					item.createDay=createDate.split('-')[2]
+					item.createMonth=createDate.split('-')[0]+'-'+createDate.split('-')[1]
+					return item
+				})
+				that.companyNewList=res
+
+			})
+		},
+		// 获取行业新闻列表
+		getindustryNewsList(){
+			let params={}
+			params.key=''
+			let that=this
+			params.pageIndex=1
+			params.pageSize=6
+			params.style=2
+			Api.CompanyList(params).then(function(res){
+				// console.log(res);
+				that.industryNewsList=res
+				console.log('that.industryNewsList',that.industryNewsList)
+			})
+		}
 	},
 	 mounted(){
     window.addEventListener('scroll', scroll.handleScroll)
+     this.$refs.banner.getBannerList()
+     this.getCompanyList()
+     this.getindustryNewsList()
   }
 }
 </script>

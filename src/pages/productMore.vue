@@ -2,28 +2,26 @@
     <div class="mobilePinfo">
        <div class="Fan"><span @click="to">《 返回上一页</span></div>
        <div class="Main">
-            <div class="list select">三室一厅</div>
-            <div class="list">两室一厅</div>
-            <div class="list">一室独居</div>
-            <div class="list">公司装修</div>
-            <div class="list">其他类型</div>
+            <div class="list" @click="changTab(index)" :class ="selectIndex == index ? 'select':''" v-for="(item,index) in decorateList">{{item.name}}</div>
         </div>
         <!--Main end-->
         <div class="container ListWarp">
-            <ImgList/>
-            <ImgList/>
+            <productMoreList :selectDecorate='selectDecorate'/>
         </div>
         <Footer/>
     </div>
 </template>
 <script>
 import Footer from "@/components/public/footer";
-import ImgList from "@/components/public/ImgList3"
+import productMoreList from "@/components/public/productMoreList"
+import Api from '@/Api/designer'
 export default {
-    components:{Footer,ImgList},  
+    components:{Footer,productMoreList},  
     data () {
          return {
-            
+            decorateList:[],
+            selectDecorate:{},
+            selectIndex:0,
          }
     },
     methods: {
@@ -31,7 +29,27 @@ export default {
             this.$router.push({
                 path:`/Designer`
             })
-        }
+        },
+        changTab(index){
+          this.selectIndex=index
+          this.selectDecorate=this.decorateList[index]
+      },
+        // 装饰设计列表
+        getDecorate(){
+          let params={};
+          let that=this
+          params.pageIndex=1
+          params.pageSize=100
+          params.key=''
+          Api.getDecorateList(params).then(function(res){
+            that.decorateList=res
+            console.log(that.decorateList)
+            that.selectDecorate=that.decorateList[0]
+        })
+      },
+    },
+    mounted(){
+       this.getDecorate()
     }
 }
 </script>

@@ -33,6 +33,4 @@ export default {
 .Lits{margin-top: 30px;width: 33%;}
 .Lits:hover{border: 1px solid #ccc;}
 a{display: inline-block;position: relative;}
-// .hotMask{z-index: 2;position: absolute;left: 0;bottom: 0;height: 15%;width: 100%;background: rgba(227, 227, 227, 0.8);opacity: 0;transition: all 0.3s;color:#000;padding-top: 3%;box-sizing: border-box;}
-// a:hover .hotMask{opacity: 1;}
 </style>

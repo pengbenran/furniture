@@ -12,5 +12,9 @@ export default {
 	// 获取产品列表
 	getProductList:params=>{
 		return API.GET('/project/design/product/queryList',params)
+	},
+	// 根据设计师id查询设计师作品
+	getDecorateDetail:params=>{
+		return API.GET('/project/product/designer',params)
 	}
 }

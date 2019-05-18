@@ -10,27 +10,26 @@
                   <strong class="tit"><span>特别</span>推荐</strong>
                   <div class="row rowNew">
                     <div class="col-5 col-md-12 Price">
-                      <p>L O C K 铁制书桌灯</p>
-                      <span>销量：18</span>
-                      <span>￥ 124</span>
+                      <p>{{tjLabelGood.goodList[0].name}}</p>
+                      <span>销量：{{tjLabelGood.goodList[0].sales}}</span>
+                      <span>￥ {{tjLabelGood.goodList[0].price}}</span>
                     </div>
-                    <div class="col-7 col-md-12  info">
+                    <div class="col-7 col-md-12 info">
                     <strong>商品详情</strong>
                     <ul>
-                      <li>LOCK</li>
-                      <li>长 27 * 宽 18 * 高 53cm</li>
-                      <li>灯体 ： 黑色&nbsp;&nbsp;&nbsp;&nbsp;灯罩：透明</li>
-                      <li>灯体 ： 黑色&nbsp;&nbsp;&nbsp;&nbsp;灯罩：透明</li>
+                      <li>{{tjLabelGood.goodList[0].productDeclare}}</li>
+                      <li>{{tjLabelGood.goodList[0].measure}}</li>
+                      <li>{{tjLabelGood.goodList[0].texture}}</li>
                     </ul>
                   </div>
                   </div>
               </div>
           </div>
           <div class="col-md-4 col-6">
-                <div class="RecommendList"><img src="../assets/images/productCenter/recommend1.png" /></div>
+                <div class="RecommendList"><img :src="tjLabelGood.goodList[0].imgUrls[0]"/></div>
           </div>
           <div class="col-md-4 col-6">
-                <div class="RecommendList"><img src="../assets/images/productCenter/recommend2.png" /></div>
+                <div class="RecommendList"><img :src="tjLabelGood.goodList[0].imgUrls[1]" /></div>
           </div>          
         </div>
       </div>
@@ -47,15 +46,15 @@
       <div class="Nordic">
         <div class="HotTitle"><span>北欧整装</span></div>
         <div class="row">
-          <div class="col-md-6 left" @click="to"><a href="javascript:;"><img src="../assets/images/productCenter/nordic1.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
+          <div class="col-md-6 left" @click="to(zhengzLabelGood.goodList[0].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[0].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[0].productDeclare}}</span></a></div>
           <div class="col-md-6 right">
             <div class="ImgTwo">
-              <div @click="to"><a href="javascript:;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
-              <div @click="to"><a href="javascript:;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
+              <div @click="to(zhengzLabelGood.goodList[1].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[1].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[1].productDeclare}}</span></a></div>
+              <div @click="to(zhengzLabelGood.goodList[2].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[2].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[2].productDeclare}}</span></a></div>
             </div>
             <div class="ImgTwo ">
-               <div @click="to"><a href="javascript:;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
-               <div @click="to"><a href="javascript:;"><img src="../assets/images/productCenter/nordic2.png" /><span class="tip">面积：123<sup>3</sup> &nbsp;&nbsp;两室一厅 &nbsp;&nbsp;首付：10万</span></a></div>
+               <div @click="to(zhengzLabelGood.goodList[3].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[3].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[3].productDeclare}}</span></a></div>
+               <div @click="to(zhengzLabelGood.goodList[4].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[4].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[4].productDeclare}}</span></a></div>
             </div>
           </div>
         </div>
@@ -79,13 +78,15 @@ export default {
   data () {
     return {
       index:3,
-      labelGoodList:[]
+      labelGoodList:[],
+      tjLabelGood:{goodList:[{name:'',sales:'',price:'',measure:'',texture:'',productDeclare:'',imgUrls:[]}]},
+       zhengzLabelGood:{goodList:[{imgUrls:[],productDeclare:''},{imgUrls:[],productDeclare:''},{imgUrls:[],productDeclare:''},{imgUrls:[],productDeclare:''},{imgUrls:[],productDeclare:''}]}
     }
   },
   methods:{
-    to(){
+    to(id){
       this.$router.push({
-        path:`/productInfo`
+        path:`/productwarp?id=${id}`
       })
     },
     showMark(){
@@ -110,8 +111,16 @@ export default {
     params.labelId=row.id
     Api.getListbyLabel(params).then(function(res){
       row.goodList=res
-      that.labelGoodList.push(row)
-      console.log('that.labelGoodList',that.labelGoodList)
+      if(row.name=="特别推荐"){
+        that.tjLabelGood=row
+      }
+      else if(row.name=="北欧整装"){
+        that.zhengzLabelGood=row
+      }
+      else{
+        that.labelGoodList.push(row)
+      }
+      console.log(that.zhengzLabelGood)
     })
    }
 },

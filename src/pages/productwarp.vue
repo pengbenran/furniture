@@ -4,22 +4,20 @@
             <div class="Fan"><span @click="to">《 返回上一页</span></div>
             <div class="row Warp">
                 <div class="col-md-7 WarpImg">
-                    <div class="Left"><img src="../assets/images/productCenter/hot2.png" /></div>
+                    <div class="Left"><img :src="goodDetail.imgUrls[0]" /></div>
                     <div class="right">
                         <div class="icon"><img src="../assets/images/productCenter/up.png" /></div>
                         <div class="ImgList">
-                           <div><img src="../assets/images/productCenter/hot2.png"/></div>
-                           <div><img src="../assets/images/productCenter/hot2.png"/></div>
-                           <div><img src="../assets/images/productCenter/hot2.png"/></div>
+                           <div v-for="(item,index) in goodDetail.imgUrls"><img :src="item"/></div>
                         </div>
                         <div class="icon"><img src="../assets/images/productCenter/bw.png" /></div>
                     </div>
                 </div>
                 <div class="col-md-5 WarpInfo">
                     <div>
-                        <div class="infoTit">极简主义</div>
+                        <div class="infoTit">{{goodDetail.name}}</div>
                         <div class="info">
-                        极简主义的浪漫，邂逅一场极简主义的浪漫，极简主义的浪漫，邂逅一场极简主义的浪漫。 极简主义的浪漫，邂逅一场极简主义的浪漫。
+                        {{goodDetail.productDeclare}}
                         </div>
                     </div>
                 </div>               
@@ -29,28 +27,39 @@
 
         <div class="Tit"><span>整体特色</span></div>
         <div class="Shopinfo">
-          极简主义的浪漫，邂逅一场极简主义的浪漫，极简主义的浪漫，邂逅一场极简主义的浪漫。 极简主义的浪漫，邂逅一场极简主义的浪漫。
-          极简主义的浪漫，邂逅一场极简主义的浪漫，极简主义的浪漫，邂逅一场极简主义的浪漫。 极简主义的浪漫，邂逅一场极简主义的浪漫。
-          极简主义的浪漫，邂逅一场极简主义的浪漫，极简主义的浪漫，邂逅一场极简主义的浪漫。 极简主义的浪漫，邂逅一场极简主义的浪漫。
+          {{goodDetail.texture}}
         </div>
         <!--Table end-->
-        
         <Footer/>
     </div>
 </template>
 <script>
 import Footer from "@/components/public/footer";
+import Api from "@/Api/goods"
 export default {
     components:{Footer},  
     data () {
          return {
-            
+             goodDetail:{imgUrls:[]}
          }
+    },
+    mounted(){
+        let that=this
+        that.getGoodDetail(that.$route.query.id)
     },
     methods: {
         to(){
             this.$router.push({
                 path:`/productCenter`
+            })
+        },
+        getGoodDetail(id){
+            let params={}
+            let that=this
+            params.id=id
+            Api.getGoodDetail(params).then(function(res){
+                that.goodDetail=res
+                console.log('that.goodDetail',that.goodDetail)
             })
         }
     }
@@ -62,7 +71,7 @@ export default {
 .WarpImg .Left{width: 82%;text-align: center;}
 .WarpImg .right{width: 18%;text-align: center;}
 .WarpImg .right .icon{width: 50%;margin:0 auto;}
-.WarpImg img{width: 100%;}
+.WarpImg img{width: 90%;}
 
 .Main .Fan{margin-bottom: 1rem;}
 .Main .Fan span{color: #0e887a;text-decoration: none;}

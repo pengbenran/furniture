@@ -61,7 +61,7 @@ export default {
       index:0,
       kindRootData:[],
       LabelList:[],
-      goodList:[{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')}]
+      goodList:[]
     }
   },
   computed:{
@@ -74,16 +74,17 @@ export default {
     changTab(index,id){
       let that=this
       that.kindIndex=index
-      that.GetCatGood(id)
+      that.GetCatLab(id)
     },
     // 获取根分类
     getRootList(){
       let params={}
       let that=this
       params.pageIndex=1
-      params.pageSize=5
+      params.pageSize=4
       Api.getRootList(params).then(function(res){
         that.kindRootData=res
+        that.GetCatLab(that.kindRootData[0].id);
       })
     },
     loadMore(){
@@ -96,15 +97,14 @@ export default {
     },
 
     //获取指定分类标签商品
-    GetCatGood(){
+    GetCatLab(id){
       let that = this;
       let params = {};
-      // params.itemId=id;
-      params.labelId = that.LabelList[1].id;
+      params.itemId=id;
+      params.labelId = that.LabelList.id;
       params.pageIndex = 0;
-      params.pageSize = 8;
-      Api_good.GetLabGoods(params).then(res => {
-        
+      params.pageSize = 6;
+      Api_good.GetCatLab(params).then(res => { 
         that.goodList = res.map(Res => {
           Res.img = Res.imgUrls[0];
           return Res;
@@ -115,12 +115,15 @@ export default {
     //获取所有的标签getLabelList
     async LabelListData(){
       let that=this
-      that.labelGoodList=[]
       let res = await Api.getLabelList().catch(err => {
         console.log("报错")
       })
       if(res != ''){
-        that.LabelList = res;
+        that.LabelList = res.find(item=>{
+          if(item.name=='热销产品'){
+            return item
+          }
+        });
       }
     },
 
@@ -131,9 +134,8 @@ export default {
   async mounted(){
      window.addEventListener('scroll', scroll.handleScroll)
      this.$refs.banner.getBannerList()
-     this.getRootList()
      await this.LabelListData();
-     this.GetCatGood();
+     this.getRootList()
   },
 
 

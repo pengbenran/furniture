@@ -16,6 +16,7 @@ import productKind from '@/pages/productKind'
 import productMore from '@/pages/productMore'
 import formJoin from '@/pages/formJoin'
 import designerList from '@/pages/designerList'
+import productDetail from '@/pages/productDetail'
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -28,6 +29,11 @@ export default new Router({
       path: '/productMore',
       name: 'productMore',
       component: productMore
+    },
+    {
+      path:'/productDetail',
+      name: 'productDetail',
+      component: productDetail
     },
     {
       path:'/designerList',

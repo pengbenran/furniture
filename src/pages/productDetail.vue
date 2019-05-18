@@ -2,7 +2,7 @@
     <div>
         <div class="container Main">
             <div class="Fan"><span @click="to">《 返回上一页</span></div>
-            <div class="Info" v-html="newDateDetail.subject">
+            <div class="Info" v-html="parductDetail.imgUrls[0]">
         
             </div>
         </div>
@@ -11,30 +11,30 @@
 </template>
 <script>
 import Footer from "@/components/public/footer";
-import Api from "@/Api/news"
+import Api from "@/Api/designer"
 export default {
      components:{Footer},
      data(){
      	return{
-            newDateDetail:{}
+            parductDetail:{imgUrls:[0]}
      	}
      },
      methods:{
-        getNewsDetail(id){
+        getProductDetail(id){
             let params={}
             params.id=id
             let that=this
-            Api.newsDetail(params).then(function(res){
-                that.newDateDetail=res
+            Api.getProductDetail(params).then(function(res){
+                that.parductDetail=res
             })
         },
-         to(){
+        to(){
             this.$router.go(-1)
         },
      },
      mounted(){
         let that=this
-        that.getNewsDetail(that.$route.query.id)
+        that.getProductDetail(that.$route.query.id)
      }
 }
 </script>

@@ -10,7 +10,7 @@
    </div>
    <p class="intro">流程介绍：您可以根据您的想法提供设计稿，而我们则负责实现您的想法</p>
    <div class="floor">
-   	<div class="floorleft">
+   	<div class="floorleft" @click="jumpToProductDetail(productList[0].id)">
       <a href="javascript:;">
         <img :src="productList[0].lordImg" class="d-block w-100">
         <div class="designerMark">
@@ -23,7 +23,7 @@
    	</div>
    	<div class="floorright">
    		<div class="floortop">
-   			<div class="floortopleft">
+   			<div class="floortopleft" @click="jumpToProductDetail(productList[1].id)">
           <a href="javascript:;">
    				<img :src="productList[1].lordImg" class="d-block w-100">
            <div class="designerMark">
@@ -34,7 +34,7 @@
         </div>
       </a>  
    			</div>
-   			<div class="floortopright">
+   			<div class="floortopright" @click="jumpToProductDetail(productList[2].id)">
            <a href="javascript:;">
    				<img :src="productList[2].lordImg" class="d-block w-100">
            <div class="designerMark">
@@ -47,7 +47,7 @@
    			</div>
    		</div>
    		<div class="floortop">
-   			<div class="floortopleft">
+   			<div class="floortopleft" @click="jumpToProductDetail(productList[3].id)">
           <a href="javascript:;">
    				<img :src="productList[3].lordImg" class="d-block w-100">
            <div class="designerMark">
@@ -58,7 +58,7 @@
         </div>
       </a>  
    			</div>
-   			<div class="floortopright">
+   			<div class="floortopright" @click="jumpToProductDetail(productList[4].id)">
           <a href="javascript:;">
    				<img :src="productList[4].lordImg" class="d-block w-100">
            <div class="designerMark">
@@ -77,10 +77,10 @@
    	<span class="leb">02/</span><span>装饰设计</span>
    </div>
    <ul class="cart">
-   	<li @click="changTab(index)" v-for="(item,index) in decorateList" :class ="selectIndex == index ? 'select':''">{{item.name}}</li>
+   	<li @click="jump" v-for="(item,index) in decorateList">{{item.name}}</li>
    </ul>
 	<div class="cartImg" @click="jump">
-		<img :src="selectDecorate.lordImg" class="d-block w-100">
+		<img src="../assets/images/designer/cartImg.png" class="d-block w-100">
 	</div>
 	<div class="title margBot">
    	<span class="leb">03/</span><span>金牌设计师</span>
@@ -143,6 +143,12 @@ export default {
       let that=this
       that.$router.push({
         path:`/productMore`
+      })
+    },
+    jumpToProductDetail(id){
+      let that=this
+      that.$router.push({
+        path:`/productDetail?id=${id}`
       })
     },
     to(id){

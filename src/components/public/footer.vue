@@ -37,7 +37,7 @@
         </div>
 
      </div>
-   <div class="bq">版权所有 &copy; 2018 四川匠兴日升木业有限责任公司 保留所有版权 粤ICP备05046166号-8</div>
+   <div class="bq">版权所有 &copy; 2018 四川匠兴日升木业有限责任公司 保留所有版权</div>
    </div>
 </template>
 <script>

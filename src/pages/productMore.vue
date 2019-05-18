@@ -26,9 +26,7 @@ export default {
     },
     methods: {
         to(){
-            this.$router.push({
-                path:`/Designer`
-            })
+            this.$router.go(-1)
         },
         changTab(index){
           this.selectIndex=index

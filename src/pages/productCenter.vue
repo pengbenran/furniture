@@ -4,7 +4,7 @@
     <Banner ref='banner'/>
     <main>
       <div class="container Recommend">
-        <div class="row rowNew">
+        <div class="row rowNew" @click="toproductInfo(tjLabelGood.goodList[0].id)">
           <div class="col-md-4 col-12 FlexWarp">
               <div class="RecommendInfo">
                   <strong class="tit"><span>特别</span>推荐</strong>
@@ -79,7 +79,7 @@ export default {
     return {
       index:3,
       labelGoodList:[],
-      tjLabelGood:{goodList:[{name:'',sales:'',price:'',measure:'',texture:'',productDeclare:'',imgUrls:[]}]},
+      tjLabelGood:{goodList:[{name:'',sales:'',price:'',measure:'',texture:'',productDeclare:'',imgUrls:[],id:''}]},
        zhengzLabelGood:{goodList:[{imgUrls:[],productDeclare:''},{imgUrls:[],productDeclare:''},{imgUrls:[],productDeclare:''},{imgUrls:[],productDeclare:''},{imgUrls:[],productDeclare:''}]}
     }
   },
@@ -87,6 +87,11 @@ export default {
     to(id){
       this.$router.push({
         path:`/productwarp?id=${id}`
+      })
+    },
+    toproductInfo(id){
+      this.$router.push({
+        path:`/productInfo?id=${id}`
       })
     },
     showMark(){

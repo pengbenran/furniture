@@ -1,10 +1,6 @@
 <template>
   <div class="content">
-<<<<<<< HEAD
    <div class="Lits" @click="to(item.id)" v-for="(item,index) in goodArry"><a href="javascript:;"><img :src="item.imgUrls[0]" alt="..."><div class="hotMask"><span><img src="../../assets/cat.png" />{{item.name}}</span></div></a></div>
-=======
-   <div class="Lits"  v-for="(item,index) in goodArry" @click="to(item.id)"><a href="javascript:;"><img :src="item.imgUrls[0]" alt="..."><div class="hotMask"><span><img src="../../assets/cat.png" />{{item.name}}</span></div></a></div>
->>>>>>> 44a5ca7ac444ec1332654940f21ecfc49dd957c3
   </div>
 </template>
 <script>

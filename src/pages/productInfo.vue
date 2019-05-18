@@ -27,8 +27,8 @@
         <div class="Tit"><span>商&nbsp;品&nbsp;信&nbsp;息</span></div>
         <div class="Table">
             <table class="table table-bordered">
-            <thead><tr><th scope="col">数量</th><th scope="col" colspan="3"></th></tr></thead>
             <tbody>
+                <tr><th scope="row">数量</th><td colspan="3">{{goodDetail.amount}}</td></tr>
                 <tr><th scope="row">尺寸</th><td colspan="3">{{goodDetail.measure}}</td></tr>
                 <tr><th scope="row">材质</th><td colspan="3">{{goodDetail.texture}}</td></tr>
                 <tr><th scope="row">说明</th><td colspan="3">{{goodDetail.productDeclare}}</td></tr>
@@ -54,14 +54,11 @@ export default {
     },
     mounted(){
         let that=this
-        console.log("查看穿过来的ID",that.$route.query.id)
         that.getGoodDetail(that.$route.query.id)
     },
     methods: {
         to(){
-            this.$router.push({
-                path:`/productCenter`
-            })
+            this.$router.go(-1)
         },
         getGoodDetail(id){
             let params={}
@@ -88,7 +85,7 @@ export default {
         },
 
         down(){
-            if(this.selectIndex < this.goodDetail.imgUrls.length){
+            if(this.selectIndex <this.goodDetail.imgUrls.length-1){
                 this.selectIndex = this.selectIndex + 1;    
                 this.SelectImgUrl = this.goodDetail.imgUrls[this.selectIndex];
             }
@@ -119,7 +116,7 @@ border:1px solid #0e887a;
 .Main .Fan span{color: #0e887a;text-decoration: none;}
 .WarpInfo{display: flex;align-items: center;justify-content: center;}
 .WarpInfo .Price,.WarpInfo .Btn{text-align: center;margin-bottom: 1.2rem;font-size: 18px;}
-.WarpInfo .Name{font-size:36px;letter-spacing:8px;font-weight: bold;margin-bottom: 1.5rem;}
+.WarpInfo .Name{font-size:36px;letter-spacing:8px;font-weight: bold;margin-bottom: 1.5rem;text-align: center;}
 .WarpInfo .Price span{color: #0e887a;font-size: 30px;font-weight: bold;margin: 0 1rem;}
 .WarpInfo .Price label{font-size: 24px;margin: 0 1rem;}
 .WarpInfo .Btn span {display: inline-block;border:3px solid #0e887a;color:#0e887a;padding: .2rem 2rem;border-radius: .4rem;}

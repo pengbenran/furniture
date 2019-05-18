@@ -2,7 +2,7 @@
   <div class="container-fluid CaseOur magTop">
     <div class="row">
         <div class="col-xs-12 col-lg-6 scroll opacity" data-animation="fadeInLeft">
-          <img src="static/images/home/company.png" alt="...">
+          <img src="../../assets/images/home/company.png" alt="...">
         </div>
         <div class="col-xs-12 col-lg-6 CaseWarp scroll opacity" data-animation="fadeInRight">
           <div class="WarpInfo">

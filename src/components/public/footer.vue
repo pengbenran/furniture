@@ -48,10 +48,10 @@ export default {
 <style scoped lang="less">
 .footer_Nav{padding-top: 4%;padding-bottom: 3%;text-align: left;
     .footer_NavList{
-        // border-left: 2px solid #ccc ;
+         /*border-left: 2px solid #ccc ;*/
         display: flex;justify-content:center;
         padding-top:5px;
-        padding-left: 10px;
+        padding-left: 5%;
         box-sizing: border-box;
         height: 80px;
     } 
@@ -63,12 +63,12 @@ export default {
  background-image: url('../../assets/footerBcg.png');
  padding-bottom: 8px;
 }
-.footer .right{text-align: left;margin-left: 6px;}
-.footer .Left{height: 100%;padding-right: 15px;box-sizing: border-box;}
+.footer .right{text-align: left;margin-left: 6px;display: inline-block;}
+.footer .Left{height: 100%;padding-right: 15px;box-sizing: border-box;display: inline-block;}
 .footer .Left img{height: 40px;}
 .footer .right p{margin-bottom: 2px;}
 .footer .right strong{display: inline-block;padding: 4px 0;}
-// .footer .line{height: 100%;width: 2px;background: #ccc;margin: 0 .4rem;}
+/*// .footer .line{height: 100%;width: 2px;background: #ccc;margin: 0 .4rem;}*/
 .bq{width: 100%;text-align: center;font-weight: 100;color: #666;}
 
 

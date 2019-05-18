@@ -7,7 +7,7 @@
     <OurCase/>
     <!-- 产品分类 -->
     <div class="Case_List magTop scroll opacity" data-animation="zoomInUp">
-        <div class="Lits" v-for='(item,index) in kindRootData' ><a href="javascript:;" @click='changTab(index)'><img :src="item.itemImg" alt=".."><div class="mask"><span>{{item.itemName}}</span></div></a></div>
+        <div class="Lits" v-for='(item,index) in kindRootData' ><a href="javascript:;" @click='changTab(index,item.id)'><img :src="item.itemImg" alt=".."><div class="mask"><span>{{item.itemName}}</span></div></a></div>
       </div>
     <div class="hotCase">
      <div class="hotTitle scroll opacity" data-animation="fadeInRight">
@@ -16,7 +16,7 @@
        <span @click="loadMore">前往查看更多》</span>
      </div>
      <div class="hotConent scroll opacity"  data-animation="fadeInLeft">
-       <div class="Lits" v-for="(item,index) in goodList"><a href="javascript:;"><img :src="item.goodImg" alt=".."><div class="hotMask"><span><img src="../assets/cat.png" />{{item.name}}</span></div></a></div>
+       <div class="Lits" v-for="(item,index) in goodList" @click="toInfo(item.id)"><a href="javascript:;"><img :src="item.img" alt=".."><div class="hotMask"><span><img src="../assets/cat.png" />{{item.name}}</span></div></a></div>
      </div>
     </div>
   <!-- 热销产品 -->
@@ -51,6 +51,7 @@ import OurCase from "@/components/public/caseOur"
 import scroll from '../assets/js/scroll.js'
 import erCode from '@/components/public/erCode'
 import Api from '@/Api/kind.js'
+import Api_good from '@/Api/goods.js'
 export default {
   components:{Header,Banner,OurCase,Footer,erCode},
   name: 'Home',
@@ -59,6 +60,7 @@ export default {
       kindIndex:0,
       index:0,
       kindRootData:[],
+      LabelList:[],
       goodList:[{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')},{name:'北欧风橱柜',goodImg:require('../assets/images/home/good2.png')}]
     }
   },
@@ -69,9 +71,10 @@ export default {
     }
   },
   methods:{
-    changTab(index){
+    changTab(index,id){
       let that=this
       that.kindIndex=index
+      that.GetCatGood(id)
     },
     // 获取根分类
     getRootList(){
@@ -90,13 +93,50 @@ export default {
     },
     showMark(){
        this.$refs.erCode.openMark();
-    }
+    },
+
+    //获取指定分类标签商品
+    GetCatGood(){
+      let that = this;
+      let params = {};
+      // params.itemId=id;
+      params.labelId = that.LabelList[1].id;
+      params.pageIndex = 0;
+      params.pageSize = 8;
+      Api_good.GetLabGoods(params).then(res => {
+        
+        that.goodList = res.map(Res => {
+          Res.img = Res.imgUrls[0];
+          return Res;
+        });
+      })
+    },
+
+    //获取所有的标签getLabelList
+    async LabelListData(){
+      let that=this
+      that.labelGoodList=[]
+      let res = await Api.getLabelList().catch(err => {
+        console.log("报错")
+      })
+      if(res != ''){
+        that.LabelList = res;
+      }
+    },
+
+    toInfo(id){     this.$router.push({ path: '/productInfo', query: {id:id}})}
+
+
   },
-  mounted(){
+  async mounted(){
      window.addEventListener('scroll', scroll.handleScroll)
      this.$refs.banner.getBannerList()
      this.getRootList()
-  }
+     await this.LabelListData();
+     this.GetCatGood();
+  },
+
+
 }
 </script>
 
@@ -170,7 +210,7 @@ width: 100%;
 .Case_List a img{width: 100%;}
 
 .hotCase{text-align: center;margin: 50px auto;width: 90%;
-  .hotConent{display: flex;justify-content: space-around;flex-wrap:wrap;}
+  .hotConent{display: flex;flex-wrap:wrap;}
 }
 .hotTitle{font-weight: 100;width: 255px;margin: auto;}
 .hotTitle label{font-size: 17px;margin-bottom: 0px;letter-spacing:8px;}

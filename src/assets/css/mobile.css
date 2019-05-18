@@ -53,7 +53,8 @@
     .mobilePinfo .Main{margin-top: 2.5rem!important;margin-bottom: 3rem!important;}
     .mobilePinfo .WarpInfo{margin-top: 1.5rem;}
     .mobilePinfo .Table{margin-bottom: 3rem!important;}
-
+    .mobilePinfo .ImgList{height: 14rem!important;}
+    .mobilePinfo .Fan{margin-bottom: 55px;}
     /* 设置产品服务中心*/    
     .mobileServer .Tab{width: 100%!important;margin-top: 1.5rem!important;}
     .mobileServer .Tab span{font-size: .9rem;}

@@ -97,7 +97,7 @@
 				<h5 class="card-title">{{item.name}}</h5>
 				<p class="card-text">性别:{{item.sex}} 年龄:{{item.age}}</p>
 				<p class="card-text">{{item.introduce}}</p>
-				<a href="#/productlist" class="btn styBtn">点击查看作品>></a>
+				<a href="javascript:;" class="btn styBtn" @click="to(item.id)">点击查看作品>></a>
 			</div>
 			</div>
 			<span class="lin2"></span>
@@ -143,6 +143,12 @@ export default {
       let that=this
       that.$router.push({
         path:`/productMore`
+      })
+    },
+    to(id){
+      let that=this
+      that.$router.push({
+        path:`/designerList?id=${id}`
       })
     },
     showMark(){

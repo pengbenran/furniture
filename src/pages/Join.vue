@@ -7,18 +7,18 @@
    	</div>
    	<div class="ipt">
    	   <div>
-   	   	<input type="text" name="" placeholder="标题">
+   	   	<input type="text" v-model="emailData.title" name="" placeholder="标题">
    	   </div>
    	   <div>
-   	   	<textarea  placeholder="内容"></textarea>
+   	   	<textarea v-model="emailData.concent"  placeholder="内容"></textarea>
    	   </div>
    	   <div>
-   	   	<input type="email" name="" placeholder="电子邮箱">
+   	   	<input type="email" v-model="emailData.email" name="" placeholder="电子邮箱">
    	   </div>
    	   <div>
-   	   	<input type="phone" name="" placeholder="电话号码">
+   	   	<input type="phone" v-model="emailData.phone" name="" placeholder="电话号码">
    	   </div>
-   	   <div class="subBtn">submit</div>
+   	   <button class="subBtn" @click="PostEmail()">submit</button>
    	</div>
    </div>
    <div class="joinConent">
@@ -31,22 +31,38 @@
 <script>
 import Header from "@/components/public/nav";
 import Footer from "@/components/public/footer";
-import erCode from '@/components/public/erCode'
+import erCode from '@/components/public/erCode';
+import Api from '@/Api/join'
+
 export default {
   components:{Header,Footer,erCode},
   name: 'Join',
   data () {
     return {
-     index:7,
+	 index:7,
+	 emailData:{
+
+	 }
     }
   },
    methods:{
- showMark(){
-       this.$refs.erCode.openMark();
-    }
+	   maasdas(){
+		   console.log("qweqweqwew")
+	   },
+	showMark(){
+	   this.$refs.erCode.openMark();
+	},
+	PostEmail(){
+	   let that = this;
+	   Api.JoinPostEmail(that.emailData).then(res => {
+           alert('发送成功')
+	   }).catch(err => {
+		   alert('网络错误，请重试')
+	   })
+	}
   },
    mounted(){
-    
+
   }
 }
 </script>
@@ -87,6 +103,7 @@ export default {
 			background: #0E887A;
 			color: #fff;
 			margin-left:84.2%; 
+			border: none;
 		}
 	}
 

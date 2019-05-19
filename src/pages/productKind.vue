@@ -9,7 +9,7 @@
       <div class="hotProduct" v-for="(item,index) in KindData" :id="`hotProduct${index}`">
        <div class="HotTitle"><img src="../assets/images/productCenter/icon.png"><span>{{item.itemName}}</span></div>
        <div ><ImgList :goodArry="item.goodList"/></div> 
-       <div class="btn" @click="jump"><img src="../assets/images/productCenter/more.png"></div>
+       <div class="btn" @click="jump(item.id)"><img src="../assets/images/productCenter/more.png"></div>
       </div>
     </main>
 
@@ -79,10 +79,11 @@ export default {
     let that=this
     that.curretIndex=index
   },
-  jump(){
+  jump(cid){
     let that=this
+    // console.log("爱撒娇的喀什角动量卡",item)
     that.$router.push({
-      path:`/productlist?id=${that.kindId}`
+      path:`/productlist?id=${that.kindId}&cid=${cid}`
     })
   }
 },

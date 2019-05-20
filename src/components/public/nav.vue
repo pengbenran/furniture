@@ -16,7 +16,7 @@
                                 <li class="childNavli" v-for="(innerItem,innerIndex) in item.childNav" @click.stop="jumpToKind(innerItem.id)">
                                   <span>{{innerItem.itemName}}</span> 
                                   <ul>
-                                    <li v-for="(innerTwoItem,innerTwoIndex) in innerItem.children">{{innerTwoItem.itemName}}</li>
+                                    <li v-for="(innerTwoItem,innerTwoIndex) in innerItem.children"  @click.stop="jumpToList(innerItem.id,innerTwoItem.id)">{{innerTwoItem.itemName}}</li>
                                   </ul>
                                 </li>
                               </ul>
@@ -101,6 +101,11 @@ export default {
            this.$router.push({
                 path:`productKind?id=${id}`
             }) 
+       },
+       jumpToList(id,cid){
+        this.$router.push({
+          path:`productList?id=${id}&cid=${cid}`
+        }) 
        },
        // 获取所有分类
        getallKindList(){

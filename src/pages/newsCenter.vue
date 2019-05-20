@@ -86,7 +86,7 @@
    	 		<div class="bottom scroll opacity"  data-animation="fadeInDown">
    	 			<div class="imglist" @click="to(industryNewsList[4].id)">
    	 				<a href="javasrcipt:;">
-					<img :src="industryNewsList[4].back_img" class="d-block w-100" >
+					<img :src="industryNewsList[4].back_img"  >
 						<div class="Mask">
 							<div class="MaskInfo">
 								<p>{{industryNewsList[4].title}}</p>
@@ -298,6 +298,7 @@ export default {
 			.bottom{
 				display: flex;
 				justify-content: space-around;
+				img{width: 99.5%;height: 100%;display: block;}
 			}
 
 		}

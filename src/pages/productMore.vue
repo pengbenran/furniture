@@ -57,4 +57,7 @@ export default {
 .Fan span{color: #0e887a;text-decoration: none;}
 .Main{display:flex;justify-content:space-around;width:50%;margin:50px auto;}
 .ListWarp{margin-bottom: 8rem;}
+@media (max-width: 767px) {
+  .Main{width:100%}
+}
 </style>

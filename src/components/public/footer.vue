@@ -72,8 +72,11 @@ export default {
 .bq{width: 100%;text-align: center;font-weight: 100;color: #666;}
 
 
-
+.footer_NavList .Left{
+    display: inline-block;
+}
 .footer_NavList .right{
+    display: inline-block;
 position: relative;
 margin: 0 auto;
 width: 100%;

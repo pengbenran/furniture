@@ -25,7 +25,7 @@ export default {
     },
     mounted(){
         let that=this
-        that.getItemsByParentId(that.$route.query.id)
+        that.getItemsByParentId(that.$route.query.id,that.$route.query.cid)
     },
     methods: {
         to(){
@@ -34,14 +34,15 @@ export default {
             })
         },
          // 根据父id获取子分类
-         getItemsByParentId(parentId){
+         getItemsByParentId(parentId,cid){
             let params={}
             let that=this
             params.parentId =parentId 
             that.KindData=[]
             Api.getItemsByParentId(params).then(function(res){
                 that.KindData=res
-                that.listbyItem(res[0])
+                that.curretIndex = that.KindData.findIndex(f => f.id == cid)
+                that.listbyItem(that.KindData[that.curretIndex])
             })
         },
         // 获取改分类下的商品

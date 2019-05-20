@@ -287,6 +287,7 @@ h1,h2{font-weight: bold;}
   margin-bottom:86px; 
 
  }
+ .floor img{height: 100%;}
  .floor{
  	width: 90%;
  	margin: 0 auto 200px auto;
@@ -297,6 +298,8 @@ h1,h2{font-weight: bold;}
     a{
       position: relative;
       display: inline-block;
+      width: 100%;
+      height: 100%;
       .designerMark{
         position: absolute;
         width: 100%;
@@ -328,11 +331,13 @@ h1,h2{font-weight: bold;}
  		justify-content: space-between; 
  		.floortop{
  			display: flex;
+      height: 49.5%;
  			justify-content: space-between;
  			.floortopleft,.floortopright{
  				width: 49.8%;
         position: relative;
         a{
+          height: 100%;
           position: relative;
           display: inline-block;
           .designerMark{

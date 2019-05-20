@@ -46,15 +46,15 @@
       <div class="Nordic">
         <div class="HotTitle"><span>北欧整装</span></div>
         <div class="row">
-          <div class="col-md-6 left" @click="to(zhengzLabelGood.goodList[0].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[0].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[0].productDeclare}}</span></a></div>
+          <div class="col-md-6 left" @click="to(zhengzLabelGood.goodList[0].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[0].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[0].measure}}</span></a></div>
           <div class="col-md-6 right">
             <div class="ImgTwo">
-              <div @click="to(zhengzLabelGood.goodList[1].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[1].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[1].productDeclare}}</span></a></div>
-              <div @click="to(zhengzLabelGood.goodList[2].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[2].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[2].productDeclare}}</span></a></div>
+              <div @click="to(zhengzLabelGood.goodList[1].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[1].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[1].measure}}</span></a></div>
+              <div @click="to(zhengzLabelGood.goodList[2].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[2].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[2].measure}}</span></a></div>
             </div>
             <div class="ImgTwo ">
-               <div @click="to(zhengzLabelGood.goodList[3].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[3].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[3].productDeclare}}</span></a></div>
-               <div @click="to(zhengzLabelGood.goodList[4].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[4].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[4].productDeclare}}</span></a></div>
+               <div @click="to(zhengzLabelGood.goodList[3].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[3].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[3].measure}}</span></a></div>
+               <div @click="to(zhengzLabelGood.goodList[4].id)"><a href="javascript:;"><img :src="zhengzLabelGood.goodList[4].imgUrls[0]" /><span class="tip">{{zhengzLabelGood.goodList[4].measure}}</span></a></div>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default {
       index:3,
       labelGoodList:[],
       tjLabelGood:{goodList:[{name:'',sales:'',price:'',measure:'',texture:'',productDeclare:'',imgUrls:[],id:''}]},
-       zhengzLabelGood:{goodList:[{imgUrls:[],productDeclare:''},{imgUrls:[],productDeclare:''},{imgUrls:[],productDeclare:''},{imgUrls:[],productDeclare:''},{imgUrls:[],productDeclare:''}]}
+       zhengzLabelGood:{goodList:[{imgUrls:[],measure:''},{imgUrls:[],measure:''},{imgUrls:[],measure:''},{imgUrls:[],measure:''},{imgUrls:[],measure:''}]}
     }
   },
   methods:{
@@ -154,7 +154,7 @@ export default {
 .HotTitle span{padding: 0 3rem;letter-spacing:10px;border-bottom: 3px solid #ccc;font-size: 1.2rem;}
 .Nordic{margin-bottom: 10rem;width: 85%;margin:200px auto;}
 .Nordic img{width: 100%;}
-.Nordic  a{position: relative;display: inline-block;overflow: hidden;}
+.Nordic  a{position: relative;display: inline-block;overflow: hidden;width: 100%;}
 .Nordic  .tip{position: absolute;bottom:10%;background: rgb(191,191,191);color: #fff;padding: .5rem 1rem;left: -4rem;;opacity: 0;transition: all 0.5s;}
 .Nordic  a:hover .tip{opacity: 1;left: 0;}
 .Nordic .right span{font-size: .9rem; padding: .2rem .5rem;}

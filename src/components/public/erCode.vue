@@ -25,7 +25,7 @@ export default {
 </script>
 <style scoped>
 .Maskbg{background: rgba(204, 204, 204, 0.5);width: 100%;height: 100%;}
-.NavMask{position:fixed;align-items: center;justify-content: center;top:0;left: 0;width: 100%;height: 100%;}
+.NavMask{position:fixed;align-items: center;justify-content: center;top:0;left: 0;width: 100%;height: 100%;z-index: 9999;}
 .MaskImg{
       position: absolute;
       width:36%;

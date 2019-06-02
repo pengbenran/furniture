@@ -41,6 +41,6 @@ export default {
 <style scoped>
 .Main{margin-top: 6rem;text-align: left;}
 .Info{margin: 6rem 0;}
-.Info img{width: 100%;height: 100%;display: block;}
+.Info>>> img{width: 100%;height: 100%;display: block;}
 .Fan a{color:#0e887a;text-decoration: none;}
 </style>

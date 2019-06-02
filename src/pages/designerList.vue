@@ -22,6 +22,7 @@ export default {
     mounted(){
         let that=this
         that.getDecorateDetail(that.$route.query.id)
+        
     },
     methods: {
         to(){

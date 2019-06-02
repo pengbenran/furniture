@@ -1,6 +1,6 @@
 <template>
   <div class="containt mobileProduct">
-    <Header :curretIndex="index" @openMark="showMark"/>
+    <Header :curretIndex="index" @openMark="showMark" ref='navHeader'/>
     <Banner ref='banner'/>
     <main>
       <div class="container Recommend">
@@ -103,19 +103,19 @@ export default {
     that.labelGoodList=[]
     Api.getLabelList().then(function(res){
       for(var i in res){
-        that.getListbyLabel(res[i])
+        that.getListbyLabel(res[i],i)
       }
     })
    },
    // 获取标签分类下的商品
-   getListbyLabel(row){
+   getListbyLabel(row,index){
     let params={}
     let that=this
     params.pageIndex=0
     params.pageSize=6
     params.labelId=row.id
     Api.getListbyLabel(params).then(function(res){
-      row.goodList=res
+      row.goodList=res.productList
       if(row.name=="特别推荐"){
         that.tjLabelGood=row
       }
@@ -123,15 +123,16 @@ export default {
         that.zhengzLabelGood=row
       }
       else{
+        // that.$set(that.labelGoodList,index,row)
         that.labelGoodList.push(row)
       }
-      console.log(that.zhengzLabelGood)
     })
    }
 },
  mounted(){
    let that=this
    that.$refs.banner.getBannerList()
+   that.$refs.navHeader.getRootList()
    that.getLabelList()
   }
 }

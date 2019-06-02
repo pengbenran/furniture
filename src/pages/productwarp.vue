@@ -17,7 +17,7 @@
                     <div>
                         <div class="infoTit">{{goodDetail.name}}</div>
                         <div class="info">
-                        {{goodDetail.productDeclare}}
+                        {{goodDetail.texture}}
                         </div>
                     </div>
                 </div>               
@@ -27,7 +27,7 @@
 
         <div class="Tit"><span>整体特色</span></div>
         <div class="Shopinfo">
-          {{goodDetail.texture}}
+          {{goodDetail.productDeclare}}
         </div>
         <!--Table end-->
         <Footer/>
@@ -110,7 +110,7 @@ border:1px solid #0e887a;
 .WarpInfo{display: flex;align-items: center;justify-content: center;}
 .WarpInfo .info{text-indent:2rem;letter-spacing: .2rem;font-size: 24px;}
 .infoTit{font-size: 36px;text-align: center;margin-bottom: 1.2rem;font-weight: bold;}
-.Shopinfo{text-align: left;text-indent:2rem;margin-bottom: 8rem;width: 84%;margin:0 auto 200px auto;font-size:18px;font-family:SimHei;font-weight: bold;}
+.Shopinfo{text-align: left;text-indent:2rem;margin-bottom: 8rem;width: 84%;margin:0 auto 200px auto;font-size:18px;font-family:SimHei;}
 .Tit{border-bottom: 2px solid #000;text-align: left;margin-bottom: 2rem;width: 82%;margin:133px auto 65px auto;}
 .Tit span{background: #000;color: #fff;padding: .2rem 1rem;}
 

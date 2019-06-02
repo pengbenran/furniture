@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-   <div class="Lits" @click="to(item.id)" v-for="(item,index) in goodArry"><a href="javascript:;"><img :src="item.imgUrls[0]" alt="..."><div class="hotMask"><span><img src="../../assets/cat.png" />{{item.name}}</span></div></a></div>
+   <div class="Lits" @click="to(item.id,item.type)" v-for="(item,index) in goodArry"><a href="javascript:;"><img :src="item.imgUrls[0]" alt="..."><div class="hotMask"><span><img src="../../assets/cat.png" />{{item.name}}</span></div></a></div>
   </div>
 </template>
 <script>
@@ -12,8 +12,17 @@ export default {
         }
     },
     methods: {
-        to(id){
-            this.$router.push({ path: '/productInfo', query: {id:id}})
+        to(id,type){
+         let that=this
+         if(type==2){
+          that.$router.push({
+            path:`/productwarp?id=${id}`
+          })
+        }else{
+          that.$router.push({
+            path:`/productInfo?id=${id}`
+          })
+        }
         }
     }
 }

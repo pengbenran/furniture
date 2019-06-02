@@ -53,7 +53,7 @@ export default {
             params.pageSize=50
             params.itemId=row.id
             Api.listbyItem(params).then(function(res){
-              that.goodList=res      
+              that.goodList=res.productList     
           })
         },
         changeTab(index){

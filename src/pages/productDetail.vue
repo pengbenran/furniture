@@ -1,7 +1,6 @@
 <template>
     <div>
         <div class="container Main">
-            <div class="Fan"><span @click="to">《 返回上一页</span></div>
             <div class="Info" v-html="parductDetail.imgUrls[0]">
         
             </div>
@@ -28,9 +27,6 @@ export default {
                 that.parductDetail=res
             })
         },
-        to(){
-            this.$router.go(-1)
-        },
      },
      mounted(){
         let that=this
@@ -41,6 +37,6 @@ export default {
 <style scoped>
 .Main{margin-top: 6rem;text-align: left;}
 .Info{margin: 6rem 0;}
-.Info img{width: 100%;height: 100%;display: block;}
+.Info>>>  img{width: 100% !important;height: 100% !important;display: block;}
 .Fan a{color:#0e887a;text-decoration: none;}
 </style>

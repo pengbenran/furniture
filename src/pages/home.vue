@@ -1,6 +1,6 @@
 <template>
   <div class="containt mobile">
-    <Header :curretIndex="index" @openMark="showMark"/>
+    <Header :curretIndex="index" @openMark="showMark" ref='navHeader'/>
     <!-- banner图 -->
     <Banner ref='banner'/>
     <!-- 关于我们 -->
@@ -16,7 +16,7 @@
        <span @click="loadMore">前往查看更多》</span>
      </div>
      <div class="hotConent scroll opacity"  data-animation="fadeInLeft">
-       <div class="Lits" v-for="(item,index) in goodList" @click="toInfo(item.id)"><a href="javascript:;"><img :src="item.img" alt=".."><div class="hotMask"><span><img src="../assets/cat.png" />{{item.name}}</span></div></a></div>
+       <div class="Lits" v-for="(item,index) in goodList" @click="toInfo(item.id,item.type)"><a href="javascript:;"><img :src="item.img" alt=".."><div class="hotMask"><span><img v-if="item.type==1" src="../assets/cat.png" />{{item.name}}</span></div></a></div>
      </div>
     </div>
   <!-- 热销产品 -->
@@ -105,7 +105,7 @@ export default {
       params.pageIndex = 0;
       params.pageSize = 6;
       Api_good.GetCatLab(params).then(res => { 
-        that.goodList = res.map(Res => {
+        that.goodList = res.productList.map(Res => {
           Res.img = Res.imgUrls[0];
           return Res;
         });
@@ -127,13 +127,23 @@ export default {
       }
     },
 
-    toInfo(id){     this.$router.push({ path: '/productInfo', query: {id:id}})}
-
-
+    toInfo(id,type){
+      let that=this
+      if(type==2){
+        that.$router.push({
+          path:`/productwarp?id=${id}`
+        })
+      }else{
+        that.$router.push({
+          path:`/productInfo?id=${id}`
+        })
+      }
+    }
   },
   async mounted(){
      window.addEventListener('scroll', scroll.handleScroll)
      this.$refs.banner.getBannerList()
+     this.$refs.navHeader.getRootList()
      await this.LabelListData();
      this.getRootList()
   },

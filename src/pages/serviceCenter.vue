@@ -1,6 +1,6 @@
 <template>
   <div class="mobileServer">
-     <Header :curretIndex="index" @openMark="showMark"/>
+     <Header :curretIndex="index" @openMark="showMark" ref='navHeader'/>
      <Banner ref='banner'/>
      <div class="container Tab mt150">
        <div class="row">
@@ -197,6 +197,7 @@ computed:{
   },
  mounted(){
     this.$refs.banner.getBannerList()
+    this.$refs.navHeader.getRootList()
   }
 }
 </script>

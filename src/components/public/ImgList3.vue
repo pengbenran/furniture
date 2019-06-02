@@ -17,9 +17,9 @@ export default {
 }
 </script>
 <style scoped lang="less">
-.content{display: flex;flex-wrap: wrap;}
+.content{display: flex;flex-wrap: wrap;padding-top: 50px;box-sizing: border-box;}
 .Lits img{width: 100%;}
-.Lits{margin-top: 30px;width: 33%;}
-.Lits:hover{border: 1px solid #ccc;}
-a{display: inline-block;position: relative;}
+.Lits{margin-bottom: 5px;width: 33%;margin-right: 0.3%}
+.Lits :hover{border: 1px solid #ccc;}
+a{display: inline-block;position: relative;width: 100%;}
 </style>

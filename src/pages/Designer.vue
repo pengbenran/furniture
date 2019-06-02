@@ -1,6 +1,6 @@
 <template>
   <div class="containt mobileDesig">
-  	<Header :curretIndex="index" @openMark="showMark"/>
+  	<Header :curretIndex="index" @openMark="showMark" ref='navHeader'/>
    <Banner ref='banner'/>
     <div class="connect">
 		<img src="../assets/images/designer/connect.png" class="d-block w-100">
@@ -211,6 +211,7 @@ export default {
      this.getDesignerList()
      this.getDecorate()
      this.getProductList()
+     this.$refs.navHeader.getRootList()
   }
 }
 </script>
@@ -338,6 +339,7 @@ h1,h2{font-weight: bold;}
         position: relative;
         a{
           height: 100%;
+          width:100%;
           position: relative;
           display: inline-block;
           .designerMark{

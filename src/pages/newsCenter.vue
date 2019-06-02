@@ -1,7 +1,7 @@
 <template>
   <div class="containt mobileNew">
   	<!-- 导航栏 -->
-  	<Header :curretIndex="index" @openMark="showMark"/>
+  	<Header :curretIndex="index" @openMark="showMark" ref='navHeader'/>
   	<!-- banner图 -->
    <Banner ref='banner'/>
    <!-- 公司新闻 -->
@@ -38,7 +38,7 @@
    	 <div class="industryConent">
    	 	<div class="left scroll opacity"  data-animation="fadeInLeft" @click="to(industryNewsList[0].id)">
 			<a href="javasrcipt:;">
-			    <img :src="industryNewsList[0].back_img" class="d-block w-100" >
+			    <img :src="industryNewsList[0].back_img" >
 				<div class="Mask">
 					<div class="MaskInfo">
 						<p>{{industryNewsList[0].title}}</p>
@@ -51,7 +51,7 @@
    	 		<div class="top scroll opacity"  data-animation="fadeInRight">
    	 			<div class="imglist" @click="to(industryNewsList[1].id)">
    	 				<a href="javasrcipt:;">
-						<img :src="industryNewsList[1].back_img" class="d-block w-100" >
+						<img :src="industryNewsList[1].back_img" >
 						<div class="Mask">
 							<div class="MaskInfo">
 								<p>{{industryNewsList[1].title}}</p>
@@ -62,7 +62,7 @@
    	 			</div>
    	 			<div class="imglist" @click="to(industryNewsList[2].id)">
    	 				<a href="javasrcipt:;">
-						<img :src="industryNewsList[2].back_img" class="d-block w-100" >
+						<img :src="industryNewsList[2].back_img"  >
 						<div class="Mask">
 							<div class="MaskInfo">
 								<p>{{industryNewsList[2].title}}</p>
@@ -73,7 +73,7 @@
    	 			</div>
    	 			<div class="imglist" @click="to(industryNewsList[3].id)">
 					<a href="javasrcipt:;">
-						<img :src="industryNewsList[3].back_img" class="d-block w-100" >
+						<img :src="industryNewsList[3].back_img" >
 						<div class="Mask">
 							<div class="MaskInfo">
 								<p>{{industryNewsList[3].title}}</p>
@@ -84,7 +84,7 @@
    	 			</div>
    	 		</div>
    	 		<div class="bottom scroll opacity"  data-animation="fadeInDown">
-   	 			<div class="imglist" @click="to(industryNewsList[4].id)">
+   	 			<div class="imglist1" @click="to(industryNewsList[4].id)">
    	 				<a href="javasrcipt:;">
 					<img :src="industryNewsList[4].back_img"  >
 						<div class="Mask">
@@ -95,9 +95,9 @@
 					    </div>
 					</a>
    	 			</div>
-   	 			<div class="imglist"@click="to(industryNewsList[5].id)">
+   	 			<div class="imglist2"@click="to(industryNewsList[5].id)">
    	 				<a href="javasrcipt:;">
-						<img :src="industryNewsList[5].back_img" class="d-block w-100" >
+						<img :src="industryNewsList[5].back_img">
 						<div class="Mask">
 							<div class="MaskInfo">
 								<p>{{industryNewsList[5].title}}</p>
@@ -151,8 +151,7 @@ export default {
 			params.style=1
 			Api.CompanyList(params).then(function(res){
 				res.map(item=>{
-					let createDate=item.createTime.split(' ')[0]
-					console.log(createDate)
+					let createDate=item.updateTime.split(' ')[0]
 					item.createDay=createDate.split('-')[2]
 					item.createMonth=createDate.split('-')[0]+'-'+createDate.split('-')[1]
 					return item
@@ -179,6 +178,7 @@ export default {
 	 mounted(){
     window.addEventListener('scroll', scroll.handleScroll)
      this.$refs.banner.getBannerList()
+     this.$refs.navHeader.getRootList()
      this.getCompanyList()
      this.getindustryNewsList()
   }
@@ -262,7 +262,8 @@ export default {
 		margin:auto;
 		display: flex;
 		justify-content: space-between;
-		a{display: inline-block;position: relative;color: #fff;}
+		a{display: inline-block;position: relative;color: #fff;width: 100%;height: 100%;}
+		a img{width:100%;height: 100%;display: block;}
 		a .Mask{background: rgba(14, 136, 122, 0.3);position: absolute;left: 0;top: 0;height: 100%;width: 100%;display: flex;align-items: center;opacity: 0;transition: all 0.3s;}
 		a .MaskInfo{width: 100%;text-align: left;padding: 0 10%;}
 		a .Mask p{font-size: 1.1rem;}
@@ -270,7 +271,6 @@ export default {
 		a:hover .Mask{opacity: 1;}
 		.left{
 			width: 23%;
-			height:100%;
 		}
 		.right{
 			width: 76.8%;
@@ -298,7 +298,9 @@ export default {
 			.bottom{
 				display: flex;
 				justify-content: space-around;
-				img{width: 99.5%;height: 100%;display: block;}
+				.imglist1{width: 66.2%;}
+				.imglist2{width: 32.8%;}
+				img{width: 100%;height: 100%;display: block;}
 			}
 
 		}

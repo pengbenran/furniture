@@ -1,6 +1,6 @@
 <template>
   <div class="containt">
-    <Header :curretIndex="index" @openMark="showMark"/>
+    <Header :curretIndex="index" @openMark="showMark" ref='navHeader'/>
     <!--header end-->
 
     <div class="main">
@@ -78,6 +78,7 @@ export default {
     }
   },
   mounted(){
+    this.$refs.navHeader.getRootList()
   }
 }
 </script>

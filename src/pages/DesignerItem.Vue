@@ -1,53 +1,56 @@
 <template>
     <div class="mobilePinfo">
        <div class="Fan"><span @click="to">《 返回上一页</span></div>
-       <div class="Main">
+       <!--<div class="Main">
             <div class="list" @click="changTab(index)" :class ="selectIndex == index ? 'select':''" v-for="(item,index) in decorateList">{{item.name}}</div>
-        </div>
+        </div>-->
         <!--Main end-->
         <div class="container ListWarp">
-            <productMoreList :selectDecorate='selectDecorate'/>
+            <DesignerList :List='List'/>
         </div>
         <Footer/>
     </div>
 </template>
 <script>
 import Footer from "@/components/public/footer";
-import productMoreList from "@/components/public/productMoreList"
+import DesignerList from "@/components/public/DesignerList"
 import Api from '@/Api/designer'
 export default {
-    components:{Footer,productMoreList},  
+    components:{Footer,DesignerList},  
     data () {
          return {
-            decorateList:[],
+            List:[],
             selectDecorate:{},
             selectIndex:0,
+            ItemId:''
          }
     },
     methods: {
         to(){
             this.$router.go(-1)
         },
-        changTab(index){
-          this.selectIndex=index
-          this.selectDecorate=this.decorateList[index]
-      },
+    //     changTab(index){
+    //       this.selectIndex=index
+    //       this.selectDecorate=this.decorateList[index]
+    //   },
         // 装饰设计列表
         getDecorate(){
           let params={};
           let that=this
           params.pageIndex=1
           params.pageSize=100
-          params.key=''
-          Api.getDecorateList(params).then(function(res){
-            that.decorateList=res
-            console.log(that.decorateList)
-            that.selectDecorate=that.decorateList[0]
+          Api.getByIdProductItemList(that.ItemId,params).then(function(res){
+            that.List=res
+            // console.log(that.decorateList)
+            // that.selectDecorate=that.decorateList[0]
         })
       },
     },
     mounted(){
-       this.getDecorate()
+    //    this.getDecorate()
+       this.ItemId = this.$route.query.id;
+       this.getDecorate();
+    //    that.$route.query.id
     }
 }
 </script>

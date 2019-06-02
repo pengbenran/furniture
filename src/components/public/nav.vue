@@ -16,7 +16,7 @@
                                 <li class="childNavli" v-for="(innerItem,innerIndex) in item.childNav" @click.stop="jumpToKind(innerItem.id)">
                                   <span>{{innerItem.itemName}}</span> 
                                   <ul>
-                                    <li v-for="(innerTwoItem,innerTwoIndex) in innerItem.children">{{innerTwoItem.itemName}}</li>
+                                    <li v-for="(innerTwoItem,innerTwoIndex) in innerItem.children"  @click.stop="jumpToList(innerItem.id,innerTwoItem.id)">{{innerTwoItem.itemName}}</li>
                                   </ul>
                                 </li>
                               </ul>
@@ -37,6 +37,7 @@
 </template>
 <script>
 import Api from "@/Api/kind"
+import store from "@/store/store"
 export default {
     props: ['curretIndex','isScroll'],
     data () {
@@ -69,7 +70,7 @@ export default {
            },
            {
             navName:'销售中心',
-            jumpUrl:'/',
+            jumpUrl:'/saleCenter',
             childNav:[]
            },
            {
@@ -92,60 +93,58 @@ export default {
     },
     methods:{
         jumpTo(url){
+          if(url!='/saleCenter'){
             this.$router.push({
-                path:url
+              path:url
             }) 
+          }   
         //    this.ShowNav = !this.ShowNav;
         },
         jumpToKind(id){
            this.$router.push({
                 path:`productKind?id=${id}`
             }) 
+            this.$emit('getItemsByParentId',id)
        },
-       // 获取所有分类
-       getallKindList(){
+       jumpToList(id,cid){
+        this.$router.push({
+          path:`productList?id=${id}&cid=${cid}`
+        }) 
+       },
+       // 获取所有根分类
+       getRootList(){
         let that=this
-        console.log(that.rootKind)
-        if(that.rootKind.length!=0){
-           that.navDate[3].childNav=that.rootKind
+        if(that.navDate[3].childNav.length!=0){
+           // that.navDate[3].childNav=that.rootKind
            that.ShowNav = true;
         }
-        else{
-         Api.getallKindList().then(function(res){
-          that.rootKind=that.toTree(res)
-          that.navDate[3].childNav=that.rootKind
-          that.ShowNav = true;
-        })
+        else{ 
+          Api.getRootList().then(function(res){
+            // that.rootKind=that.toTree(res)
+            for(var i in res){
+              that.getItemsByParentId(res[i],i)
+            }
+            // that.navDate[3].childNav=that.rootKind
+          })  
         }
        },
-       toTree(data){
-         // 删除 所有 children,以防止多次调用
-         data.forEach(function (item) {
-          delete item.children;
-        });
-        // 将数据存储为 以 id 为 KEY 的 map 索引数据列
-        var map = {};
-        data.forEach(function (item) {
-            map[item.id] = item;
-        });
-        var val = [];
-        data.forEach(function (item) {
-            // 以当前遍历项，的pid,去map对象中找到索引的id
-            var parent = map[item.parentId];
-            // 好绕啊，如果找到索引，那么说明此项不在顶级当中,那么需要把此项添加到，他对应的父级中
-            if (parent) {
-                (parent.children || ( parent.children = [] )).push(item);
-            } else {
-                //如果没有在map中找到对应的索引ID,那么直接把 当前的item添加到 val结果集中，作为顶级
-                val.push(item);
-            }
-        });
-        return val;
+       // 根据父id获取子分类
+       getItemsByParentId(row,index){
+        let that=this
+        let params={}
+        params.parentId=row.id
+        Api.getItemsByParentId(params).then(function(res){
+          // that.parentId =that.toTree(res)
+          row.children=res
+          that.navDate[3].childNav[index]=row
+          // that.ShowNav = true;
+        })
        },
+    
         enter(index){//鼠标进入
           let that=this
           if(index==3){
-            that.getallKindList()
+            that.getRootList()
           } 
           else if(index==4){
             this.ShowNav2=true

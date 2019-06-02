@@ -1,6 +1,6 @@
 <template>
   <div class="mobileServer">
-     <Header :curretIndex="index" @openMark="showMark"/>
+     <Header :curretIndex="index" @openMark="showMark" ref='navHeader'/>
      <Banner ref='banner'/>
      <div class="container Tab mt150">
        <div class="row">
@@ -125,7 +125,7 @@
      <div class="container Map">
        <img src="../assets/images/serviceCenter/map.png" />
        <div class="MapF">
-        <div class="icon" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()"><img src="../assets/images/serviceCenter/mapf.png" class="w-100 d-block" /></div>
+        <div class="icon" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()"><img src="../assets/images/serviceCenter/mapf.png"/></div>
         <div class="sj" v-show="isShow"></div>
         <div class="addressInfo" v-show="isShow">
            地址:四川省成都市金牛区天力商务楼501
@@ -197,6 +197,7 @@ computed:{
   },
  mounted(){
     this.$refs.banner.getBannerList()
+    this.$refs.navHeader.getRootList()
   }
 }
 </script>
@@ -208,12 +209,14 @@ computed:{
 .mt150{margin-top: 8rem;}
 
 .TabWarp{text-align: center;}
-.TabTitle{display: inline-block;height: 40px;line-height: 40px;width: 200px; text-align: center;background: #f8f8f8;font-size: 1.2rem;}
+.TabTitle{display: inline-block;height: 40px;line-height: 40px;width: 200px; text-align: center;background: #f8f8f8;}
 .TabList{padding: 6rem 10%;text-align: left;background: #f8f8f8;}
 .TabList .newList{display: flex; justify-content: space-between;flex-direction: column;}
 .TabList>div>div{padding: 0 3rem;}
-.TabList .tit{margin-bottom: 24px;font-size:20px;}
-.TabList .info{font-weight: 100;text-indent:2rem;justify-content: content;}
+
+.TabList .tit{margin-bottom: 24px; font-size:20px;}
+.TabList .info{font-size: 16px;font-weight: 100;text-indent:2rem;justify-content: content;}
+
 .TabList .tit p{font-weight: 100;font-size: 1rem;}
 .TabImg{display: flex;align-items: center;}
 .TabImg img{width: 100%;}

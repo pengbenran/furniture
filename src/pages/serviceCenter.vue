@@ -212,8 +212,8 @@ computed:{
 .TabList{padding: 6rem 10%;text-align: left;background: #f8f8f8;}
 .TabList .newList{display: flex; justify-content: space-between;flex-direction: column;}
 .TabList>div>div{padding: 0 3rem;}
-.TabList .tit{margin-bottom: 24px;}
-.TabList .info{font-size:20px;font-weight: 100;text-indent:2rem;justify-content: content;}
+.TabList .tit{margin-bottom: 24px;font-size:20px;}
+.TabList .info{font-weight: 100;text-indent:2rem;justify-content: content;}
 .TabList .tit p{font-weight: 100;font-size: 1rem;}
 .TabImg{display: flex;align-items: center;}
 .TabImg img{width: 100%;}

@@ -4,6 +4,7 @@ import home from '@/pages/home'
 import serviceCenter from '@/pages/serviceCenter'
 import corporateCulture from '@/pages/corporateCulture'
 import Designer from '@/pages/Designer'
+import DesignerItem from '@/pages/DesignerItem'
 import Join from '@/pages/Join'
 import newsCenter from '@/pages/newsCenter'
 import newsInfo from '@/pages/newsInfo'
@@ -20,6 +21,13 @@ import designerList from '@/pages/designerList'
 import productDetail from '@/pages/productDetail'
 Vue.use(Router)
 export default new Router({
+  scrollBehavior(to,from,saveTop){
+      if(saveTop){
+        return saveTop;
+      }else{
+        return {x:0,y:0}
+      }
+    },
   routes: [
     {
       path: '/',
@@ -70,6 +78,11 @@ export default new Router({
       path: '/Designer',
       name: 'Designer',
       component: Designer
+    },
+    {
+      path: '/DesignerItem',
+      name: 'DesignerItem',
+      component: DesignerItem
     },
     {
       path: '/Join',

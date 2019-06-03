@@ -1,6 +1,6 @@
 <template>
   <div class="containt mobileDesig">
-  	<Header :curretIndex="index" @openMark="showMark"/>
+  	<Header :curretIndex="index" @openMark="showMark" ref='navHeader'/>
    <Banner ref='banner'/>
     <div class="connect">
 		<img src="../assets/images/designer/connect.png" class="d-block w-100">
@@ -147,8 +147,9 @@ export default {
     },
     jumpToProductDetail(id){
       let that=this
+      // productDetail
       that.$router.push({
-        path:`/productDetail?id=${id}`
+        path:`/DesignerItem?id=${id}`
       })
     },
     to(id){
@@ -201,7 +202,7 @@ export default {
       params.pageIndex=1
       params.pageSize=10
       params.key=''
-      Api.getProductList(params).then(function(res){
+      Api.getProductItemList(params).then(function(res){
         that.productList=res
       })
     }
@@ -211,6 +212,7 @@ export default {
      this.getDesignerList()
      this.getDecorate()
      this.getProductList()
+     this.$refs.navHeader.getRootList()
   }
 }
 </script>
@@ -338,6 +340,7 @@ h1,h2{font-weight: bold;}
         position: relative;
         a{
           height: 100%;
+          width:100%;
           position: relative;
           display: inline-block;
           .designerMark{

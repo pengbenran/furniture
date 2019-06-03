@@ -1,18 +1,24 @@
 <template>
   <div class="content">
-   <div class="Lits" v-for="(item,index) in selectDecorate.imgUrls"><a href="javascript:;"><img :src="item" alt="..."></a></div>
+   <div class="Lits" v-for="(item,index) in List" @click='jumpToProductDetail(item.id)'><a href="javascript:;"><img :src="item.lordImg" alt="..."></a></div>
   </div>
 </template>
 <script>
 export default {
-    props:['selectDecorate'],
+    props:['List'],
     data () {
         return {
 
         }
     },
     methods: {
-      
+    jumpToProductDetail(id){
+      let that=this
+      // productDetail
+      that.$router.push({
+        path:`/productDetail?id=${id}`
+      })
+    },
     }
 }
 </script>

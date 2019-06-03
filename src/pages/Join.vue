@@ -1,6 +1,6 @@
 <template>
   <div class="containt">
-   <Header :curretIndex="index" @openMark="showMark"/>
+   <Header :curretIndex="index" @openMark="showMark" ref='navHeader'/>
    <div class="join">
    	<div class="bcg">
    	   <img src="../assets/images/Join/joinbcg.png" class="d-block w-100" >
@@ -62,7 +62,7 @@ export default {
 	}
   },
    mounted(){
-
+this.$refs.navHeader.getRootList()
   }
 }
 </script>

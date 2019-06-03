@@ -1,6 +1,6 @@
 <template>
   <div class="containt mobileProduct">
-    <Header :curretIndex="index" @openMark="showMark"/>
+    <Header :curretIndex="index" @openMark="showMark" ref='navHeader' @getItemsByParentId="getItemsByParentId"/>
     <Banner ref='banner'/>
     <main> 
       <div class="productKind">
@@ -31,10 +31,14 @@ export default {
     return {
       index:3,
       curretIndex:0,
-      KindData:[
-      
-      ],
+      KindData:[],
       kindId:''
+    }
+  },
+  computed:{
+    KindDatas(){
+      let that=this
+      return that.KindData
     }
   },
   methods:{
@@ -49,22 +53,20 @@ export default {
     that.KindData=[]
     Api.getItemsByParentId(params).then(function(res){
       for(var i in res){
-        that.listbyItem(res[i])
+        that.listbyItem(res[i],i)
       }
-      
-
     })
   },
   // 获取改分类下的商品
-  listbyItem(row){
+  listbyItem(row,index){
     let params={}
     let that=this
     params.pageIndex=0
     params.pageSize=6
     params.itemId=row.id
     Api.listbyItem(params).then(function(res){
-      row.goodList=res
-      that.KindData.push(row)
+      row.goodList=res.productList
+      that.$set(that.KindData,index,row)
     })
   },
    showMark(){
@@ -90,6 +92,7 @@ export default {
  mounted(){
     let that=this
     window.addEventListener('scroll', this.menu)
+    that.$refs.navHeader.getRootList()
     that.$refs.banner.getBannerList()
     that.kindId=that.$route.query.id
     that.getItemsByParentId(that.kindId)

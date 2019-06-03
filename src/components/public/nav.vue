@@ -13,10 +13,10 @@
                             <div class="menuConent" v-if="index==3&&ShowNav">
                               <div class="upIcon"></div>
                               <ul class="childNavUl"  @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
-                                <li class="childNavli" v-for="(innerItem,innerIndex) in item.childNav" @click.stop="jumpToKind(innerItem.id)">
+                                <li class="childNavli" v-for="(innerItem,innerIndex) in item.childNav" @click.stop="jumpToKind(innerItem.id,innerItem.itemName)">
                                   <span>{{innerItem.itemName}}</span> 
                                   <ul>
-                                    <li v-for="(innerTwoItem,innerTwoIndex) in innerItem.children"  @click.stop="jumpToList(innerItem.id,innerTwoItem.id)">{{innerTwoItem.itemName}}</li>
+                                    <li v-for="(innerTwoItem,innerTwoIndex) in innerItem.children"  @click.stop="jumpToList(innerItem.id,innerTwoItem.id,innerItem.itemName)">{{innerTwoItem.itemName}}</li>
                                   </ul>
                                 </li>
                               </ul>
@@ -100,16 +100,37 @@ export default {
           }   
         //    this.ShowNav = !this.ShowNav;
         },
-        jumpToKind(id){
-           this.$router.push({
-                path:`productKind?id=${id}`
+        jumpToKind(id,itemName){
+          if(itemName=='大型工装'){
+
+          }
+          else if(itemName=='整体家装'){
+            this.$router.push({
+              path:`productKind?id=${id}`
             }) 
-            this.$emit('getItemsByParentId',id)
+          } 
+          else{
+            this.$router.push({
+              path:`productKind2?id=${id}`
+            })
+          }
+          this.$emit('getItemsByParentId',id)
        },
-       jumpToList(id,cid){
-        this.$router.push({
-          path:`productList?id=${id}&cid=${cid}`
-        }) 
+       jumpToList(id,cid,itemName){
+         if(itemName=='大型工装'){
+
+          }
+          else if(itemName=='整体家装'){
+            this.$router.push({
+              path:`productList?id=${id}&cid=${cid}`
+            }) 
+          } 
+          else{
+            this.$router.push({
+              path:`productList2?id=${id}&cid=${cid}`
+            }) 
+          }
+        
        },
        // 获取所有根分类
        getRootList(){

@@ -11,8 +11,10 @@ import productCenter from '@/pages/productCenter'
 import productInfo from '@/pages/productInfo'
 import productwarp from '@/pages/productwarp'
 import productlist from '@/pages/productlist'
+import productlist2 from '@/pages/productlist2'
 import salesCenter from '@/pages/salesCenter'
 import productKind from '@/pages/productKind'
+import productKind2 from '@/pages/productKind2'
 import productMore from '@/pages/productMore'
 import formJoin from '@/pages/formJoin'
 import designerList from '@/pages/designerList'
@@ -56,6 +58,11 @@ export default new Router({
       path: '/productKind',
       name: 'productKind',
       component: productKind
+    },
+      {
+      path: '/productKind2',
+      name: 'productKind2',
+      component: productKind2
     },
     {
       path: '/serviceCenter',
@@ -106,6 +113,11 @@ export default new Router({
       path: '/productlist',
       name: 'productlist',
       component: productlist
+    },
+    {
+      path: '/productlist2',
+      name: 'productlist2',
+      component: productlist2
     },
     {
       path: '/salesCenter',

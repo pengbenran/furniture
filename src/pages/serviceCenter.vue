@@ -122,32 +122,11 @@
        </div>
      </div>
 
-     <div class="container Map">
-       <img src="../assets/images/serviceCenter/map.png" />
-       <div class="MapF">
-        <div class="icon" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()"><img src="../assets/images/serviceCenter/mapf.png"/></div>
-        <div class="sj" v-show="isShow"></div>
-        <div class="addressInfo" v-show="isShow">
-           地址:四川省成都市金牛区天力商务楼501
-         </div>
-       </div>
-      <div class="MapF MapF1">
-        <div class="icon" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()"><img src="../assets/images/serviceCenter/mapf.png"/></div>
-        <div class="sj" v-show="isShow"></div>
-        <div class="addressInfo" v-show="isShow">
-           地址:邢台市桥东区泉北东大街88号
-         </div>
-       </div>
-        <div class="MapF MapF2">
-        <div class="icon" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()"><img src="../assets/images/serviceCenter/mapf.png"/></div>
-        <div class="sj" v-show="isShow"></div>
-        <div class="addressInfo" v-show="isShow">
-           地址:南宁市青秀区凤岭南路6-6号
-         </div>
-       </div>
-     </div>
+
+     <Map></Map>
 
      <Footer/>
+
      <erCode ref="erCode"/>
   </div>
 </template>
@@ -156,9 +135,10 @@ import Header from "@/components/public/nav";
 import Footer from "@/components/public/footer";
 import Banner from "@/components/public/banner";
 import erCode from '@/components/public/erCode'
+import Map from '@/components/public/map'
 export default {
   name: 'serviceCenter',
-  components:{Header,Banner,Footer,erCode},
+  components:{Header,Banner,Footer,erCode,Map},
   data () {
     return {
      index:5,
@@ -189,12 +169,7 @@ export default {
     }
   },
   methods:{
-  mouseEnter(){
-    this.isShow=true
-  },
-  mouseLeave(){
-    this.isShow=false
-  },
+
   changTab(index){
     let that=this
     that.serviveIndex=index
@@ -285,32 +260,7 @@ top: 50%;
 -o-transform: translateY(-50%);
 transform: translateY(-50%);
 }
-.Map{position: relative;padding: 4rem;}
-.Map img{width: 70%;}
-.MapF{position: absolute;top: 54%;left: 45%;display:flex;
-  .sj{
-    height:0;
-    width:0;
-    overflow: hidden;
-    font-size: 0;
-    line-height: 0;
-    border-color:transparent #E6E6E6 transparent transparent;
-    border-style:solid dashed solid dashed;
-    border-width:20px;
-    margin-top:20px;
-  }
- .addressInfo{
-  background: #fff;
-  opacity: 0.8;
-  height: 80px;
-  background: #E6E6E6;
-  font-size: 14px;
-  padding:30px 10px;
-  box-sizing: border-box;
- }
-}
-.MapF1{position: absolute;top: 38%;left: 61%;}
-.MapF2{position: absolute;top: 74%;left: 55%;}
+
 .ChangTab0{
     .LineWarp{width: 50%;}
   .LineWarp:nth-child(1) label{left: 44%;}

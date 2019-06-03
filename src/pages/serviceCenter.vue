@@ -131,6 +131,20 @@
            地址:四川省成都市金牛区天力商务楼501
          </div>
        </div>
+      <div class="MapF MapF1">
+        <div class="icon" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()"><img src="../assets/images/serviceCenter/mapf.png"/></div>
+        <div class="sj" v-show="isShow"></div>
+        <div class="addressInfo" v-show="isShow">
+           地址:邢台市桥东区泉北东大街88号
+         </div>
+       </div>
+        <div class="MapF MapF2">
+        <div class="icon" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()"><img src="../assets/images/serviceCenter/mapf.png"/></div>
+        <div class="sj" v-show="isShow"></div>
+        <div class="addressInfo" v-show="isShow">
+           地址:南宁市青秀区凤岭南路6-6号
+         </div>
+       </div>
      </div>
 
      <Footer/>
@@ -295,6 +309,8 @@ transform: translateY(-50%);
   box-sizing: border-box;
  }
 }
+.MapF1{position: absolute;top: 38%;left: 61%;}
+.MapF2{position: absolute;top: 74%;left: 55%;}
 .ChangTab0{
     .LineWarp{width: 50%;}
   .LineWarp:nth-child(1) label{left: 44%;}

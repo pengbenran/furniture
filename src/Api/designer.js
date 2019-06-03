@@ -20,5 +20,14 @@ export default {
 	// 获取产品设计详情
 	getProductDetail:params=>{
 		return API.GET('/project/design/product',params)
+	},
+    // 获取产品分类列表
+	getProductItemList:params=>{
+		return API.GET('/project/design/item/product/queryList',params)
+	},
+
+	    // 获取指定产品分类列表
+	getByIdProductItemList:(itemId,params)=>{
+		return API.GET(`/project/design/product/queryList/${itemId}`,params)
 	}
 }

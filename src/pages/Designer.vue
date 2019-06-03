@@ -147,8 +147,9 @@ export default {
     },
     jumpToProductDetail(id){
       let that=this
+      // productDetail
       that.$router.push({
-        path:`/productDetail?id=${id}`
+        path:`/DesignerItem?id=${id}`
       })
     },
     to(id){
@@ -201,7 +202,7 @@ export default {
       params.pageIndex=1
       params.pageSize=10
       params.key=''
-      Api.getProductList(params).then(function(res){
+      Api.getProductItemList(params).then(function(res){
         that.productList=res
       })
     }

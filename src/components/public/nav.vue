@@ -109,7 +109,9 @@ export default {
         },
         jumpToKind(id,itemName){
           if(itemName=='大型工装'){
-
+            this.$router.push({
+              path:`productCen?id=${id}`
+            }) 
           }
           else if(itemName=='整体家装'){
             this.$router.push({
@@ -125,7 +127,9 @@ export default {
        },
        jumpToList(id,cid,itemName){
          if(itemName=='大型工装'){
-
+            this.$router.push({
+              path:`productCen?id=${id}`
+            }) 
           }
           else if(itemName=='整体家装'){
             this.$router.push({

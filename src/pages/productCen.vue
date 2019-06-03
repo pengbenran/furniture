@@ -5,9 +5,9 @@
     
     <div class='container Main'>
         <div class="nav">
-          <span>川音酒店</span>
-          <span>川音酒店</span>
-          <span>川音酒店</span>
+          <span v-for="(item,index) in kindData" :key="item.id" @click="changeTab(index)">
+            <a :class="curretIndex==index?'selectOn':''">{{item.itemName}}</a>
+          </span>
         </div>   
     </div>
 
@@ -17,10 +17,9 @@
         </div>
            <div class="Info">
              <div>
-             <label>川音酒店</label>
+             <label>{{goodDetail.name}}</label>
              <div>
-               你好世界川音酒店，世界也不是你想的那样的。我希望这是一个充满希望的世界，每一个人都平平安安的这就世界就和平了。
-               你好世界川音酒店，世界也不是你想的那样的。我希望这是一个充满希望的世界，每一个人都平平安安的这就世界就和平了
+               {{goodDetail.productDeclare}}
              </div>
              </div>
            </div>
@@ -28,15 +27,9 @@
 
         <div class="container Case">
           <ul>
-            <li><img src="../assets/images/home/company.png"/></li>
-            <li><img src="../assets/images/home/company.png"/></li>
-            <li><img src="../assets/images/home/company.png"/></li>
-            <li><img src="../assets/images/home/company.png"/></li>
+            <li v-for="(item,index) in goodDetail.imgUrls"><img :src="item"/></li>
           </ul>
         </div>
-
-
-
     <Footer/>   
     <erCode ref="erCode"/>
   </div>
@@ -53,20 +46,53 @@ export default {
   data () {
     return {
       index:3,
-
-
+      kindData:[],
+      curretIndex:0,
+      goodDetail:{}
     }
   },
   methods:{
     showMark(){
      this.$refs.erCode.openMark();
    },
-
+  changeTab(index){
+    let that=this
+    that.curretIndex=index
+    that.listbyItem(that.kindData[that.curretIndex].id)
+  },
+  // 根据父id获取子分类
+  getItemsByParentId(parentId){
+    let that=this
+    let params={}
+    params.parentId=parentId
+    Api.getItemsByParentId(params).then(function(res){
+      that.kindData=res
+      if(that.kindData.length>0){
+        that.listbyItem(that.kindData[that.curretIndex].id)
+      }
+    })
+  },
+ // 获取改分类下的商品
+  listbyItem(id){
+    let params={}
+    let that=this
+    params.pageIndex=0
+    params.pageSize=6
+    params.itemId=id
+    Api.listbyItem(params).then(function(res){
+      // row.goodList=res.productList
+      // console.log(res);
+      that.goodDetail=res.productList[0]
+      // console.log(that.goodDetail);
+      // that.$set(that.childKindData,index,row)
+      // that.childKindData.push(row)
+    })
+  },
 },
  mounted(){
    let that=this
    that.$refs.banner.getBannerList()
-
+   that.getItemsByParentId(that.$route.query.id)
   }
 }
 </script>
@@ -78,6 +104,7 @@ export default {
   display: flex;justify-content: center;
   span{margin: 0 2rem;}
 }
+.nav .selectOn{color:#0e887a;}
 .BgInfo{
   position: relative; height: 35rem;margin-bottom: 5rem;
   .BgImg{height: 100%;width: 100%;}

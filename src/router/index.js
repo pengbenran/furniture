@@ -8,6 +8,7 @@ import Join from '@/pages/Join'
 import newsCenter from '@/pages/newsCenter'
 import newsInfo from '@/pages/newsInfo'
 import productCenter from '@/pages/productCenter'
+import productCen from '@/pages/productCen'
 import productInfo from '@/pages/productInfo'
 import productwarp from '@/pages/productwarp'
 import productlist from '@/pages/productlist'
@@ -49,6 +50,11 @@ export default new Router({
       path: '/productKind',
       name: 'productKind',
       component: productKind
+    },
+    {
+      path: '/productCen',
+      name: 'productCen',
+      component: productCen
     },
     {
       path: '/serviceCenter',

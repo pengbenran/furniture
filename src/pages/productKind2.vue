@@ -9,7 +9,7 @@
       <div class="hotProduct" v-for="(item,index) in childKindData">
        <div class="HotTitle"><img src="../assets/images/productCenter/icon.png"><span>{{item.itemName}}</span></div>
        <div ><ImgList :goodArry="item.goodList"/></div> 
-       <div class="btn" @click="jump(item.id)"><img src="../assets/images/productCenter/more.png"></div>
+       <div class="btn" @click="jump(item.parentId,item.id)"><img src="../assets/images/productCenter/more.png"></div>
       </div>
     </main>
 
@@ -45,7 +45,7 @@ export default {
     let params={}
     let that=this
     params.parentId =parentId 
-    that.KindData=[]
+    // that.KindData=[]
     Api.getItemsByParentId(params).then(function(res){
       that.KindData=res
       that.getChildItem(that.KindData[0].id)
@@ -56,6 +56,7 @@ export default {
     let params={}
     let that=this
     params.parentId =parentId 
+    that.childKindData=[]
     Api.getItemsByParentId(params).then(function(res){
       for(var i in res){
         that.listbyItem(res[i],i)
@@ -72,6 +73,7 @@ export default {
     Api.listbyItem(params).then(function(res){
       row.goodList=res.productList
       that.$set(that.childKindData,index,row)
+      // that.childKindData.push(row)
     })
   },
    showMark(){
@@ -87,11 +89,10 @@ export default {
     that.curretIndex=index
     that.getChildItem(that.KindData[that.curretIndex].id)
   },
-  jump(cid){
+  jump(id,cid){
     let that=this
-    // console.log("爱撒娇的喀什角动量卡",item)
     that.$router.push({
-      path:`/productlist?id=${that.kindId}&cid=${cid}`
+      path:`/productlist?id=${id}&cid=${cid}`
     })
   }
 },

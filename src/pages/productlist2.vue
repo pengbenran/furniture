@@ -37,7 +37,7 @@ export default {
          getItemsByParentId(parentId,cid){
             let params={}
             let that=this
-            params.parentId =parentId 
+            params.parentId =cid 
             that.KindData=[]
             Api.getItemsByParentId(params).then(function(res){
                 that.KindData=res

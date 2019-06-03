@@ -1,10 +1,5 @@
 <template>
     <div class="mobilePinfo">
-       <div class="Fan"><span @click="to">《 返回上一页</span></div>
-       <!--<div class="Main">
-            <div class="list" @click="changTab(index)" :class ="selectIndex == index ? 'select':''" v-for="(item,index) in decorateList">{{item.name}}</div>
-        </div>-->
-        <!--Main end-->
         <div class="container ListWarp">
             <DesignerList :List='List'/>
         </div>
@@ -59,7 +54,7 @@ export default {
 .select{color: #379589;}
 .Fan span{color: #0e887a;text-decoration: none;}
 .Main{display:flex;justify-content:space-around;width:50%;margin:50px auto;}
-.ListWarp{margin-bottom: 8rem;}
+.ListWarp{margin-bottom: 8rem;margin-top: 150px;}
 @media (max-width: 767px) {
   .Main{width:100%}
 }

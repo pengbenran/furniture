@@ -7,7 +7,7 @@
     <OurCase/>
     <!-- 产品分类 -->
     <div class="Case_List magTop scroll opacity" data-animation="zoomInUp">
-        <div class="Lits" v-for='(item,index) in kindRootData' ><a href="javascript:;" @click='changTab(index,item.id)'><img :src="item.itemImg" alt=".."><div class="mask"><span>{{item.itemName}}</span></div></a></div>
+        <div class="Lits" v-for='(item,index) in kindRootData' v-if='item.itemName!="大型工装"'><a href="javascript:;" @click='changTab(index,item.id)'><img :src="item.itemImg" alt=".."><div class="mask"><span>{{item.itemName}}</span></div></a></div>
       </div>
     <div class="hotCase">
      <div class="hotTitle scroll opacity" data-animation="fadeInRight">
@@ -83,6 +83,11 @@ export default {
       params.pageIndex=1
       params.pageSize=4
       Api.getRootList(params).then(function(res){
+        let index=res.findIndex((item)=>{
+          // item.itemName=='大型工装'
+          item.itemName=='大型工装'
+        })
+        console.log('index',index);
         that.kindRootData=res
         that.GetCatLab(that.kindRootData[0].id);
       })

@@ -25,7 +25,13 @@ export default {
     },
     mounted(){
         let that=this
-        that.getItemsByParentId(that.$route.query.id,that.$route.query.cid)
+        if(that.$route.query.cid==undefined){
+            that.getItemsByParentId(that.$route.query.id,1)
+        }
+        else{
+            that.getItemsByParentId(that.$route.query.id,that.$route.query.cid)
+        }
+       
     },
     methods: {
         to(){
@@ -41,7 +47,12 @@ export default {
             that.KindData=[]
             Api.getItemsByParentId(params).then(function(res){
                 that.KindData=res
-                that.curretIndex = that.KindData.findIndex(f => f.id == cid)
+                if(cid==1){
+                    that.curretIndex = that.KindData.findIndex(f => f.parentId == parentId)
+                }
+                else{
+                    that.curretIndex = that.KindData.findIndex(f => f.id== cid)
+                }     
                 that.listbyItem(that.KindData[that.curretIndex])
             })
         },

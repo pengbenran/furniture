@@ -84,7 +84,7 @@ export default {
 </script>
 <style scoped>
 .main{background-image: url('../assets/images/corporateCulture/bg.png');background-size: cover;width:100%;}
-.mainWarp{width:42%;background: rgba(255, 255, 255, 0.45);margin-top: 200px;margin-bottom: 150px;padding-bottom: 50px;box-sizing: border-box;font-family:'STFangsong';}
+.mainWarp{width:42%;background: rgba(255, 255, 255, 0.75);margin-top: 200px;margin-bottom: 150px;padding-bottom: 50px;box-sizing: border-box;font-family:'STFangsong';}
 .main{position: relative;display: flex;align-items: center;justify-content: center;}
 .main strong{display: block;font-size: 48px;padding:30px 0 50px 0;text-align: center;font-family: SimHei;}
 .main .info{padding: 0 50px; text-indent: 25px;font-size: 20px;}

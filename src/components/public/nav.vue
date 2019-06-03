@@ -23,11 +23,17 @@
                             </div>
                             <div class="menuConent" v-if="index==4&&ShowNav2">
                               <div class="upIcon"></div>
-                              <ul class="childNav2" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
-                                <li><a target="_blank" href="https://item.taobao.com/item.htm?id=549469471881&ali_refid=a3_430673_1006:1106029645:N:bStCjpXiZdyzwB%2F%2BY1%2BBsA%3D%3D:73bfc8d40aafa9017bf2615044aee5dc&ali_trackid=1_73bfc8d40aafa9017bf2615044aee5dc&spm=a2e15.8261149.07626516002.7" >淘宝店铺</a></li>
-                                <li>微店</li>
-                                <li @click.stop="ShowQc">微信小程序</li>
-                              </ul>
+                              <div class="childNav2" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
+                                <div class="left">
+                                  <div @click="showRight">线上店铺</div>
+                                  <div>线下门店</div>
+                                </div>
+                                <div class="right" v-if="isShow">
+                                  <div><a target="_blank" href="https://item.taobao.com/item.htm?id=549469471881&ali_refid=a3_430673_1006:1106029645:N:bStCjpXiZdyzwB%2F%2BY1%2BBsA%3D%3D:73bfc8d40aafa9017bf2615044aee5dc&ali_trackid=1_73bfc8d40aafa9017bf2615044aee5dc&spm=a2e15.8261149.07626516002.7" >淘宝店铺</a></div>
+                                  <div>微店</div>
+                                  <div @click.stop="ShowQc">微信小程序</div>
+                                </div>
+                              </div>
                             </div>
                         </li>
                     </ul>
@@ -45,6 +51,7 @@ export default {
            ShowNav:false,
            ShowNav2:false,
            MaskShow:false,
+           isShow:false,
            timer:'',
            rootKind:[],
            navDate:[
@@ -122,12 +129,12 @@ export default {
           }
           else if(itemName=='整体家装'){
             this.$router.push({
-              path:`productList?id=${id}&cid=${cid}`
+              path:`productList?id=${id}`
             }) 
           } 
           else{
             this.$router.push({
-              path:`productList2?id=${id}&cid=${cid}`
+              path:`productList?id=${cid}`
             }) 
           }
         
@@ -164,6 +171,7 @@ export default {
     
         enter(index){//鼠标进入
           let that=this
+          that.isShow=false
           if(index==3){
             that.getRootList()
           } 
@@ -191,7 +199,10 @@ export default {
             that.ShowNav = false;  
             that.ShowNav2=false;
         },
-
+        showRight(){
+          let that=this
+          that.isShow=true
+        },
         //显示二维码
         ShowQc(){
             this.$emit('openMark')
@@ -225,10 +236,14 @@ export default {
 
 .navbar-nav .nav-item .childNav2{
    list-style: none;position: absolute;top:10px;left: 0;background: rgba(255, 255, 255, 0.35);border-radius: 4px;padding:25px;color: #fff;box-sizing: border-box;
+   display: flex;
 }
-.navbar-nav .nav-item .childNav2 li{width: 120px;text-align: center;line-height: 40px;color: #fff;font-size: 18px;}
-.navbar-nav .nav-item .childNav2 li a{color: #fff;}
-.navbar-nav .nav-item .childNav2 li:hover{color: #379589;}
+.navbar-nav .nav-item .childNav2 .left{width: 120px;text-align: center;line-height: 40px;color: #fff;font-size: 18px;}
+.navbar-nav .nav-item .childNav2 .right{width: 120px;text-align: center;line-height: 40px;color: #fff;font-size: 18px;border-left: 1px solid #fff;}
+.navbar-nav .nav-item .childNav2 .right a{color: #fff;}
+.navbar-nav .nav-item .childNav2 .right div:hover{color: #379589;}
+.navbar-nav .nav-item .childNav2 .left{color: #fff;}
+.navbar-nav .nav-item .childNav2 .left div:hover{color: #379589;}
 
 .navbar-nav .nav-item .childNavUl .childNavli{width: 120px;font-size: 18px;}
 .navbar-nav .nav-item .childNavUl .childNavli span{border-bottom: 2px solid #ddd;}

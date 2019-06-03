@@ -3,75 +3,25 @@
   	<Header :curretIndex="index" @openMark="showMark" ref='navHeader'/>
    <Banner ref='banner'/>
     <div class="connect">
-		<img src="../assets/images/designer/connect.png" class="d-block w-100">
-	</div>
+		  <img src="../assets/images/designer/connect.png" class="d-block w-100">
+	  </div>
    <div class="title">
    	<span class="leb">01/</span><span>产品设计</span>
    </div>
-   <p class="intro">流程介绍：您可以根据您的想法提供设计稿，而我们则负责实现您的想法</p>
-   <div class="floor">
-   	<div class="floorleft" @click="jumpToProductDetail(productList[0].id)">
-      <a href="javascript:;">
-        <img :src="productList[0].lordImg" class="d-block w-100">
-        <div class="designerMark">
-          <div class="detail">
-            <p>{{productList[0].name}}</p>
-            <p>{{productList[0].egName}}</p>
+    <p class="intro">流程介绍：您可以根据您的想法提供设计稿，而我们则负责实现您的想法</p>
+  <div class="floor">		
+      <div class="floorlist" @click="jumpToProductDetail(item.id)" v-for="(item,index) in productList">
+        <a href="javascript:;">
+         <img :src="item.lordImg" class="d-block w-100">
+          <div class="designerMark">
+            <div class="detail">
+              <p>{{item.name}}</p>
+              <p>{{item.egName}}</p>
+            </div>
           </div>
-        </div>
-      </a>	
-   	</div>
-   	<div class="floorright">
-   		<div class="floortop">
-   			<div class="floortopleft" @click="jumpToProductDetail(productList[1].id)">
-          <a href="javascript:;">
-   				<img :src="productList[1].lordImg" class="d-block w-100">
-           <div class="designerMark">
-          <div class="detail">
-            <p>{{productList[1].name}}</p>
-            <p>{{productList[1].egName}}</p>
-          </div>
-        </div>
-      </a>  
-   			</div>
-   			<div class="floortopright" @click="jumpToProductDetail(productList[2].id)">
-           <a href="javascript:;">
-   				<img :src="productList[2].lordImg" class="d-block w-100">
-           <div class="designerMark">
-          <div class="detail">
-            <p>{{productList[2].name}}</p>
-            <p>{{productList[2].egName}}</p>
-          </div>
-        </div>
-      </a>  
-   			</div>
-   		</div>
-   		<div class="floortop">
-   			<div class="floortopleft" @click="jumpToProductDetail(productList[3].id)">
-          <a href="javascript:;">
-   				<img :src="productList[3].lordImg" class="d-block w-100">
-           <div class="designerMark">
-          <div class="detail">
-            <p>{{productList[3].name}}</p>
-            <p>{{productList[3].egName}}</p>
-          </div>
-        </div>
-      </a>  
-   			</div>
-   			<div class="floortopright" @click="jumpToProductDetail(productList[4].id)">
-          <a href="javascript:;">
-   				<img :src="productList[4].lordImg" class="d-block w-100">
-           <div class="designerMark">
-          <div class="detail">
-            <p>{{productList[4].name}}</p>
-            <p>{{productList[4].egName}}</p>
-          </div>
-        </div>
-      </a>  
-   			</div>
-   		</div>	
-   	</div>
-   </div>
+        </a>  
+      </div>
+    </div> 
    <!-- 装饰设计 -->
    <div class="title2" @click="jump">
    	<span class="leb">02/</span><span>装饰设计</span>
@@ -125,7 +75,7 @@ export default {
   	 designerList:[],
      decorateList:[],
      selectDecorate:{},
-     productList:[{lordImg:'',egName:'',name:''},{lordImg:'',egName:'',name:''},{lordImg:'',egName:'',name:''},{lordImg:'',egName:'',name:''},{lordImg:'',egName:'',name:''}]
+     productList:[]
     }
   },
   computed:{
@@ -293,83 +243,40 @@ h1,h2{font-weight: bold;}
  .floor{
  	width: 90%;
  	margin: 0 auto 200px auto;
- 	display: flex;
- 	justify-content: space-around;
- 	.floorleft{
- 		width: 32%;
-    a{
-      position: relative;
-      display: inline-block;
+ 	display: flex; 
+  .floorlist{
+    width:33%;
+    margin-right: 0.3%;
+   a{
+    height: 100%;
+    width:100%;
+    position: relative;
+    display: inline-block;
+    .designerMark{
+      position: absolute;
       width: 100%;
       height: 100%;
-      .designerMark{
+      top:0;
+      left: 0;
+      background: rgba(174,206,196, 0.7);
+      opacity: 0;
+      transition:all 0.3s;
+      .detail{
+        color:#fff;
+        font-size: 24px;
+        font-weight: bold;
         position: absolute;
+        bottom: 20%;
         width: 100%;
-        height: 100%;
-        top:0;
-        left: 0;
-        background: rgba(174,206,196, 0.7);
-        opacity: 0;
-        transition:all 0.3s;
-        .detail{
-          color:#fff;
-          font-size: 24px;
-          font-weight: bold;
-          position: absolute;
-          bottom: 20%;
-          width: 100%;
-          text-align: center;
-        }
+        text-align: center;
       }
     }
-    a:hover .designerMark{
-     opacity: 1;
-   }
- 	} 
- 	.floorright{
- 		width:67.5%;
- 		display: flex;
- 		flex-direction:column;
- 		justify-content: space-between; 
- 		.floortop{
- 			display: flex;
-      height: 49.5%;
- 			justify-content: space-between;
- 			.floortopleft,.floortopright{
- 				width: 49.8%;
-        position: relative;
-        a{
-          height: 100%;
-          width:100%;
-          position: relative;
-          display: inline-block;
-          .designerMark{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top:0;
-            left: 0;
-            background: rgba(174,206,196, 0.7);
-            opacity: 0;
-            transition:all 0.3s;
-            .detail{
-              color:#fff;
-              font-size: 24px;
-              font-weight: bold;
-              position: absolute;
-              bottom: 20%;
-              width: 100%;
-              text-align: center;
-            }
-          }
-        }
-        a:hover .designerMark{
-         opacity: 1;
-       }
+  }
+  a:hover .designerMark{
+   opacity: 1;
+ }
 
- 			}
- 		}
- 	}
+}
  }
  .floor3{
  	width: 72%;

@@ -122,8 +122,8 @@
        </div>
      </div>
 
-
-     <Map></Map>
+<!-- 
+     <Map></Map> -->
 
      <Footer/>
 

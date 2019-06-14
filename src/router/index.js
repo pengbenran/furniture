@@ -21,6 +21,7 @@ import productMore from '@/pages/productMore'
 import formJoin from '@/pages/formJoin'
 import designerList from '@/pages/designerList'
 import productDetail from '@/pages/productDetail'
+import shopName from '@/pages/shopName'
 Vue.use(Router)
 export default new Router({
   scrollBehavior(to,from,saveTop){
@@ -40,6 +41,11 @@ export default new Router({
       path: '/productMore',
       name: 'productMore',
       component: productMore
+    },
+    {
+      path: '/shopName',
+      name: 'shopName',
+      component: shopName
     },
     {
       path:'/productDetail',

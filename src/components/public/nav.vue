@@ -26,7 +26,7 @@
                               <div class="childNav2" @mouseenter.self="mouseEnter()" @mouseleave.self="mouseLeave()">
                                 <div class="left">
                                   <div @click="showRight">线上店铺</div>
-                                  <div>线下门店</div>
+                                  <div @click="jumpMap">线下门店</div>
                                 </div>
                                 <div class="right" v-if="isShow">
                                   <div><a target="_blank" href="https://item.taobao.com/item.htm?id=549469471881&ali_refid=a3_430673_1006:1106029645:N:bStCjpXiZdyzwB%2F%2BY1%2BBsA%3D%3D:73bfc8d40aafa9017bf2615044aee5dc&ali_trackid=1_73bfc8d40aafa9017bf2615044aee5dc&spm=a2e15.8261149.07626516002.7" >淘宝店铺</a></div>
@@ -117,6 +117,11 @@ export default {
             this.$router.push({
               path:`productKind?id=${id}`
             }) 
+          }
+          else if(itemName=='软装饰品'){
+            this.$router.push({
+              path:`productKind?id=${id}`
+            }) 
           } 
           else{
             this.$router.push({
@@ -197,6 +202,11 @@ export default {
         mouseEnter(){
           let that=this
           clearTimeout(that.timer);
+        },
+        jumpMap(){
+          this.$router.push({
+              path:`shopName`
+            }) 
         },
         mouseLeave(){
             let that=this

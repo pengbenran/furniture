@@ -150,7 +150,7 @@ export default {
 .Recommend .info strong{display: block;margin-bottom: .6rem;font-size: 1.2rem;letter-spacing:5px;}
 .Recommend .info li{font-size: 1rem;}
 .Recommend img{width: 100%;}
-.hotProduct{width: 85%;margin:200px auto;}
+.hotProduct{width: 85%;margin:0 auto;margin-bottom: 200px;}
 .HotTitle{margin-bottom: 80px;}
 .HotTitle span{padding: 0 3rem;letter-spacing:10px;border-bottom: 3px solid #ccc;font-size: 1.2rem;}
 .Nordic{margin-bottom: 10rem;width: 85%;margin:200px auto;}

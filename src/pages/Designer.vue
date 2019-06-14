@@ -10,13 +10,24 @@
    </div>
     <p class="intro">流程介绍：您可以根据您的想法提供设计稿，而我们则负责实现您的想法</p>
   <div class="floor">		
-      <div class="floorlist" @click="jumpToProductDetail(item.id)" v-for="(item,index) in productList">
+      <div class="floorlistleft" @click="jumpToProductDetail(productList[0].id)">
         <a href="javascript:;">
-         <img :src="item.lordImg" class="d-block w-100">
+         <img :src="productList[0].lordImg" class="d-block w-100">
           <div class="designerMark">
             <div class="detail">
-              <p>{{item.name}}</p>
-              <p>{{item.egName}}</p>
+              <p>{{productList[0].name}}</p>
+              <p>{{productList[0].egName}}</p>
+            </div>
+          </div>
+        </a>  
+      </div>
+      <div class="floorlistRight" @click="jumpToProductDetail(productList[1].id)">
+        <a href="javascript:;">
+         <img :src="productList[1].lordImg" class="d-block w-100">
+          <div class="designerMark">
+            <div class="detail">
+              <p>{{productList[1].name}}</p>
+              <p>{{productList[1].egName}}</p>
             </div>
           </div>
         </a>  
@@ -75,7 +86,7 @@ export default {
   	 designerList:[],
      decorateList:[],
      selectDecorate:{},
-     productList:[]
+     productList:[{lordImg:'',egName:'',name:''},{lordImg:'',egName:'',name:''}]
     }
   },
   computed:{
@@ -241,12 +252,11 @@ h1,h2{font-weight: bold;}
  }
  .floor img{height: 100%;}
  .floor{
- 	width: 90%;
+ 	width: 100%;
  	margin: 0 auto 200px auto;
  	display: flex; 
-  .floorlist{
-    width:33%;
-    margin-right: 0.3%;
+  .floorlistleft,.floorlistRight{
+    width:43.75%;
    a{
     height: 100%;
     width:100%;
@@ -275,7 +285,9 @@ h1,h2{font-weight: bold;}
   a:hover .designerMark{
    opacity: 1;
  }
-
+}
+.floorlistRight{
+  width: 56.25%
 }
  }
  .floor3{

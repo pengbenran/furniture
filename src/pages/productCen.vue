@@ -5,26 +5,28 @@
     
     <div class='container Main'>
         <div class="nav">
-          <span v-for="(item,index) in kindData" :key="item.id" @click="changeTab(index)">
-            <a :class="curretIndex==index?'selectOn':''">{{item.itemName}}</a>
+          <span v-for="(item,index) in goodArray" :key="item.id" @click="changeTab(index)">
+            <a :class="curretIndex==index?'selectOn':''">{{item.name}}</a>
           </span>
         </div>   
     </div>
-
         <div class="BgInfo" >
-        <div class="BgImg">
-          <img src="../assets/images/home/desigen1.png"/>
-        </div>
-           <div class="Info">
-             <div>
-             <label>{{goodDetail.name}}</label>
-             <div>
-               {{goodDetail.productDeclare}}
-             </div>
-             </div>
-           </div>
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
+            <div class="carousel-inner">
+              <div class="carousel-item" v-for="(item,index) in goodDetail.bannerList" :class="index==0?'active':''">
+                <img class="d-block w-100" :src="item">
+              </div>
+            </div>
+            <div class="carousel-caption d-none d-md-block Info">
+              <div>
+                 <label>{{goodDetail.name}}</label>
+              </div>
+              <div>
+                {{goodDetail.productDeclare}}
+              </div>         
+          </div>
+          </div>
         </div>  
-
         <div class="container Case">
           <ul>
             <li v-for="(item,index) in goodDetail.imgUrls"><img :src="item"/></li>
@@ -46,8 +48,8 @@ export default {
   data () {
     return {
       index:3,
-      kindData:[],
       curretIndex:0,
+      goodArray:[],
       goodDetail:{}
     }
   },
@@ -58,19 +60,8 @@ export default {
   changeTab(index){
     let that=this
     that.curretIndex=index
-    that.listbyItem(that.kindData[that.curretIndex].id)
-  },
-  // 根据父id获取子分类
-  getItemsByParentId(parentId){
-    let that=this
-    let params={}
-    params.parentId=parentId
-    Api.getItemsByParentId(params).then(function(res){
-      that.kindData=res
-      if(that.kindData.length>0){
-        that.listbyItem(that.kindData[that.curretIndex].id)
-      }
-    })
+    that.goodDetail=that.goodArray[that.curretIndex]
+    // that.listbyItem(that.kindData[that.curretIndex].id)
   },
  // 获取改分类下的商品
   listbyItem(id){
@@ -80,19 +71,24 @@ export default {
     params.pageSize=6
     params.itemId=id
     Api.listbyItem(params).then(function(res){
-      // row.goodList=res.productList
-      // console.log(res);
-      that.goodDetail=res.productList[0]
-      // console.log(that.goodDetail);
-      // that.$set(that.childKindData,index,row)
-      // that.childKindData.push(row)
+      that.goodArray=res.productList.map(item=>{
+        if(item.type==3&&item.texture!=null){
+          item.bannerList=item.texture.split(',')
+        }else{
+          item.bannerList=[] 
+        }
+        return item
+      })
+      console.log('that.goodArray',that.goodArray);
+      that.goodDetail=that.goodArray[that.curretIndex]
+      console.log(that.goodDetail)
     })
   },
 },
  mounted(){
    let that=this
    that.$refs.banner.getBannerList()
-   that.getItemsByParentId(that.$route.query.id)
+   that.listbyItem(that.$route.query.id)
   }
 }
 </script>
@@ -105,16 +101,11 @@ export default {
   span{margin: 0 2rem;}
 }
 .nav .selectOn{color:#0e887a;}
-.BgInfo{
-  position: relative; height: 35rem;margin-bottom: 5rem;
-  .BgImg{height: 100%;width: 100%;}
-  .BgImg img{height: 100%;width: 100%;}
-  .Info{background: rgba(255, 255, 255, 0.35);width: 90%;margin-left: 5%;position: absolute;top: 30%;padding: 5rem 2rem;}
+.Info{background: rgba(255, 255, 255, 0.6);margin:0 auto 150px auto; padding: 40px;color:#000;
 }
-
 .Case{
   ul{display: flex;flex-wrap: wrap;list-style-type:none;}
-  li{width: 33%;margin-bottom: 1rem;}
+  li{width: 33%;margin-top:15px;}
   li img{width: 100%;height: 100%;padding: 0 .5rem;}
 }
 

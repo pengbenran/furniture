@@ -101,7 +101,7 @@ export default {
   span{margin: 0 2rem;}
 }
 .nav .selectOn{color:#0e887a;}
-.Info{background: rgba(255, 255, 255, 0.6);margin:0 auto 150px auto; padding: 40px;color:#000;
+.Info{background: rgba(255, 255, 255, 0.6);margin:0 auto 250px auto; padding: 40px;color:#000;
 }
 .Case{
   ul{display: flex;flex-wrap: wrap;list-style-type:none;}

@@ -297,7 +297,7 @@ h1,h2{font-weight: bold;}
 	justify-content: space-between;
 	transition: all 0.5s;
  	.cardList{
-		 /*width: 32%;*/
+		width: 33.33%;
 		padding-top: 2rem;
 		padding-bottom: 5rem;
  		background: #DADBDB;

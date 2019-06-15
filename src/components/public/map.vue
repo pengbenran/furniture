@@ -42,7 +42,7 @@ export default {
           this.isShow=e
         },
         mouseLeave(e){
-          this.isShow=e
+          this.isShow=0
         },
     },
 }
